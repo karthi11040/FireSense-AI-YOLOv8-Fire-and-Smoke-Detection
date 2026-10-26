@@ -1,5 +1,7 @@
 # FireSense AI
 
+![FireSense AI logo](assets/firesense-ai-logo.jpg)
+
 YOLOv8 fire/smoke object detection research pipeline. See `reports/FINAL_REPORT.md`
 for the original benchmark and `reports/OPTIMIZATION_REPORT.md` for the deployed
 refinement, confidence thresholds and measured precision/recall tradeoffs.
