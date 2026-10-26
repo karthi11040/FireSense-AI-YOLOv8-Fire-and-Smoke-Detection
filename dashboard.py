@@ -123,6 +123,7 @@ class Handler(BaseHTTPRequestHandler):
         files = {'/': ('index.html', 'text/html; charset=utf-8'),
                  '/favicon.svg': ('favicon.svg', 'image/svg+xml'),
                  '/style.css': ('style.css', 'text/css'), '/app.js': ('app.js', 'text/javascript'),
+                 '/downloads.mjs': ('downloads.mjs', 'text/javascript'),
                  '/simulation.mjs': ('simulation.mjs', 'text/javascript'),
                  '/scene.mjs': ('scene.mjs', 'text/javascript'),
                  '/sample-video.webm': ('sample-video.webm', 'video/webm'),

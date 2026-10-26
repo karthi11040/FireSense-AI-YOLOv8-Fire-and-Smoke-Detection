@@ -1,0 +1,12 @@
+✔ download names preserve useful text without path or invalid characters (1.3639ms)
+✔ completed clip finalizes asynchronously and releases capture tracks (1.4956ms)
+✔ recording byte limit preserves a partial clip and cleans up (2.8963ms)
+✔ failed start preserves the previous download and stops capture tracks (1.4103ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.3698

@@ -24,9 +24,16 @@ const assert=require('node:assert/strict');
     assert.ok(responses.length>0);assert.deepEqual(errors,[]);
     assert.ok(responses.every(r=>r.status===200));
     const positive=responses.filter(r=>r.detections.some(d=>d.label==='fire')).length;
-    const summary={file:video,model:await page.locator('#model-name').innerText(),
+    let downloadedVideo=null;
+    if(process.argv.includes('--download')){
+      await page.waitForFunction(()=>!document.querySelector('#download-video').disabled);
+      const saved=page.waitForEvent('download');await page.locator('#download-video').click();
+      const file=await saved;downloadedVideo=`evidence/user_video/${tag}.webm`;await file.saveAs(downloadedVideo);
+      assert.ok(fs.statSync(downloadedVideo).size>1000);
+    }
+    const summary={file:video,model:await page.locator('#model-name').textContent(),
       minimumScore:Number(await page.locator('#confidence').inputValue()),processedFrames:responses.length,
-      framesWithFire:positive,firePositiveFraction:positive/responses.length,pageErrors:errors,responses};
+      framesWithFire:positive,firePositiveFraction:positive/responses.length,downloadedVideo,pageErrors:errors,responses};
     fs.writeFileSync(`evidence/user_video/${tag}.json`,JSON.stringify(summary,null,2));
     await page.screenshot({path:`evidence/user_video/${tag}.png`,fullPage:true});
     console.log(JSON.stringify({...summary,responses:undefined},null,2));

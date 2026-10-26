@@ -1,0 +1,7 @@
+{
+  "decoded_frames": 47,
+  "width": 640,
+  "height": 360,
+  "container_reported_fps": 60.0,
+  "note": "Variable timestamps control playback; browser duration/timing is tested separately"
+}

@@ -1,0 +1,27 @@
+{
+  "pngCheck": {
+    "width": 640,
+    "height": 360,
+    "changed": 2718
+  },
+  "webmCheck": {
+    "width": 640,
+    "height": 360,
+    "sourceSeconds": 3.065,
+    "playbackSeconds": 3.2952000000001864
+  },
+  "videoDownload": true,
+  "syntheticCameraRecording": true,
+  "sourceSwitchPreservesClip": true,
+  "partialClip": true,
+  "invalidImageError": true,
+  "unsupportedRecorderFallback": true,
+  "widths": [
+    320,
+    768,
+    1024,
+    1440
+  ],
+  "keyboardSkip": true,
+  "pageErrors": []
+}

@@ -1,41 +1,59 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>FireSense AI · Live monitor</title><link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FireSense AI · Detection workspace</title><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script>
 </head>
 <body>
 <a class="skip" href="#monitor">Skip to monitor</a>
-<aside class="sidebar">
-  <a class="brand" href="#monitor"><span class="brand-icon">F</span><span>FireSense<span class="brand-ai">AI</span></span></a>
-  <div class="workspace-label"><span class="workspace-mark">L</span><span>Local workspace<small>Research environment</small></span></div>
-  <p class="eyebrow side-label">WORKSPACE</p>
-  <nav aria-label="Main navigation">
-    <a class="nav-link selected" href="/" aria-current="page"><span>◉</span> Live monitor</a>
-    <a class="nav-link" href="#events"><span>≡</span> Activity</a>
-  </nav>
-  <div class="model-card"><p class="eyebrow">DETECTION MODEL</p><strong id="model-name">YOLOv8 nano</strong><span>Fire & smoke detection</span><div class="benchmark"><b><span id="benchmark-map">82.02</span><span>%</span></b><small>Test mAP@0.5<br>Held-out image benchmark</small></div></div>
-  <div class="local-note"><span class="local-dot"></span> Running locally<p>Frames stay on this computer.</p></div>
-</aside>
+<header class="app-header">
+<a class="brand" href="/"><span class="brand-icon" aria-hidden="true">F</span>FireSense <span class="brand-ai">AI</span></a>
+<nav aria-label="Main navigation"><a href="#monitor" aria-current="page">Detection workspace</a><a href="#events">Activity</a></nav>
+<span id="model-status" class="chip" role="status">Loading detector…</span>
+</header>
 <main id="monitor">
-  <header><span class="breadcrumb">Workspace <span>/</span> Live monitor</span><span id="model-status" class="chip" role="status">● Loading detector</span></header>
-  <section class="page-heading"><div><p class="eyebrow">MONITORING CONSOLE</p><h1>Live monitoring<span class="title-dot">.</span></h1><p>Detect fire and smoke from your camera, video, or image.</p></div></section>
-  <div id="error" class="error" role="alert" hidden></div>
-  <section class="source-panel" aria-label="Input controls">
-    <div class="source-top"><div class="source-tabs" role="group" aria-label="Input source"><button data-source="camera" aria-pressed="true">Live camera</button><button data-source="video" aria-pressed="false">Video file</button><button data-source="image" aria-pressed="false">Image</button></div><div class="source-actions"><button id="sample" class="button text-button">Try sample image ↗</button><button id="start" class="button primary" disabled>Start camera</button><button id="stop" class="button stop" disabled>Stop</button></div></div>
-    <div class="source-bottom"><div class="input-description"><label for="upload" id="upload-label" hidden>Choose a file</label><input id="upload" type="file" accept="video/*" hidden><span id="source-hint">Camera access starts only when you choose Start camera.</span></div><details class="settings" open><summary>Detection settings</summary><label class="confidence-control" for="confidence">Minimum score <input id="confidence" type="range" min="0.05" max="0.95" step="0.05" value="0.50"><output id="confidence-value">50%</output></label><div class="filter-presets"><button id="precision-filter" class="button secondary" type="button">50% · recommended</button><button id="strict-filter" class="button secondary" type="button">90%+ only</button></div><p id="filter-note" class="filter-note">Scores are model confidence, not measured accuracy.</p></details></div>
-  </section>
-  <div class="workspace-grid">
-    <section class="panel feed-panel"><div class="panel-heading"><div class="panel-title"><span class="panel-icon">▣</span><div><h2>Detection feed</h2><p>Live source with model overlays</p></div></div><span id="source-status" class="chip">● Idle</span></div>
-      <div class="feed-view"><canvas id="feed" width="960" height="540" aria-label="Input video or image with detected fire and smoke boxes"></canvas></div>
-      <div class="feed-footer"><span id="feed-caption">No source connected</span><span id="frame-age">Waiting for live frames</span></div>
-      <section class="metrics" aria-label="Latest analyzed frame"><div><span>Fire detections</span><strong id="fire-count">0</strong><small>Latest frame</small></div><div><span>Smoke detections</span><strong id="smoke-count">0</strong><small>Latest frame</small></div><div><span>Top confidence</span><strong id="top-confidence">—</strong><small id="confidence-caption">Raw model score, not accuracy</small></div><div><span>Frames analyzed</span><strong id="frame-count">0</strong><small id="latency">Waiting for source</small></div></section>
-      <div class="feed-meta"><span><i class="key fire-key"></i> Fire <i class="key smoke-key"></i> Smoke</span><span id="processed-rate">Inference rate —</span></div>
-    </section>
-
-  </div>
-  <section id="events" class="panel events-panel"><div class="panel-heading"><div><h2>Session activity</h2><p>Source activity and detection results.</p></div><div class="event-actions"><a href="/sample-video.webm" download="sample-video.webm" class="sample-link">↓ Sample video</a><button id="export" class="button secondary" disabled>↓ Export log</button></div></div><ol id="event-list" aria-label="Session events"><li class="no-events">No activity yet. Connect a camera or upload a file.</li></ol></section>
-  <footer><span>FireSense AI <span class="footer-dot">·</span> Local research prototype</span><span>Missing detections do not establish a safe scene.</span></footer>
+<section class="page-heading"><div><p class="eyebrow">LOCAL VISION WORKSPACE</p><h1>Live monitoring.</h1><p>Choose a source, review detections, and save your annotated results.</p></div><span class="local-badge">● Frames stay on this computer</span></section>
+<div id="error" class="error" role="alert" hidden></div>
+<div class="workspace-grid">
+<section class="source-panel panel" aria-label="Input controls">
+<div class="section-heading"><span class="step" aria-hidden="true">1</span><div><h2>Set up detection</h2><p>Select your input and processing options.</p></div></div>
+<div class="form-section">
+<p id="source-label" class="field-label">Input source</p>
+<div class="source-tabs" role="group" aria-labelledby="source-label"><button data-source="camera" aria-pressed="true">Live camera</button><button data-source="video" aria-pressed="false">Video file</button><button data-source="image" aria-pressed="false">Image</button></div>
+<p id="source-hint" class="source-hint">Start your camera to detect fire and smoke live. Your browser will ask for camera permission.</p>
+<div class="input-description"><label for="upload" id="upload-label" hidden>Choose a file</label><input id="upload" type="file" accept="video/*" aria-describedby="file-help file-info" hidden><p id="file-help" class="help" hidden>Choose a browser-supported MP4 or WebM.</p></div>
+<p id="file-info" class="file-info" aria-live="polite">No source connected</p>
+</div>
+<div class="form-section">
+<label class="field-label confidence-label" for="confidence">Minimum detection score <output id="confidence-value" for="confidence">50%</output></label>
+<input id="confidence" type="range" min="0.05" max="0.95" step="0.05" value="0.50" aria-describedby="filter-note">
+<p id="filter-note" class="help">50% is recommended. A higher score filter can miss real fire or smoke.</p>
+<div class="filter-presets"><button id="precision-filter" class="button subtle" type="button">Use recommended 50%</button><button id="strict-filter" class="button subtle" type="button">90%+ only</button></div>
+</div>
+<div id="record-option" class="form-section"><label class="check-label"><input id="record-video" type="checkbox"><span>Record annotated video<small>Enable before starting to save a silent WebM preview.</small></span></label><p id="record-support" class="help">Video files are recorded by default. Camera recording is optional.</p></div>
+<div class="source-actions"><button id="start" class="button primary" disabled>Start camera</button><button id="stop" class="button stop" disabled>Stop</button></div>
+<button id="sample" class="button subtle sample-button" disabled>Try sample image ↗</button>
+<details class="model-details"><summary>About this detector</summary><strong id="model-name">YOLOv8 nano</strong><p>Classes: fire and smoke. Test mAP@0.5: <b id="benchmark-map">—</b>%. This image benchmark is not a safety guarantee.</p></details>
+</section>
+<div class="results-column">
+<section class="panel feed-panel" aria-label="Detection results">
+<div class="panel-heading"><div class="section-heading"><span class="step" aria-hidden="true">2</span><div><h2>Detection preview</h2><p>Fire and smoke boxes from the latest analyzed frame.</p></div></div><span id="source-status" class="chip" role="status">● Idle</span></div>
+<div class="feed-view"><canvas id="feed" width="960" height="540" aria-label="Input video or image with detected fire and smoke boxes"></canvas></div>
+<div class="playback-row"><progress id="video-progress" max="1" value="0" aria-label="Video playback progress"></progress><span id="video-time">No video playing</span></div>
+<div class="feed-footer"><span id="feed-caption">No source connected</span><span id="frame-age">Waiting for live frames</span></div>
+<section class="metrics" aria-label="Latest analyzed frame"><div><span>Fire detections</span><strong id="fire-count">0</strong><small>Latest frame</small></div><div><span>Smoke detections</span><strong id="smoke-count">0</strong><small>Latest frame</small></div><div><span>Top confidence</span><strong id="top-confidence">—</strong><small id="confidence-caption">Raw score, not accuracy</small></div><div><span>Frames analyzed</span><strong id="frame-count">0</strong><small id="latency">Waiting for source</small></div></section>
+<div class="feed-meta"><span><i class="key fire-key"></i> Fire <i class="key smoke-key"></i> Smoke</span><span id="processed-rate">Inference rate —</span></div>
+</section>
+<section class="panel downloads-panel" aria-labelledby="downloads-title">
+<div class="section-heading"><span class="step" aria-hidden="true">3</span><div><h2 id="downloads-title">Save your results</h2><p>Download the annotated preview, including visible detection boxes.</p></div></div>
+<div class="download-actions"><button id="download-image" class="button secondary" aria-describedby="download-status" disabled>↓ Download image</button><button id="download-video" class="button secondary" aria-describedby="download-status" disabled>↓ Download video</button></div>
+<p id="download-status" class="download-status" role="status">Process an image or start monitoring to enable image download.</p>
+<p class="help">PNG image · 15 fps WebM video · Preview resolution, up to 1280 × 720 · No audio. Stop playback to finalize a recording. Saves stay in this tab until replaced or closed.</p>
+</section>
+</div>
+</div>
+<section id="events" class="panel events-panel"><div class="panel-heading"><div><h2>Session activity</h2><p>Source changes, processing, and saved results.</p></div><div class="event-actions"><a href="/sample-video.webm" download="sample-video.webm">Download test video</a><button id="export" class="button subtle" disabled>↓ Export log</button></div></div><ol id="event-list" tabindex="0" aria-label="Session events"><li class="no-events">No activity yet. Connect a camera or upload a file.</li></ol></section>
+<footer><span>FireSense AI · Local research prototype</span><span>Missing detections do not establish a safe scene.</span></footer>
 </main><video id="video" muted playsinline hidden></video><canvas id="capture" hidden></canvas>
 </body></html>

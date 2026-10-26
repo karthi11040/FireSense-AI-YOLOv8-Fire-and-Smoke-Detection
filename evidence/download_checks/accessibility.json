@@ -1,0 +1,37 @@
+[
+  {
+    "source": "Live camera",
+    "width": 320,
+    "violations": []
+  },
+  {
+    "source": "Live camera",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "source": "Video file",
+    "width": 320,
+    "violations": []
+  },
+  {
+    "source": "Video file",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "source": "Image",
+    "width": 320,
+    "violations": []
+  },
+  {
+    "source": "Image",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "source": "Populated image results and scrollable activity",
+    "width": 1440,
+    "violations": []
+  }
+]

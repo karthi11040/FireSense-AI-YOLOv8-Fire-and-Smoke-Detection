@@ -16,6 +16,36 @@ For files, choose an upload and click **Play & detect** or **Analyze image**.
 **Stop** releases the camera and retains the last frame. **Export log** saves source
 activity. The simulator and virtual sprinkler controls have been removed.
 
+### Save annotated images and videos
+
+The white workspace separates **Set up detection**, **Detection preview**, and
+**Save your results**. The form shows supported formats, file size, image/video
+dimensions and video duration. Playback progress and detector status are visible.
+
+- **Download image** saves a PNG of the displayed frame with its visible boxes and
+  scores. It becomes available after the first analyzed frame, including still
+  images, video frames and camera snapshots.
+- **Record annotated video** is enabled by default for uploaded videos. For camera
+  sessions, select it before Start camera. Let playback finish or select Stop,
+  then choose **Download video**. A stopped upload is labeled a partial clip.
+- Video exports are **WebM (VP8), without audio**, recorded from the preview at up
+  to 15 fps and up to 1280×720 resolution. They preserve playback timing and show
+  the latest available detections; each recorded frame is not independently inferred.
+- Recording is limited to approximately **100 MB or 10 minutes**. The partial
+  recording remains downloadable and detection continues. Save before starting
+  another recording or closing/reloading the tab; recordings are held in browser
+  memory and are not persisted on the server. Switching sources alone retains the
+  completed recording. Starting another recording replaces it.
+- Chrome/Edge are recommended. If recording is unsupported, detection and PNG
+  download remain usable. Errors and recording/finalizing/ready states are shown.
+
+Verification: `node --test web/downloads.test.mjs` checks export lifecycle and
+resource cleanup. Optional browser checks are in `scripts/test_downloads.cjs`,
+using the same `PLAYWRIGHT_MODULE` setup as the other browser scripts. Accessibility
+checks in `scripts/test_accessibility.cjs` use a local `tmp/axe.min.js` test-only
+copy of axe-core 4.10.3. This is not an application dependency. Evidence is under
+`evidence/download_checks/`.
+
 Only sampled frames are sent to the local model. One inference request runs at a
 time; video rendering remains independent. Overlays older than 750 ms are hidden.
 Actual inference rate depends on your hardware. The server binds to localhost;

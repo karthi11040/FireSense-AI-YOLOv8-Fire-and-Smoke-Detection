@@ -1,0 +1,10 @@
+{
+  "file": "C:\\Users\\Karth\\Downloads\\6401825-hd_1080_1920_30fps.mp4",
+  "model": "YOLOv8 nano (domain adapted)",
+  "minimumScore": 0.5,
+  "processedFrames": 151,
+  "framesWithFire": 151,
+  "firePositiveFraction": 1,
+  "downloadedVideo": "evidence/user_video/processed_video_download.webm",
+  "pageErrors": []
+}
