@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import re
+import shutil
 import sys
 from xml.sax.saxutils import escape
 
@@ -53,12 +54,16 @@ def build():
               [[s, n, counts[s]['images'], counts[s]['fire_boxes'], counts[s]['smoke_boxes'], counts[s]['negatives']]
                for s,n in [('train',3900), ('val',1300), ('test',1300)]]),
         f'The published split is 60/20/20. Auditing observed {audit["raw_images"]} images, quarantined '
-        f'{len(audit["rejected"])} invalid/unreadable/missing-label inputs and removed {len(audit["exact_duplicates_removed"])} '
+        f'{len(audit["rejected"])} inputs and removed {len(audit["exact_duplicates_removed"])} '
         'exact decoded-pixel duplicates. Duplicate priority is test, validation, then training: an image in test never remains in training. '
         'Labels must contain finite normalized class/x/y/width/height values, valid class IDs, positive dimensions and in-bounds boxes. '
         'Images are resized proportionally to at most 640 px and stored as quality-95 JPEG; YOLO then letterboxes them to 416 px. '
         'There is no generated data or offline augmentation. Archive hashes/URLs are in evidence/downloads.json; every retained image '
         'and label is listed in evidence/manifest.json; exclusions are in evidence/data_audit.json.',
+        'In this run, all 33 quarantined inputs have non-default EXIF orientation. They were excluded conservatively because '
+        'automatically rotating pixels without confirming the annotation coordinate convention can misalign boxes; this does not '
+        'mean the source image is corrupt. Both exact duplicate removals occurred within the official test split. '
+        'No exact decoded-pixel overlap was found between retained splits.',
         'The official split is retained rather than claiming a new scene-independent benchmark. Exact pixel hashes do not catch '
         'near duplicates, alternate encodings or adjacent video frames. A dependable frame-to-source-video map was not available; '
         'scene overlap is therefore an unresolved risk. The test set is held out from optimization, but is not demonstrated to be '
@@ -66,10 +71,18 @@ def build():
         '## Method and configuration',
         'Both detectors use official COCO-pretrained YOLOv8 weights, replacing the detection head for two classes and fine-tuning '
         'the network. Nano is the primary low-cost baseline; small tests whether additional capacity improves accuracy. '
-        'Both have the same data, seed, input resolution, optimizer and epoch budget. Only model size changes. '
+        'Both share the same data, seed, input resolution, optimizer and epoch budget. '
+        'Nano began with batch 8 and changed to batch 4 after epoch 8 following resource failures; small uses batch 4 throughout. '
+        'Gradient accumulation targets nominal batch 64. This is a practical resource-constrained comparison, not a strictly isolated architecture ablation. '
         'This is one run per size, without hyperparameter search or repeated-seed confidence intervals.',
+        'The nano run was interrupted just after epoch 6 by Windows error 1450 (insufficient system resources) during a filesystem '
+        'existence check. The same check subsequently succeeded and the JPEG remained readable. A later CUDA out-of-memory error '
+        'interrupted epoch 9. Training was resumed from last.pt with native model, optimizer and completed-epoch recovery, '
+        'reducing batch size to 4 for the second recovery. Partial work in the interrupted epochs was discarded. '
+        'No data labels or operating-system policy were altered. This interruption may change the stochastic training trajectory '
+        'relative to a completely uninterrupted run; original and recovery logs are retained in evidence/.',
         table(['Setting', 'Value'], [
-            ['Models','YOLOv8n and YOLOv8s'], ['Input / batch','416 x 416 / 8'],
+            ['Models','YOLOv8n and YOLOv8s'], ['Input / batch','416 x 416 / 4 (nano epochs 1-8 used 8)'],
             ['Budget / early stopping','20 epochs per model / patience 8'],
             ['Optimizer / learning rate','AdamW / 0.001 initial, final multiplier 0.01'],
             ['Weight decay / warmup','0.0005 / 2 epochs'], ['Seed / loader workers','42 / 0'],
@@ -79,7 +92,7 @@ def build():
             ['Checkpoint selection','Best validation fitness under pinned Ultralytics version'],
             ['AP evaluation','Confidence floor .001; NMS IoU .7; IoU thresholds .50:.05:.95'],
             ['Operational P/R','Fixed confidence .25; NMS IoU .7; class-aware matching at IoU .5']]),
-        'The 4 GB NVIDIA GTX 1650 motivated 416 px, batch 8 and nano/small models. The short 20-epoch budget is a reproducible '
+        'The 4 GB NVIDIA GTX 1650 motivated 416 px, batch 4 and nano/small models. The short 20-epoch budget is a reproducible '
         'local baseline and may undertrain the models; it is not evidence of convergence. Full precision avoids depending on mixed-precision '
         'behavior on this older GPU. Exact resolved defaults and configuration are saved in runs/train/*/args.yaml and evidence/train_*.json.',
         f'Environment: Python {env["python"]}; PyTorch {env["torch"]}; Ultralytics {env["ultralytics"]}; '
@@ -134,7 +147,10 @@ def build():
                 file = file.with_name('PR_curve.png')
             if not file.exists():
                 raise FileNotFoundError(file)
-            relative = Path('..') / file.relative_to(ROOT)
+            portable = ROOT / 'reports/figures' / f'yolov8{size}_{file.name}'
+            portable.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(file, portable)
+            relative = portable.relative_to(ROOT / 'reports')
             sections.append(f'![{caption}]({relative.as_posix()})')
     sections += [
         '## Error analysis and practical implications',
@@ -143,6 +159,9 @@ def build():
         'TP/FP/FN are saved in each evaluator\'s image_results.json; failure_examples.json lists the worst ten. '
         'A missed smoke plume or small flame is relevant to the monitoring objective; false boxes would become nuisance candidates '
         'if every frame triggered an alert. Localization AP does not measure incident confirmation, false alarms per hour or detection delay.',
+        'The label vocabulary describes visible flame and smoke, not emergency severity. Controlled flames and candles can be '
+        'correct fire detections under these annotations. A separate event/context policy is needed before a detector output '
+        'can reasonably become an emergency alarm.',
         (ROOT / 'evidence/error_analysis.md').read_text(encoding='utf-8'),
         '## Reproduction and delivered assets',
         'Use the documented commands in README.md. Training: `.venv/Scripts/python.exe pipeline.py train --size n --epochs 20`. '
@@ -183,7 +202,6 @@ def make_pdf(sections, output):
     from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, KeepTogether
     from reportlab.lib.styles import getSampleStyleSheet
     from reportlab.lib import colors
-    from reportlab.lib.enums import TA_LEFT
     from reportlab.lib.utils import ImageReader
     styles = getSampleStyleSheet()
     styles['BodyText'].fontSize = 9

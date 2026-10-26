@@ -3,7 +3,6 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import hashlib
 import json
-import urllib.request
 import zipfile
 from range_download import download
 

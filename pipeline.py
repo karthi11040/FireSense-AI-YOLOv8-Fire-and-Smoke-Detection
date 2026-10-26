@@ -51,6 +51,7 @@ def prepare():
         images = sorted(p for p in base.rglob('*') if p.suffix.lower() in {'.jpg', '.jpeg', '.png'})
         if not images:
             raise FileNotFoundError(f'No images under {base}; run scripts/download_data.py first')
+        print(f'Auditing {split}: {len(images)} images', flush=True)
         for p in images:
             try:
                 label = labels[p.stem]
@@ -68,6 +69,7 @@ def prepare():
     counts = {}
     for split in ['train', 'val', 'test']:
         selected = [r for r in kept if r['split'] == split]
+        print(f'Writing {split}: {len(selected)} images', flush=True)
         folder = ROOT / 'data/prepared' / split
         (folder / 'images').mkdir(parents=True, exist_ok=True)
         (folder / 'labels').mkdir(parents=True, exist_ok=True)
@@ -105,9 +107,11 @@ def train(args):
     from ultralytics import YOLO
     import torch
     torch.set_num_threads(4)
-    model = YOLO(f'yolov8{args.size}.pt')
+    (ROOT / 'models').mkdir(parents=True, exist_ok=True)
+    model = YOLO(args.resume or f'yolov8{args.size}.pt')
     model.train(data=str(ROOT / 'data/dataset.yaml'), epochs=args.epochs,
-                imgsz=416, batch=8, device=args.device, workers=0, cache=False,
+                resume=bool(args.resume),
+                imgsz=416, batch=args.batch, device=args.device, workers=0, cache=False,
                 seed=42, deterministic=True, optimizer='AdamW', lr0=.001,
                 lrf=.01, weight_decay=.0005, patience=8, warmup_epochs=2,
                 hsv_h=.015, hsv_s=.7, hsv_v=.4, degrees=0., translate=.1,
@@ -139,6 +143,8 @@ def main():
     p = sub.add_parser('train')
     p.add_argument('--size', choices=['n', 's'], default='n')
     p.add_argument('--epochs', type=int, default=20)
+    p.add_argument('--batch', type=int, default=4)
+    p.add_argument('--resume', help='Resume an unfinished last.pt checkpoint with its optimizer state')
     p.add_argument('--device', default='0')
     p = sub.add_parser('predict')
     p.add_argument('--weights', default=str(ROOT / 'models/yolov8n_best.pt'))
