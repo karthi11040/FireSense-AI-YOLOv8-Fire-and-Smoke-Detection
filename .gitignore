@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+data/
+runs/
+models/*.pt
+*.cache
+evidence/*.pdf
+evidence/*install*.log
+evidence/environment_freeze.txt
+tmp/
