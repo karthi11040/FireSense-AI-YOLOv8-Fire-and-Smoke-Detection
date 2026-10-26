@@ -10,3 +10,5 @@ evidence/*.pdf
 evidence/*install*.log
 evidence/environment_freeze.txt
 tmp/
+evidence/dashboard_server*.log
+evidence/dashboard_commit.log
