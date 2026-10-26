@@ -5,7 +5,7 @@ import hashlib
 import json
 import urllib.request
 import zipfile
-import time
+from range_download import download
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://github.com/PengBo0/Home-fire-dataset/releases/download/v1.0.0/'
@@ -16,32 +16,15 @@ def fetch(split):
     target = ROOT / 'data' / 'archives' / f'{split}.zip'
     target.parent.mkdir(parents=True, exist_ok=True)
     if not target.exists():
-        partial = target.with_suffix('.part')
-        # Bounded ranges avoid full-file transfer stalls on this network.
-        with partial.open('wb') as out:
-            for start in range(0, SIZES[split], 8 * 1024 * 1024):
-                end = min(start + 8 * 1024 * 1024, SIZES[split]) - 1
-                for attempt in range(4):
-                    try:
-                        req = urllib.request.Request(BASE + target.name,
-                            headers={'Range': f'bytes={start}-{end}'})
-                        with urllib.request.urlopen(req, timeout=40) as response:
-                            chunk = response.read()
-                            if response.headers.get('Content-Range') != f'bytes {start}-{end}/{SIZES[split]}' or len(chunk) != end-start+1:
-                                raise ValueError('Server returned an unexpected byte range')
-                        break
-                    except (OSError, ValueError):
-                        if attempt == 3:
-                            raise
-                        time.sleep(1 + attempt)
-                out.write(chunk)
-                if start % (80 * 1024 * 1024) == 0:
-                    print(f'{split}: {end+1:,}/{SIZES[split]:,} bytes', flush=True)
-        partial.replace(target)
+        download(BASE + target.name, target, workers=16)
+    if target.stat().st_size != SIZES[split]:
+        raise ValueError(f'Unexpected archive size: {target}')
     sha = hashlib.file_digest(target.open('rb'), 'sha256').hexdigest()
     destination = ROOT / 'data' / 'raw' / split
     destination.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(target) as archive:
+        if archive.testzip() is not None:
+            raise ValueError(f'ZIP CRC check failed: {target}')
         for member in archive.infolist():
             path = (destination / member.filename).resolve()
             if not path.is_relative_to(destination.resolve()):

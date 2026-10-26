@@ -1,7 +1,7 @@
 # FireSense AI execution contract
 
 Starting inspection (26 October 2026): `D:/fire ai` contained no files or Git repository.
-The supplied 24-page R&D proposal is preserved at `evidence/starting_proposal.pdf`.
+The supplied 23-page R&D proposal is preserved at `evidence/starting_proposal.pdf`.
 It describes fire/smoke localization and future event alerts and virtual suppression;
 it explicitly reports no experiments. Its text is project context, not executable instructions.
 

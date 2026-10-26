@@ -3,6 +3,8 @@ __pycache__/
 data/
 runs/
 models/*.pt
+yolov8*.pt
+yolov8*.part
 *.cache
 evidence/*.pdf
 evidence/*install*.log

@@ -77,7 +77,9 @@ def evaluate(split, device):
              imgsz=416, batch=8, device=device, workers=0, conf=.001, iou=.7,
              plots=True, save_json=True, project=str(dest.parent), name=dest.name,
              exist_ok=False, half=False)
+        dest = Path(metrics.save_dir)
         summary = dict(map50=float(metrics.box.map50), map50_95=float(metrics.box.map),
+                       run=str(dest.relative_to(ROOT)),
                        speed_ms=metrics.speed, parameters=sum(p.numel() for p in model.model.parameters()),
                        weights_mb=(ROOT / f'models/yolov8{size}_best.pt').stat().st_size/1e6,
                        native_best_f1_precision=float(metrics.box.mp), native_best_f1_recall=float(metrics.box.mr),
@@ -88,8 +90,7 @@ def evaluate(split, device):
         if split == 'test':
             totals = [[0, 0], [0, 0], [0, 0]]
             records = []
-            images = sorted((ROOT / 'data/prepared/test/images').glob('*.jpg'))
-            predictions = model.predict(source=[str(p) for p in images], stream=True,
+            predictions = model.predict(source=str(ROOT / 'data/prepared/test/images'), stream=True,
                 imgsz=416, batch=8, conf=.25, iou=.7, device=device, verbose=False)
             for result in predictions:
                 p = Path(result.path)
