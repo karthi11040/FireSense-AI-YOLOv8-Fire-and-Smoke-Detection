@@ -47,3 +47,5 @@ responsive light theme and an independent animated scene. Video-frame callbacks
 replace the fixed inference delay, with one request in flight and measured result
 age/rate. Simulation timing uses elapsed seconds. An included 20-second generated
 WebM test sequence has source-image provenance in evidence/sample_video_provenance.json.
+
+Latest user scope: remove simulator navigation, demo and virtual-response panel. Keep camera/video/image inference with a full-width feed. Browser checks passed for real image/video inference, synthetic camera and 320/768/1024/1440px layouts.

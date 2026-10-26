@@ -3,68 +3,21 @@
 YOLOv8 fire/smoke object detection research pipeline. See `reports/FINAL_REPORT.md`
 for the measured results and limitations once the experiment completes.
 
-## Frontend and live virtual simulation
+## Local detection dashboard
 
-The trained weights are already present in this workspace. Start the dashboard:
+Run `.venv/Scripts/python.exe dashboard.py`, then open http://localhost:8765.
+Wait for **Detector ready**. Select **Live camera**, **Video file**, or **Image**.
+For files, choose an upload and click **Play & detect** or **Analyze image**.
+**Try sample image** runs the included image; **Sample video** downloads a generated
+20-second test sequence from held-out still images, not real incident footage.
+**Stop** releases the camera and retains the last frame. **Export log** saves source
+activity. The simulator and virtual sprinkler controls have been removed.
 
-```powershell
-cd "D:\fire ai"
-.venv/Scripts/python.exe dashboard.py
-```
-
-Open **http://localhost:8765** in Chrome or Edge. No additional packages or training
-are needed. The page opens while the detector loads; wait for **Detector ready**
-before starting real inference. **Run simulation demo** works immediately.
-
-The sidebar's **Live simulator** opens `http://localhost:8765/?view=simulator`,
-a dedicated scene-first page with a highlighted virtual fire target, one active
-sprinkler and two closed heads. Start a camera/video or use the scripted demo.
-Changing pages starts a new browser session; detection state is not transferred.
-
-- **Live camera:** click Start camera and grant browser permission. Stop releases
-  the camera. If the embedded preview cannot access it, open the URL in Chrome/Edge.
-- **Video file:** choose a browser-supported video (e.g. H.264 MP4 or WebM), then
-  Play & detect. The browser decodes the video; only sampled JPEG frames go to
-  the local model. Overlays represent the latest analyzed frame, not object tracking.
-  Download the included [20-second sample](web/sample-video.webm) from the dashboard,
-  choose Video file, upload it, and click Play & detect. It contains 4 seconds of
-  background, 8 seconds of fire and 8 seconds of smoke, generated from held-out
-  still images. It tests playback and inference, not real incident performance.
-- **Image:** choose a JPEG, PNG or WebP, then Analyze image; Try sample image uses
-  the included Home Fire test image. A still image cannot confirm a temporal event.
-- **Virtual response:** 3 fire-positive samples in the last 5 analyzed frames latch
-  one incident. Automatic mode opens virtual water. Smoke alone does not open it.
-  Toggle virtual water manually, or Reset session to clear the incident.
-- **Demo:** detections and confidence values are scripted and clearly labeled.
-  Actual camera/video/image modes use the trained YOLOv8 nano checkpoint.
-- **Export log:** downloads the current browser session's event JSON with incident
-  IDs, timestamps and source. Frames are processed in memory and are not written
-  to disk by the dashboard. Exporting events is a user action.
-
-The simulation is an illustrative animation, not a fire-severity estimator or a
-physical suppression model. Intensity is 0–100 arbitrary units: visible-fire
-samples add 4 AU/s and virtual water removes 16 AU/s, clamped to the range.
-Its clock pauses when monitoring stops. Confirmed incidents remain latched until
-reset; an ended/disconnected source is reported as stopped/error, never as safe.
-The 3-of-5 policy is a prototype and has not been calibrated on event-labeled video.
-No physical sprinkler, email provider or alarm hardware is connected.
-
-The white monitoring console displays video independently of inference. New decoded
-frames trigger one model request at a time, without a fixed delay or request queue.
-Inference rate and overlay age are measured; boxes older than 750 ms are hidden.
-The simulation advances using elapsed seconds. Actual inference speed depends on
-your GPU/CPU and browser; smooth animation does not imply equal model throughput.
-
-Use `--device cpu` if CUDA is unavailable, or `--port 8766` if 8765 is occupied.
-The server binds only to 127.0.0.1 and serves an explicit asset allowlist. It is a
-local desktop prototype, not a public hosting server. Press Ctrl+C in its terminal
-to shut it down. The benchmark report describes the detector experiment before
-this UI extension; adding the simulation does not change its measured model results.
-
-Dashboard checks: Python tests include image validation and localhost-origin
-restrictions. `node --test web/simulation.test.mjs` checks the event gate and toy
-dynamics. Optional Playwright browser QA is in `scripts/test_dashboard.cjs`;
-set `PLAYWRIGHT_MODULE` to an installed Playwright module if needed.
+Only sampled frames are sent to the local model. One inference request runs at a
+time; video rendering remains independent. Overlays older than 750 ms are hidden.
+Actual inference rate depends on your hardware. The server binds to localhost;
+use `--device cpu` if CUDA is unavailable. This is a research detector, and missing
+detections do not establish safety. No physical hardware is controlled.
 
 ## Setup (Windows PowerShell, Python 3.12)
 
