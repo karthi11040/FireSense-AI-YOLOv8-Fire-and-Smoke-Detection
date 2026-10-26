@@ -1,0 +1,12 @@
+✔ three of five samples confirm one latched incident (1.9563ms)
+✔ smoke alone does not start virtual water (0.2551ms)
+✔ water reduces toy intensity; reset clears the incident (0.355ms)
+✔ manual mode waits for a water action (2.3542ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 177.4911

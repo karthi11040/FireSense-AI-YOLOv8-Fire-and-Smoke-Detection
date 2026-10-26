@@ -3,6 +3,54 @@
 YOLOv8 fire/smoke object detection research pipeline. See `reports/FINAL_REPORT.md`
 for the measured results and limitations once the experiment completes.
 
+## Frontend and live virtual simulation
+
+The trained weights are already present in this workspace. Start the dashboard:
+
+```powershell
+cd "D:\fire ai"
+.venv/Scripts/python.exe dashboard.py
+```
+
+Open **http://localhost:8765** in Chrome or Edge. No additional packages or training
+are needed. The page opens while the detector loads; wait for **Detector ready**
+before starting real inference. **Run simulation demo** works immediately.
+
+- **Live camera:** click Start camera and grant browser permission. Stop releases
+  the camera. If the embedded preview cannot access it, open the URL in Chrome/Edge.
+- **Video file:** choose a browser-supported video (e.g. H.264 MP4 or WebM), then
+  Play & detect. The browser decodes the video; only sampled JPEG frames go to
+  the local model. Overlays represent the latest analyzed frame, not object tracking.
+- **Image:** choose a JPEG, PNG or WebP, then Analyze image; Try sample image uses
+  the included Home Fire test image. A still image cannot confirm a temporal event.
+- **Virtual response:** 3 fire-positive samples in the last 5 analyzed frames latch
+  one incident. Automatic mode opens virtual water. Smoke alone does not open it.
+  Toggle virtual water manually, or Reset session to clear the incident.
+- **Demo:** detections and confidence values are scripted and clearly labeled.
+  Actual camera/video/image modes use the trained YOLOv8 nano checkpoint.
+- **Export log:** downloads the current browser session's event JSON with incident
+  IDs, timestamps and source. Frames are processed in memory and are not written
+  to disk by the dashboard. Exporting events is a user action.
+
+The simulation is an illustrative animation, not a fire-severity estimator or a
+physical suppression model. Intensity is 0–100 arbitrary units: visible-fire
+samples add 4 AU/s and virtual water removes 16 AU/s, clamped to the range.
+Its clock pauses when monitoring stops. Confirmed incidents remain latched until
+reset; an ended/disconnected source is reported as stopped/error, never as safe.
+The 3-of-5 policy is a prototype and has not been calibrated on event-labeled video.
+No physical sprinkler, email provider or alarm hardware is connected.
+
+Use `--device cpu` if CUDA is unavailable, or `--port 8766` if 8765 is occupied.
+The server binds only to 127.0.0.1 and serves an explicit asset allowlist. It is a
+local desktop prototype, not a public hosting server. Press Ctrl+C in its terminal
+to shut it down. The benchmark report describes the detector experiment before
+this UI extension; adding the simulation does not change its measured model results.
+
+Dashboard checks: Python tests include image validation and localhost-origin
+restrictions. `node --test web/simulation.test.mjs` checks the event gate and toy
+dynamics. Optional Playwright browser QA is in `scripts/test_dashboard.cjs`;
+set `PLAYWRIGHT_MODULE` to an installed Playwright module if needed.
+
 ## Setup (Windows PowerShell, Python 3.12)
 
 ```powershell
@@ -97,8 +145,9 @@ The original collection includes third-party videos; preserve attribution and ch
 original terms before redistributing media. Ultralytics is AGPL-3.0 / enterprise licensed:
 https://www.ultralytics.com/license.
 
-This is an image detector research baseline. The supplied proposal's email alerts,
-event calibration and virtual sprinkler simulation are future work. The results do
+This is an image detector research baseline with a local frontend and an illustrative
+virtual sprinkler. The supplied proposal's email alerts and event calibration remain
+future work. The results do
 not establish certified fire detection, real suppression, time-to-alarm or camera
 generalization. Exact duplicates are audited; correlated frames from the same source
 video may still cross official splits because a reliable frame-to-video map is absent.

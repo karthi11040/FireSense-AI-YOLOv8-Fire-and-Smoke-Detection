@@ -33,3 +33,11 @@ and overall metrics retained, ten report figures, Markdown and visually checked
 12-page PDF, six passing tests, successful single-image and 15-frame video CLI checks.
 Recommended delivered checkpoint: YOLOv8n (test mAP50 82.02%, mAP50-95 47.22%).
 All final evidence is under evidence/; portable report figures are under reports/figures/.
+
+Frontend extension completed: dashboard.py serves a local-only HTML/JS dashboard
+using the existing nano model. Browser image/video inputs and webcam frames feed
+normalized detections to a 3-of-5 latched event gate. The virtual sprinkler uses an
+explicitly illustrative AU intensity model. Demo detections are visibly scripted.
+Eight Python tests, four simulation tests, and Playwright end-to-end checks cover
+the UI, inference API, synthetic camera, uploads, log export and responsive layout.
+The physical webcam and real suppression behavior have not been validated.

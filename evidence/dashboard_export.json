@@ -1,0 +1,142 @@
+{
+  "simulationOnly": true,
+  "policy": "3-of-5 fire-positive analyzed frames",
+  "events": [
+    {
+      "time": "2026-10-26T08:16:08.799Z",
+      "title": "Virtual sprinkler opened",
+      "detail": "Toy response simulation started. No physical actuation.",
+      "source": "demo",
+      "incidentId": "630b6292-546e-416c-adda-d1c02b0e20af",
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:08.796Z",
+      "title": "Fire confirmed",
+      "detail": "3 of 5 analyzed frames positive. Incident 630b6292. Confirmation is not emergency certification.",
+      "source": "demo",
+      "incidentId": "630b6292-546e-416c-adda-d1c02b0e20af",
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:06.785Z",
+      "title": "Source started",
+      "detail": "Virtual response demo — scripted detections, not model results.",
+      "source": "demo",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:06.662Z",
+      "title": "Monitoring stopped",
+      "detail": "Video ended · last evidence retained",
+      "source": "video",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:05.234Z",
+      "title": "Source started",
+      "detail": "qa-video.webm",
+      "source": "video",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:03.675Z",
+      "title": "Image analyzed",
+      "detail": "One image cannot satisfy the 3-frame confirmation gate.",
+      "source": "image",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:03.535Z",
+      "title": "Source started",
+      "detail": "sample.jpg",
+      "source": "image",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:03.419Z",
+      "title": "Monitoring stopped",
+      "detail": "Stopped by user · last evidence retained",
+      "source": "camera",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:02.317Z",
+      "title": "Source started",
+      "detail": "Camera live",
+      "source": "camera",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:02.271Z",
+      "title": "Session reset",
+      "detail": "Incident latch, evidence window and toy intensity cleared.",
+      "source": "idle",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:01.886Z",
+      "title": "Image analyzed",
+      "detail": "One image cannot satisfy the 3-frame confirmation gate.",
+      "source": "image",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:01.668Z",
+      "title": "Source started",
+      "detail": "Included held-out sample",
+      "source": "image",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:01.552Z",
+      "title": "Session reset",
+      "detail": "Incident latch, evidence window and toy intensity cleared.",
+      "source": "idle",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:01.502Z",
+      "title": "Monitoring stopped",
+      "detail": "Stopped by user · last evidence retained",
+      "source": "demo",
+      "incidentId": "d8800683-f7c9-434c-8f62-195fcc4ba2b3",
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:00.814Z",
+      "title": "Virtual sprinkler opened",
+      "detail": "Toy response simulation started. No physical actuation.",
+      "source": "demo",
+      "incidentId": "d8800683-f7c9-434c-8f62-195fcc4ba2b3",
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:16:00.813Z",
+      "title": "Fire confirmed",
+      "detail": "3 of 5 analyzed frames positive. Incident d8800683. Confirmation is not emergency certification.",
+      "source": "demo",
+      "incidentId": "d8800683-f7c9-434c-8f62-195fcc4ba2b3",
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T08:15:58.773Z",
+      "title": "Source started",
+      "detail": "Virtual response demo — scripted detections, not model results.",
+      "source": "demo",
+      "incidentId": null,
+      "simulationOnly": true
+    }
+  ]
+}

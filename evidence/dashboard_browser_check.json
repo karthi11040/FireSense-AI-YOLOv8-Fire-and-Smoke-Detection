@@ -1,0 +1,12 @@
+{
+  "demoConfirmation": true,
+  "latchedStop": true,
+  "reset": true,
+  "sampleInference": true,
+  "imageUpload": true,
+  "syntheticCamera": true,
+  "videoUpload": true,
+  "logExport": true,
+  "mobileNoOverflow": true,
+  "pageErrors": []
+}

@@ -1,0 +1,14 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'Fire confirmed · latched'
+- 'Awaiting evidence'
+
+    at D:\fire ai\scripts\test_dashboard.cjs:22:12 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'Fire confirmed · latched',
+  expected: 'Awaiting evidence',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
