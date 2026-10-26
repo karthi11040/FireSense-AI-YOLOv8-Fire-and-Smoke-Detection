@@ -1,0 +1,5 @@
+2026-10-26T12:41:34.0481025+05:30
+utilization.gpu [%], memory.used [MiB], clocks.current.sm [MHz], power.draw [W], temperature.gpu
+38 %, 1107 MiB, 1890 MHz, 28.65 W, 59
+{"LoadPercentage":77,"CurrentClockSpeed":2100,"MaxClockSpeed":2100}
+{"FreePhysicalMemory":1834632,"FreeVirtualMemory":2811604}

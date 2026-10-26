@@ -1,0 +1,8 @@
+{
+  "source_images": [
+    "data\\prepared\\test\\images\\test_10.jpg",
+    "data\\prepared\\test\\images\\test_410.jpg",
+    "data\\prepared\\test\\images\\test_127.jpg"
+  ],
+  "purpose": "Synthetic 3-second concatenation of test stills for video I/O verification only; not an event-detection benchmark"
+}

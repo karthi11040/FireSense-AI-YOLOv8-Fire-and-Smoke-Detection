@@ -1,0 +1,926 @@
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 1
+FIRESENSE AI
+Research & Development Report
+Risk-Calibrated Video Fire & Smoke Detection with Event-
+Level Alerts and a Closed-Loop Virtual Sprinkler 
+Simulation
+M.Sc. Artificial Intelligence & Machine Learning — Major Project
+Prepared for: Research design, implementation planning, and conference-paper preparation
+Report version: 1.0  |  Date: 26 October 2026  |  Status: Proposed R&D plan; experiments not yet performed
+Project boundary  Prototype scope is live webcam + uploaded video, fire/smoke recognition, local alarm, 
+email notification, and a software-only virtual sprinkler simulation. It is not a certified fire detection or 
+extinguishing system.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 2
+Document Control and Reading Guide
+Item Description
+Project name FireSense AI
+Working research title
+Risk-Calibrated Video Fire Detection with Evidence-
+Triggered Alerts and Simulation-in-the-Loop Virtual 
+Suppression Evaluation
+Target users
+Facilities monitoring teams, lab demonstrators, 
+academic researchers; initial use is a research 
+prototype
+Core inputs Live webcam stream and uploaded video clips; optional still images for quick testing
+Core outputs
+Fire/smoke bounding boxes, event confidence, latched 
+alarm, email event notification, event log, virtual 
+sprinkler/fire-intensity simulation
+Team / duration 2–3 students / 6 months
+Expected artefacts
+Dataset manifests, trained detector weights, inference 
+application, alert subsystem, simulation module, 
+evaluation report, reproducible research paper draft
+Evidence status All target metrics in this report are evaluation goals, not achieved results
+Contents
+ 1. Executive summary
+ 2. Project definition and requirements
+ 3. Literature review and current state of the art
+ 4. Research gap, questions and hypotheses
+ 5. Proposed contribution and novelty claim discipline
+ 6. System architecture
+ 7. Dataset strategy and data governance
+ 8. Model training and inference methodology
+ 9. Event-level alarm and email design
+ 10. Virtual fire and sprinkler simulation
+ 11. Tools and skills required
+ 12. Evaluation and experimental design
+ 13. Six-month R&D roadmap and team division
+ 14. Risk, ethics and safety controls
+ 15. Publication plan and paper structure
+ 16. Implementation checklist and acceptance criteria
+ 17. References and research links
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 3
+How to use this report  Treat the system, algorithm and simulation as a research proposal. First 
+reproduce baselines, then validate the proposed event policy. Do not present the candidate contribution as 
+globally novel until a systematic related-work and patent/product search has been completed.
+1. Executive Summary
+FireSense AI is proposed as an end-to-end computer-vision research prototype that detects visible fire and 
+smoke in live webcam streams and uploaded videos, provides visual evidence, activates a local audible alarm, 
+and queues an email notification. A software-only response simulation will illustrate how a confirmed 
+detection event can trigger a virtual sprinkler and lower a simulated fire-intensity indicator over time. This 
+simulation supports system demonstration and policy experiments, but it does not predict real fire growth, 
+sprinkler hydraulics, or extinguishment outcomes.
+The baseline engineering task—training a fire/smoke detector and wiring it to an alarm—is useful but may be 
+too generic for a strong research paper. Video-based detection is mature, datasets exist, recent reviews 
+describe 100+ studies and multiple datasets, and recent papers already address track-level temporal alarm 
+validation and multimodal sensor fusion [1–4]. Accordingly, the R&D contribution should not be claimed as 
+“the first AI fire detector” or “the first temporal fire detector.”
+The recommended research direction is a response-aware evaluation framework: calibrate alarm decisions at 
+the event level using detector confidence, evidence persistence, region evolution and an explicit cost of false 
+alarms; preserve an audit trail of why an alert fired; and connect confirmed events to a transparent virtual 
+suppression simulation. Evaluate the detection policy and simulation policy separately, then together. This 
+gives the paper a testable contribution rather than a list of integrated features.
+Recommended datasets include D-Fire for accessible initial training, FireAndSmoke and LFDN for difficult 
+negatives and broader visual variation, and video datasets such as MIVIA for event-level testing. MmodalFire 
+is a recent 2026 dataset that pairs continuous video with physical sensor measurements; it can support a later 
+multimodal extension if access, licensing and annotation formats suit the project [5–9]. Split by source 
+video/camera/source collection rather than randomly splitting near-duplicate frames.
+Expected six-month outcome  A reproducible trained detector, live/upload inference, event-level alert 
+policy, secure email notification, browser-based virtual response simulation, a cross-dataset evaluation 
+with hard-negative testing, and a conference-ready manuscript draft. Acceptance is not guaranteed.
+2. Project Definition and Requirements
+2.1 Problem statement
+Frame-level visual fire detectors can respond to visually confusing patterns such as sunlight, reflections, 
+clouds, mist, steam, illuminated red/orange objects and scene changes. A high frame-wise detection score 
+alone does not establish a persistent fire event. Research reviews call out data scarcity, scene dependence, and 
+the need to evaluate realistic camera scenarios rather than only image-level accuracy [1,2].
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 4
+The project therefore targets a connected but separable pipeline: (a) detect and localize fire/smoke; (b) decide 
+whether detections form a credible event; (c) issue a quick, auditable alert; (d) record the evidence and 
+response latency; and (e) demonstrate the system’s response logic with a virtual sprinkler/fire-state 
+simulation.
+2.2 Primary objectives
+ Build a training and evaluation pipeline for a fire/smoke object detector using public, appropriately 
+licensed image/video data.
+ Support local webcam inference and uploaded video processing, with rendered bounding boxes, class 
+labels, confidence scores and timestamps.
+ Design a separate event-level alarm gate that can balance detection sensitivity against false alarms and 
+delay.
+ Implement a local audible alarm and email notification with secure credentials, retry handling, event 
+snapshots and a deduplication policy.
+ Implement a self-contained software simulation: confirmed fire event  virtual sprinkler opens  → →
+simulated severity decreases according to documented parameters.
+ Evaluate detection, event alerting, inference performance, hard-negative behaviour and simulation policy 
+under controlled scenarios.
+ Prepare reproducible experiment logs and a research paper with clear limitations and no fabricated 
+results.
+2.3 In-scope and out-of-scope
+In scope for the six-month prototype Out of scope / must not be implied
+Live webcam, uploaded video and optional image inference Certified fire alarm, life-safety system, or guaranteed early warning
+Fire/smoke localization and confidence display Validated building-wide camera coverage or guaranteed detection through obstructions
+Software alarm, configurable email notification, event log Direct control of a real sprinkler valve, pump, fire panel, or building automation system
+Virtual fire intensity and water-effect visualization Physically accurate fire dynamics / CFD / hydraulic prediction
+Academic benchmark and controlled evaluation Claim that the system meets fire codes or replaces certified equipment
+3. Literature Review and Current State of the Art
+This review is a focused R&D scan, not yet a systematic review. The publication-quality review should expand 
+the search, register the search strings and dates, screen papers by criteria, and compare relevant methods, 
+datasets, splits, hardware, and metrics.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 5
+3.1 Relevant literature at the time of this report
+Source / year What it contributes Implication for FireSense
+[1] Gragnaniello et al., 2024; Expert Systems 
+with Applications
+Review of 153 papers and 17 public datasets; 
+proposes a scenario taxonomy based on 
+visible fire size and background activity, and 
+labels 536 videos.
+Dataset split and test design must consider 
+distance/size and distracting background 
+activity, not just random image accuracy.
+[2] Catargiu et al., 2024; Sensors
+FireAndSmoke dataset: over 22,000 images 
+and 93,000 instances compiled from about 
+1,200 videos/public sources, including difficult 
+fire-like cases.
+Use hard negatives and source-wise split; 
+report dataset provenance and avoid frame 
+leakage.
+[3] Venâncio et al. / D-Fire project; dataset 
+repository
+D-Fire lists over 21,000 images; categories 
+include fire, smoke, both, and no event; YOLO-
+format boxes.
+Good starting baseline and manageable 
+bounding-box training format; supplement 
+with video tests.
+[4] Ghimire et al., 2026; STV-FSANet, Sensors
+Detect–track–verify architecture for temporal 
+false-alarm suppression; reports an FSAV 
+tracklet dataset built from 1,347 source videos.
+Temporal tracking/verification alone is 
+already being researched. FireSense must 
+distinguish its exact decision policy and 
+response-simulation evaluation.
+[5] Jia et al., 2026; MmodalFire, Scientific Data
+Continuous indoor-fire videos paired with six 
+physical sensing data types including smoke 
+density and temperature; 65 videos are 
+described.
+Useful for future vision-plus-sensor studies if 
+the project can map modalities and handle the 
+relatively small video count.
+[6] LFDN / MIVIA, updated dataset page 2024
+36,554 images with fire, smoke, combined 
+cases and 4,154 hard-negative samples, 
+including sunlight, clouds, fog, glare and 
+red/white objects.
+Strong source for hard-negative testing and 
+checking false alarms.
+[7] MIVIA Fire Detection Dataset
+31 videos: 14 with fire and 17 without the 
+target event, including difficult non-fire 
+scenes.
+Useful for small video-level sanity tests; too 
+small alone for a robust modern benchmark.
+[8] Early Fire and Smoke Detection review, 
+2025
+Reviews modern models, datasets and 
+challenges, including false alarms, data 
+scarcity and deployment constraints.
+Use as a related-work entry point and cross-
+check primary articles rather than relying on 
+survey claims alone.
+[9] ISO/TS 7240-30:2022, confirmed current in 
+2026
+Specifies design, installation, commissioning 
+and service requirements for video fire 
+detector systems.
+Academic prototype must not claim 
+conformance; deployment requires standards 
+review and qualified professionals.
+3.2 What existing work means for the proposed contribution
+The existence of STV-FSANet (August 2026) is particularly important: it directly addresses video-track 
+temporal validation of fire/smoke alarms and false detections [4]. Recent 2026 work also studies video 
+combined with physical sensors [5]. Therefore, “combine YOLO with temporal filtering,” “reduce false 
+alarms,” or “add sensor fusion” are not defensible novelty claims by themselves.
+The safer and stronger research position is to propose a specific, measurable, response-aware protocol: an 
+event-level decision policy whose thresholds are selected on validation data using a stated false-alarm budget 
+and detection-delay constraint, paired with an explainable virtual response simulation that records detection-
+to-response timing and scenario-dependent simulated suppression. The distinctive contribution would be the 
+experimental formulation and evaluation of this detection-to-response loop—not the mere fact of sending an 
+email or animating water.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 6
+4. Research Gap, Questions and Hypotheses
+4.1 Candidate gap
+Public research covers frame-level and video-level fire/smoke detection, temporal verification, difficult 
+negatives, and multimodal sensing. A promising student-scale gap to investigate is how an event-level decision 
+policy can be calibrated under a target false-alert budget and then evaluated in a transparent response 
+simulation that explicitly measures the impact of detection confidence, confirmation delay, fire-region 
+location and virtual sprinkler coverage. This is a candidate gap from the initial review, not a claim that no 
+prior product or paper has ever implemented a similar idea.
+4.2 Research questions
+1. RQ1: How does event-level evidence gating change the trade-off between fire-event recall, false alarms per 
+hour and time-to-alarm compared with a frame-only threshold?
+2. RQ2: How much does training/evaluation with hard-negative sources (e.g., LFDN or FireAndSmoke) change 
+false positives on held-out camera/video sources?
+3. RQ3: In a defined virtual-response simulation, how do detection delay, sprinkler-zone overlap and virtual 
+actuation delay affect simulated residual severity and simulated time-to-extinguish?
+4. RQ4: Can the system provide useful visual evidence and audit logs while maintaining acceptable processing 
+latency on the available local machine?
+4.3 Testable hypotheses (pre-register targets after baseline)
+Hypothesis Comparison Primary outcome
+H1: Event-level gating reduces false 
+alarms while preserving useful event 
+recall.
+Frame-only fixed threshold vs proposed 
+event gate at matched event recall or 
+under a pre-set recall floor.
+False alarms/hour, event recall, time-to-
+alarm.
+H2: Hard-negative training/testing 
+improves robustness to fire-like 
+distractors.
+Train on base data only vs base + hard-
+negative dataset; test on held-out source 
+videos.
+Hard-negative false-positive rate; 
+fire/smoke precision.
+H3: Response-aware policy improves 
+outcomes in the virtual simulator.
+Fixed immediate actuation vs 
+confirmation-gated and zone-aware 
+virtual actuation across matched 
+simulation scenarios.
+Simulated residual severity, simulated 
+response latency, false activations.
+H4: A compact detector satisfies local 
+real-time needs.
+Candidate model sizes on the target 
+laptop/GPU.
+FPS, p50/p95 inference latency, 
+RAM/VRAM use and model size.
+Do not pre-claim results  Choose numerical success thresholds after a pilot and freeze them before the 
+final evaluation. Report the measurements even when the proposed method does not beat a baseline. A 
+conference paper is strengthened by controlled methods and honest negative findings, not by unsupported 
+high-accuracy claims.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 7
+5. Proposed Contribution and Novelty Claim Discipline
+5.1 Working method name
+Response-aware Fire Event Verification and Virtual Suppression Evaluation (ReFiVE). This is a provisional 
+name for the proposed method; perform a name search before public use.
+5.2 Candidate contributions
+ An event-level alert policy that keeps frame detection and alarm confirmation as separate modules, 
+exposes the reasons for an alert, supports confidence calibration, hysteresis and a defined alert cooldown.
+ A source-wise hard-negative evaluation protocol covering distractors such as clouds, fog, glare, sunlight, 
+red/orange objects and illumination changes.
+ A simulation-in-the-loop experiment where each confirmed event drives a virtual sprinkler state machine 
+and a transparent fire-intensity proxy, allowing controlled measurement of alert delay and simulated 
+residual severity.
+ A reproducible comparison among frame-only detection, detection plus event gating, and event gating 
+plus virtual-response policy; include ablations so the contribution is measurable.
+5.3 What should not be claimed
+ Do not say “first ever,” “not available in any system,” or “unique worldwide” without a systematic 
+literature and product/patent search.
+ Do not claim temporal verification is novel: STV-FSANet already studies track-level temporal fire/smoke 
+alarm verification [4].
+ Do not claim multimodal sensor fusion is novel: MmodalFire and recent sensor-fusion research exist [5]. 
+Keep the primary scope vision-only unless sensor data is genuinely available.
+ Do not call the virtual fire reduction real suppression, validated fire physics, or evidence that sprinklers 
+would extinguish the same event.
+5.4 Novelty validation search plan
+Search IEEE Xplore, Scopus/Web of Science (if institutionally available), ACM Digital Library, ScienceDirect, 
+SpringerLink, Google Scholar, Crossref and patent databases. Search strings should include: (fire OR smoke) 
+AND (video OR vision) AND (false alarm OR alarm validation OR temporal verification); (fire detection) AND 
+(sprinkler OR suppression OR response policy OR digital twin); (fire detection) AND (risk calibration OR event-
+level evaluation OR cost-sensitive threshold); and equivalent terms for integrated fire monitoring products. 
+Record date, query, filters, screened abstracts, full-text decisions and the closest competing work.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 8
+6. Proposed System Architecture
+Figure 1. Proposed FireSense architecture. The simulator is a software-only module and the safety boundary prohibits direct physical 
+suppression control.
+6.1 Functional flow
+1. Input: open local webcam or accept an uploaded clip. Preserve source ID, time and file metadata. Never 
+upload private camera footage without permission.
+2. Preprocess: decode frames, resize consistently, preserve timestamps and record dropped frames. For long 
+clips, optionally sample frames for offline evaluation but use continuous streaming for temporal 
+evaluation.
+3. Detect: run the trained fire/smoke object detector and produce class, confidence and bounding boxes.
+4. Associate: link candidate boxes across adjacent frames using a tracking method or simple overlap 
+association. Record region persistence, size variation and per-frame confidence.
+5. Confirm event: apply a validation-calibrated state machine. Fire/smoke thresholds can differ; retain a fast 
+path for very-high-confidence evidence to avoid excessive delay.
+6. Alert: immediately raise local software alarm after confirmation, save an evidence snapshot, create one 
+event ID, and queue an email. A failed email must not silence the local alarm.
+7. Simulate response: send a simulated suppression command to the virtual zone. Track virtual valve state, 
+water effect, coverage and the intensity proxy separately from detector output.
+8. Log and evaluate: record each candidate and state transition, alert time, email status, simulated actuation 
+time, model version, and final experiment label.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 9
+6.2 Suggested technical stack
+Layer Recommended tools Why / notes
+Model training Python, PyTorch, Ultralytics YOLO or equivalent, OpenCV Fine-tune an object detector; pin framework and model versions. Check model/library license before distribution.
+Data / annotation
+D-Fire, FireAndSmoke, LFDN, MIVIA; CVAT 
+or Label Studio where reannotation is 
+required
+Use bounding-box data formats and 
+provenance/source IDs.
+Video processing OpenCV, FFmpeg, Python queues/threads Keep video decode and inference separate so the UI remains responsive.
+Backend/API FastAPI or Flask Routes for upload, prediction, event records, email job and simulation triggers.
+Frontend Streamlit for a fast prototype or React for a polished dashboard Live frame overlay, alert history, thresholds and simulator panel.
+Notifications SMTP with app-specific password or provider API; background task queue Credentials from environment variables or secret store, retries, alert deduplication.
+Storage SQLite first; PostgreSQL for multi-user deployment Store events, timestamps, class/confidence, evidence location and delivery status.
+Experiment tracking MLflow or CSV/JSON logs; Git; fixed random seeds Track dataset manifest, model checksum, training config and evaluation outputs.
+Simulation
+HTML/JavaScript for a small visual 
+demonstration; Python state model for 
+experiments
+Make assumptions visible; clearly label the 
+simulation as illustrative.
+7. Dataset Strategy and Data Governance
+7.1 Recommended datasets
+Dataset Publicly described characteristics Role in the project / cautions
+D-Fire [3]
+Over 21,000 images; fire, smoke, 
+fire+smoke and no-event categories; 
+bounding boxes in YOLO format.
+Primary baseline. Check repository license 
+and downloaded archive details; pre-split 
+exists but verify source overlap if 
+supplementing.
+FireAndSmoke [2]
+Over 22,000 images and about 93,000 
+instances; samples gathered from around 
+1,200 videos and other public sources; 
+includes difficult cases.
+Hard-negative source and cross-source 
+comparison. Since multiple images can 
+come from one video, split by source video 
+to avoid leakage.
+LFDN [6]
+36,554 images; fire, smoke, both and 4,154 
+negative samples, including fire-like 
+distractors.
+Priority for hard-negative robustness. 
+Verify access/terms and ensure no overlap 
+with other source datasets.
+MIVIA Fire Detection [7]
+31 videos, 14 with fire and 17 without 
+target events; negative videos include 
+confusing red objects, smoke/clouds.
+Video-level event evaluation and latency 
+tests; small dataset, so report uncertainty 
+and do not tune on its test portion.
+MIVIA Smoke Detection 149 videos, about 35 hours; outdoor Optional smoke-focused challenge set; 
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 10
+Dataset Publicly described characteristics Role in the project / cautions
+scenery, clouds, reflections and smoke-like 
+patterns. verify access requirements.
+MmodalFire [5]
+2026 dataset; 65 videos with synchronized 
+video and six physical sensor data types 
+including smoke density and temperature.
+Optional Phase 2 multimodal extension. Do 
+not mix into vision-only evaluation unless 
+modality availability and labels are aligned.
+Own negative test clips
+Permissioned indoor/outdoor clips without 
+fire: sunlight, traffic lights, reflection, 
+steam/fog video (where legally available).
+Use as external negative stress test. 
+Document collection context, 
+consent/permissions, source and 
+annotation criteria.
+7.2 Split policy — essential for credible results
+ Create a source manifest containing source dataset, original video ID/URL where allowed, scene, camera, 
+licence, class, annotation format and split.
+ Split by video/source or scene, not randomly by extracted frames. Adjacent frames and near-duplicates 
+must stay in one split.
+ Use train/validation/test separation: train for fitting, validation for hyperparameters and thresholds, test 
+once for final reporting. Preserve source-wise external tests.
+ If combining datasets, identify duplicate images with hashes/perceptual hashes and remove cross-split 
+duplicates. Keep a dataset overlap report.
+ Create a hard-negative set explicitly labelled by phenomenon: clouds, fog, steam, glare, sunlight, 
+red/orange moving object, welding-like light (only from licensed clips), camera motion and compression 
+artefacts.
+ Record licensing and attribution. Do not redistribute datasets or extracted frames unless the terms permit 
+redistribution.
+7.3 Labelling policy
+Use classes `fire` and `smoke` for localization. Keep images/videos with no event as negative samples with no 
+boxes. Define whether smoke boxes include translucent edges, how to label multiple independent regions, and 
+how tiny/distant flame patches are treated. Have a second annotator inspect a subset and record agreement or 
+disagreement. Video-level event labels should include event start/end time, first visible evidence, fire vs 
+smoke, hard-negative category, and whether the event is ambiguous.
+8. Model Training and Inference Methodology
+8.1 Baseline
+Begin with a small real-time object detector such as an appropriately licensed YOLO-family nano/small model, 
+then compare with a second model family if hardware/time permit. Fine-tuning from existing general object-
+detection weights is a pragmatic baseline. If the research explicitly requires training from random 
+initialization, treat that as a separate experiment because it generally needs more data and compute. The 
+paper must state pretraining, class map, input size, framework version, and licence.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 11
+8.2 Training protocol
+1. Inspect and render annotations before training; run label validation and class-count reports.
+2. Deduplicate and split sources before extracting frames or augmentations.
+3. Use train/validation/test manifests with immutable IDs. Fit with training set only; choose threshold and 
+checkpoints on validation only.
+4. Augmentation: moderate brightness/contrast, blur, scale, crop, compression and camera-like perturbations. 
+Do not use transformations that change the semantic label or erase a tiny fire object.
+5. Run an initial pilot to confirm labels, GPU use and loss convergence; then freeze a reproducible 
+configuration for full runs.
+6. Log training loss, validation precision/recall/mAP, learning rate, seed, epoch, model hash, runtime and 
+hardware.
+7. Export the best validation checkpoint; test cross-source generalization without fine-tuning on the test 
+source.
+8.3 Event-level logic
+Let a detector generate candidate i at time t with class c, confidence p(t), and box b(t). The event gate uses 
+several frames to avoid emitting an email for every transient detection. A simple baseline is a rolling hit rule: 
+candidate is positive when p(t)  τ; confirm if at least k of the last n frames are positive. A richer research ≥
+policy may add a smoothed score, track persistence, box-area evolution, and uncertainty. Every threshold 
+must be tuned using validation data and evaluated against the same locked test set.
+Illustrative exponentially smoothed confidence:  s_t = λ s_(t 1) + (1 λ) p_t. A separate persistence score is P_t − −
+= positives in last n frames / n. A candidate event score can be defined as R_t = w_s s_t + w_p P_t + w_g G_t  −
+w_u U_t, where G_t is a normalized region-growth cue and U_t is a selected uncertainty term. This formula is a 
+research candidate, not a validated model. Ablate each component; do not choose weights on test data.
+8.4 Alarm state machine
+State Entry condition Behaviour / next state
+NORMAL No candidate fire/smoke evidence No incident alert; maintain system health logs.
+CANDIDATE One or more detector candidates exceed a low threshold
+Draw amber overlay; collect temporal 
+evidence; do not yet trigger virtual 
+response unless an emergency fast-path 
+condition is explicitly tested.
+CONFIRMED Event gate satisfies validation-set policy
+Latch event ID, record time and 
+evidence, turn local software alarm on, 
+queue email, and activate virtual 
+sprinkler scenario.
+ALERTED / ACKNOWLEDGED Alert event exists; optional user acknowledgement
+Show event details; acknowledgement 
+does not delete the original evidence; 
+repeat notifications follow explicit 
+policy.
+CLEAR CANDIDATE No current evidence for a configured interval Do not silently erase a latched event. Mark the visual condition cleared while 
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 12
+State Entry condition Behaviour / next state
+keeping the incident history.
+COOLDOWN / READY After a configurable deduplication interval or approved reset Avoid repeated emails for the same continuous incident; a distinct new event can re-trigger.
+Speed vs false-alarm trade-off  An overly long confirmation window can delay a genuine alert. A single-
+frame trigger can spam users. Test at least three policies (frame-only, k-of-n gate, proposed calibrated gate) 
+at matched recall or a declared recall floor; report the complete trade-off curve.
+9. Event-Level Alert and Email Design
+9.1 Local alarm
+After an event is confirmed, trigger the local application sound immediately and show a clear persistent red 
+banner. Provide a manual mute/acknowledge option, but record it and do not equate mute with “fire cleared.” 
+When a sound output is unavailable, the visual alert and event log must continue. Keep the system heartbeat 
+and camera disconnected/error states visible.
+9.2 Email event payload
+Field Purpose
+Event ID / UTC and local timestamp Supports deduplication and event audit.
+Camera ID / source clip name Tells the recipient which source generated the event.
+Class and confidence Fire/smoke class, event score and the decision rule/version.
+Evidence snapshot / short clip reference Allows the recipient to inspect the event; apply retention and access controls.
+System status Local alarm state, email delivery state and whether this is a test/simulation event.
+Recommended next step “Verify the area and follow the site emergency procedure”; never claim the AI alone confirms safety.
+9.3 Email reliability and security
+ Use a background task/queue so network delays do not block video inference.
+ Store SMTP/provider credentials in environment variables or a secret manager, never hard-code them in 
+source code or screenshots.
+ Use retry with backoff, delivery status, and alert deduplication. Do not promise “instant” delivery; 
+measure queue and provider latency.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 13
+ Attach a single snapshot or secured link rather than sending large raw videos by default. Avoid exposing 
+camera footage to unauthorized recipients.
+ When email fails, keep the local alarm active and show a visible delivery error. Network loss must not 
+cause a silent failure.
+ Provide a test-email function and clearly mark test/simulation events so they cannot be mistaken for an 
+actual emergency.
+10. Virtual Fire and Sprinkler Simulation
+10.1 Purpose and boundaries
+The requested simulation demonstrates a software control flow: when the AI event gate confirms a fire, a 
+virtual sprinkler valve opens, water animation appears, and a fire-intensity proxy decreases. It is a 
+demonstrator for the application and an experimental environment for comparing response policies. It is not 
+a computational fluid dynamics (CFD) model, hydraulic calculation, sprinkler certification, or evidence of real 
+extinguishment.
+10.2 State variables
+Variable Meaning Unit / range
+I_t Simulated fire intensity/severity proxy 0–100 arbitrary units
+g Illustrative fire growth term when suppression is off arbitrary units per simulation step
+q Illustrative virtual water-effect term arbitrary units per step
+C
+Coverage factor representing overlap 
+between fire region and virtual 
+sprinkler zone
+0–1
+d_a Virtual actuation delay after confirmed alert simulation steps/seconds
+A_t Alert state normal / candidate / confirmed / acknowledged
+S_t Virtual sprinkler state closed / open / fault
+E_t Email notification state queued / sent / failed / retried
+10.3 Illustrative update rule
+For a simple prototype, use a bounded state update: I_(t+1) = clip(I_t + g·f(I_t)  q·C·W_t, 0, 100), where f(I_t) is −
+a simple growth function (for example I_t/100), W_t is 1 when the virtual sprinkler is open and 0 otherwise, 
+and clip limits the value to [0,100]. Add an actuation delay and configurable zone coverage to model why late 
+or misaligned response has less simulated benefit. Parameters must be visibly described as demonstrator 
+assumptions.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 14
+Recommended rule for the first demonstrator: the simulation runs only after a `fire_confirmed` event from the 
+application or a clearly marked manual test trigger. The simulator then sets S_t to `open`; at each simulation 
+step it subtracts the virtual water effect scaled by the coverage factor. When intensity reaches a chosen low 
+threshold for a preset number of steps, display “simulated extinguishment.” The UI should keep the initial fire 
+score, activation time, end score and all assumptions in the audit log.
+10.4 Experiments supported by the simulator
+ Baseline A: detector output shown, but no virtual response; record the severity proxy trajectory.
+ Baseline B: sprinkler opens on the first candidate frame; measure simulated residual severity but count 
+false activations on hard negatives.
+ Policy C: sprinkler opens only after event confirmation; compare false activations and simulated response 
+delay.
+ Policy D: confirmation plus virtual coverage factor; compare scenarios with central vs edge-of-zone 
+detections and different actuation delays.
+ Sensitivity test: vary growth, delay, coverage and water-effect parameters. Publish the ranges and do not 
+calibrate them against real-world claims unless validated fire data are available.
+Safety separation  Do not connect the prototype to a real water valve, pump, sprinkler control panel, 
+building-management system or fire-alarm loop. If hardware is later demonstrated, use LEDs/buzzer and a 
+low-voltage mock actuator on a supervised dry bench. Real fire suppression requires qualified engineers, 
+certified equipment, site-specific design and applicable standards.
+11. Tools and Skills Required
+11.1 Tools
+Tool / technology Use Priority
+Python 3.11+ Main training/inference backend and experiment scripts Essential
+PyTorch + YOLO implementation
+Fire/smoke localization; pin exact 
+model/runtime version and check 
+licence
+Essential
+OpenCV + FFmpeg Webcam, video decoding, frame processing and overlay Essential
+CVAT or Label Studio Inspect/fix bounding boxes and annotate new hard-negative/temporal test clips High
+FastAPI / Flask Backend routes for input, events, notification and simulation High
+Streamlit or React Dashboard, webcam/video upload UI, alert history, simulation visualization Choose one for MVP
+SQLite  PostgreSQL→ Store events and experiment metadata SQLite first
+SMTP/provider API Email alerts Essential
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 15
+Tool / technology Use Priority
+Git + GitHub Version control, experiment reproducibility and team collaboration Essential
+MLflow / structured CSV logs Track model configs, metrics, checkpoints and versions High
+Google Colab / local GPU Initial training; local CPU/GPU inference benchmark As available
+Browser-based HTML/JavaScript Tiny sprinkler/fire response simulation with no setup Essential for demo
+Docker Optional packaging after working local setup Later
+11.2 Skills to learn or demonstrate
+Skill area Expected ability by project end
+Python engineering Build modular scripts, errors/logging, CLI/config files and tests.
+Computer vision Understand images/videos, bounding boxes, confidence, NMS, frame sampling and tracking.
+Deep learning Fine-tune detection models, data augmentation, loss curves, checkpointing and inference.
+Dataset engineering Inspect annotation quality, class imbalance, source-wise splitting, deduplication and licence tracking.
+Temporal/event design State machines, persistence rules, cooldown/hysteresis, event-level metrics and latency measurement.
+Backend and UI Upload validation, webcam/video flow, REST APIs, responsive event dashboard and persistence.
+Email/reliability Secrets management, retry/backoff, deduplication and failure-state design.
+Evaluation/statistics Precision/recall/mAP, event recall, false alarms/hour, confidence intervals, ablations and fair comparison.
+Research writing Related-work synthesis, research questions, reproducible methods, limitations and appropriate citations.
+Safety/privacy Camera consent, data minimization, secure footage retention and clear non-certified prototype boundary.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 16
+12. Evaluation and Experimental Design
+12.1 Evaluation must be conducted at two levels
+Detection evaluation asks whether boxes locate fire/smoke. System evaluation asks whether the whole system 
+creates useful alerts without spamming, how long the alert takes, and what happens in the response 
+simulation. Do not use frame-wise mAP as the only result for a video alarm system.
+Metric Definition / reporting suggestion Why it matters
+Precision / Recall Report per class and threshold. Balance misses and false detections.
+mAP@0.5 and mAP@0.5:0.95 Object detection metrics on a locked test set. Detection/localization baseline.
+Event recall Detected eligible events / annotated events. Define matching rule in advance. Whether real incidents appear as alerts.
+False alarms per hour Number of confirmed false events / hours of negative video. Directly measures annoyance and operational burden.
+Time-to-alarm
+First alert time minus annotated first 
+visible evidence time. Report median and 
+90th percentile.
+Captures responsiveness.
+Hard-negative false-positive rate
+False events by category (sunlight, fog, 
+clouds, glare, red objects, scene 
+transitions).
+Tests likely real-world confounders.
+p50/p95 latency and FPS
+Measure end-to-end inference including 
+decode and drawing on specified 
+hardware.
+Practical local real-time behaviour.
+Email delivery latency / failure rate
+Queue time, provider response and 
+eventual delivery; exclude provider 
+failures from model latency but report 
+them separately.
+System reliability.
+Simulation residual severity End intensity proxy and simulated time-to-low-threshold under identical initial states. Compares virtual policies only; not real firefighting effect.
+Calibration Reliability diagram, ECE/Brier score where the scoring protocol supports it. Confidence threshold quality.
+12.2 Baselines and ablations
+ B0: frame-level detector and single threshold.
+ B1: detector + k-of-n persistence gate.
+ B2: detector + tracking/temporal score + validation-calibrated threshold.
+ B3: B2 + hard-negative training data.
+ B4: B2 connected to virtual response simulator (policy-only comparison).
+ Ablations: remove persistence, remove growth cue, change threshold calibration, change cooldown, 
+disable region/coverage factor, vary fire/smoke thresholds.
+ Cross-source test: train on one or more sources and test on an unseen dataset/source. Report any 
+taxonomy mismatch or excluded class.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 17
+12.3 Statistical hygiene
+ Use source-level splits and keep the final test data locked.
+ Run multiple seeds where practical; report mean and standard deviation or confidence intervals, not only 
+the best run.
+ When comparing systems, use the same test clips, event definitions and hardware; include the exact 
+threshold-selection rule.
+ Predefine incident matching: one predicted event may match at most one ground-truth event; specify the 
+matching time window and overlap criteria.
+ Report negative results, failure cases, dataset imbalance, and differences between image and event 
+metrics.
+ Do not call simulated severity a physical outcome or report simulated extinction as a real-world success.
+13. Six-Month R&D Roadmap and Team Division
+Month Research & engineering work Milestones / artefacts
+1 — Scope and review
+Screen related work; define target scenes; 
+inspect licenses; build dataset manifest; 
+establish evaluation definitions; create 
+risk/safety plan.
+Research protocol; related-work matrix; 
+dataset map; demo requirements.
+2 — Data and baseline
+Download/prepare D-Fire and selected 
+supplementary data; inspect labels; source-
+wise split; train baseline detector; 
+implement image/video inference.
+Reproducible baseline checkpoint; first 
+metrics; upload-video prototype.
+3 — Live system
+Connect webcam streaming; draw 
+detections; implement frame queue and 
+performance logging; build local alarm and 
+basic event DB.
+Live webcam and uploaded-video MVP; 
+model versioning; event records.
+4 — Research method
+Implement candidate event gate and 
+calibration on validation data; hard-
+negative challenge suite; run ablations and 
+cross-source tests.
+Locked experimental protocol; main 
+method comparisons; failure analysis.
+5 — Alert + simulation
+Implement email queue, 
+retry/deduplication, secure secrets; create 
+and integrate virtual sprinkler/fire 
+intensity simulation; run response-policy 
+scenarios.
+End-to-end demo; event latency; simulation 
+experiment results.
+6 — Final evaluation and paper
+Freeze final test; rerun required seeds; 
+analyze metrics; render tables/figures; 
+write paper and limitations; clean 
+repository.
+Reproducible code, report, paper draft and 
+conference submission package.
+13.1 Team division for 2–3 members
+Role Owner Responsibilities
+ML / data lead Member 1
+Datasets, annotation QA, detector 
+training, experiment tracking and 
+detection metrics.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 18
+Role Owner Responsibilities
+Backend / system lead Member 2
+Webcam/video, backend, alarm state 
+machine, email queue, event DB and 
+dashboard integration.
+Research / simulation / evaluation lead Member 3, or shared by members 1 and 2
+Literature review, event annotations, 
+simulation model, ablations, statistical 
+analysis, paper figures and 
+reproducibility.
+14. Risk, Ethics and Safety Controls
+Risk Impact Mitigation / required evidence
+False negative or late detection A genuine event may be missed or reported too late. Do not deploy as sole safety control; test distant/small fire, occlusion, low light and smoke-only cases; state limits clearly.
+False positive from visual confounder Unnecessary alarm/email and virtual sprinkler activation. Hard-negative test suite; validation-calibrated threshold; track/cooldown; report false alarms/hour.
+Training/test leakage Inflated results from near-duplicate frames. Source/video/camera-level split and duplicate audit.
+Network/email failure Notification does not reach recipients. Local alarm independent of email; retry status; error visibility; delivery tests.
+Model/library licence conflict Restrictions on sharing code or weights. Review the exact model, code and dataset licences before publication or distribution.
+Privacy breach Camera footage could contain people or sensitive environments. Consent, local processing where possible, access control, minimization, configurable retention and secure evidence links.
+Unsafe hardware integration Experimental prototype could activate a real actuator unexpectedly. Simulation-only by default; no real valve or pump integration; physical demo limited to LED/buzzer/mock low-voltage outputs.
+Simulation misinterpreted as real physics Results might be overstated as fire suppression. Label all charts “simulated proxy”; document assumptions; exclude simulation from real fire-extinguishment claims.
+Unsubstantiated novelty claim Paper rejected or credibility harmed.
+Systematic search and closest-work matrix 
+including 2026 track-level and multimodal 
+papers.
+Dataset permission / attribution issue Improper use or redistribution. Verify terms for each dataset; cite original paper; do not re-host restricted media.
+Fire safety standards are outside the capability of this student project to certify. ISO/TS 7240-30:2022 describes 
+design, installation, commissioning and service requirements for video fire detector systems and was 
+confirmed current by ISO in 2026 [9]. Review it and local applicable codes with the project supervisor, but do 
+not claim conformance from a software benchmark.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 19
+15. Publication Plan and Paper Structure
+15.1 Suggested working title
+“Response-Aware Video Fire Detection: Event-Level Alarm Calibration and Simulation-in-the-Loop Virtual 
+Suppression Evaluation.”
+15.2 Proposed paper contributions
+ A reproducible dataset protocol combining public fire/smoke data with difficult negatives and source-wise 
+video testing.
+ A clearly defined event-level alarm policy with validation-set thresholding and measured 
+false-alarm/detection-delay trade-off.
+ A transparent response simulation and experiment protocol that measures only virtual outcomes under 
+controlled assumptions.
+ A complete prototype showing webcam/upload ingestion, localization overlay, local alarm, secure email 
+notification, event audit and simulator integration.
+15.3 Manuscript outline
+Section Content
+Abstract Problem, method, datasets, main quantitative results (insert only after experiments), and limitations.
+1. Introduction Why visual fire detection needs fewer false alerts while maintaining timely event detection; contributions.
+2. Related work Video fire/smoke detectors, hard-negative datasets, event/track verification, sensor fusion, system response simulation.
+3. Problem definition Input/output, event definitions, assumptions, detection-to-alert timing and virtual simulation boundary.
+4. Method Detector, event risk gate, threshold policy, alert state machine, simulation equations and parameter ranges.
+5. Experimental setup Datasets, split by source, labels, hardware, baselines, threshold selection, metrics, seeds.
+6. Results Detection metrics, event metrics, hard-negative breakdown, latency, ablations and simulation-only results.
+7. Discussion Failure cases, domain shift, safety implications, what is and is not supported by the evidence.
+8. Conclusion Summary and next steps; no claim of real sprinkler performance.
+Availability statement Repository, manifests, code, configuration, model licence, data access constraints and reproducibility notes.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 20
+15.4 Conference targeting
+Select a venue only after the experimental scope and contribution are clear. Possible categories include 
+applied computer vision, intelligent systems, industrial AI, IoT/edge AI, or safety engineering conferences. 
+Check the official call for papers, peer-review process, indexing claims, fees, deadlines, proceedings policy and 
+overlap rules. Avoid predatory conference invitations. Do not submit a results-based abstract before the 
+results exist.
+16. Implementation Checklist and Acceptance Criteria
+Gate Acceptance condition
+G1 — Dataset
+A manifest lists every source and licence; label checks pass; 
+source-wise train/validation/test split and duplicate report are 
+saved.
+G2 — Baseline Detector trains and checkpoints; test script generates boxes and per-class metrics; all configuration is versioned.
+G3 — Input modes Webcam and uploaded video run end-to-end; dropped frames and latency are logged; failure UI is visible.
+G4 — Alarm gate Frame-only and event-level policies are switchable; event ID is unique; repeated detections do not spam repeated alerts.
+G5 — Email Test email succeeds; credentials are environment-based; retry/failure is visible; local alarm continues on email failure.
+G6 — Simulator
+A confirmed event activates only a virtual sprinkler; intensity 
+proxy falls according to parameters; false-positive test does 
+not activate the sprinkler under the expected gate.
+G7 — Evaluation
+Metrics are computed on locked tests; event matching is 
+documented; source-wise false alarms/hour and latency are 
+reported.
+G8 — Paper Related-work matrix includes closest 2026 work; results are reproducible; limitations and safety boundary are prominent.
+16.1 Suggested repository layout
+FireSenseAI/
+  app/
+    ui/                 # webcam, video upload, dashboard
+    detector/           # inference wrapper and model config
+    events/             # tracking, calibration, alert state machine
+    notifications/      # email queue and retry
+    simulator/          # virtual sprinkler and intensity state
+    storage/            # event database and evidence paths
+  training/             # dataset manifests, training, evaluation
+  configs/              # versioned model and threshold settings
+  tests/                # event logic, email mocks, simulator tests
+  experiments/          # frozen configs and evaluation outputs
+  docs/                  # R&D report, related-work matrix, paper
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 21
+  .env.example           # names only; never commit real secrets
+  README.md
+17. Conclusion and R&D Recommendation
+FireSense AI should be built in two tracks. The engineering track creates a stable local application that accepts 
+webcam or uploaded videos, detects and localizes fire/smoke, produces a local alarm and email event, and 
+records a visible audit trail. The research track tests a specific response-aware event decision policy using 
+source-wise hard negatives and event-level metrics, then uses the virtual sprinkler simulation to perform 
+controlled, clearly labelled policy experiments.
+The most important improvement over a routine implementation is a disciplined evaluation: real source-held-
+out video testing, false alarms per hour, time-to-alarm, cross-dataset robustness, confidence calibration and 
+ablations. The virtual simulation adds an engaging closed-loop demonstration and supports reproducible 
+policy experiments, but must not be presented as real fire dynamics. Novelty remains provisional until the 
+complete related-work and product/patent review is finished.
+Recommended next action  In Month 1, prepare the closest-work matrix for [1], [2], [4], [5] and [6]; verify 
+dataset terms; select the detector/version and freeze evaluation rules. Do not build the sprinkler 
+simulation before defining how a fire event is confirmed and how the resulting states are logged.
+References and Research Links
+[1] D. Gragnaniello, A. Greco, C. Sansone and B. Vento, “Fire and smoke detection from videos: A literature review under a novel 
+taxonomy,” Expert Systems with Applications, vol. 255, part D, article 124783, 2024. DOI: 
+https://doi.org/10.1016/j.eswa.2024.124783. Accessed 26 Oct 2026.
+[2] C. Catargiu, N. Cleju and I. B. Ciocoiu, “A Comparative Performance Evaluation of YOLO-Type Detectors on a New Open Fire and 
+Smoke Dataset,” Sensors, vol. 24, no. 17, 5597, 2024. DOI: https://doi.org/10.3390/s24175597. Dataset information: 
+https://github.com/CostiCatargiu/NEWFireSmokeDataset_YoloModels. Accessed 26 Oct 2026.
+[3] GAIA, “D-Fire: an image dataset for fire and smoke detection,” official repository and dataset documentation. 
+https://github.com/gaia-solutions-on-demand/DFireDataset. Repository describes >21,000 images and YOLO-format bounding 
+boxes. Accessed 26 Oct 2026.
+[4] D. Ghimire, D. Kim, Y. Jo, E. Lee, S. Jeong and B. Kim, “STV-FSANet: Track-Level Spatio-Temporal Verification for Fire and Smoke 
+Alarm Validation in Video Surveillance,” Sensors, vol. 26, no. 15, article 4970, 2026. DOI: https://doi.org/10.3390/s26154970. 
+Published 5 Aug 2026. Accessed 26 Oct 2026.
+[5] Y. Jia, Y. Guo, Y. Chen et al., “MmodalFire: A Continuous Multimodal Dataset Comprising Video and Physical Sensing Data for 
+Detecting Indoor Fires,” Scientific Data, vol. 13, article 489, 2026. DOI: https://doi.org/10.1038/s41597-026-06810-6. Published 19 
+Feb 2026. Accessed 26 Oct 2026.
+[6] MIVIA / LFDN, “Large Fire Dataset improved with Negative samples (LFDN),” dataset description, updated 2024. 
+https://mivia.unisa.it/large-fire-dataset-with-negative-samples-lfdn/. Description lists 36,554 images and hard-negative 
+conditions. Accessed 26 Oct 2026.
+[7] MIVIA, “Fire Detection Dataset,” video dataset page, 2014. https://mivia.unisa.it/datasets/video-analysis-datasets/fire-detection-
+dataset/. Accessed 26 Oct 2026.
+[8] “Early Fire and Smoke Detection Using Deep Learning: A Comprehensive Review of Models, Datasets, and Challenges,” Applied 
+Sciences, vol. 15, no. 18, 10255, 2025. DOI: https://doi.org/10.3390/app151810255. Accessed 26 Oct 2026.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 22
+[9] ISO, “ISO/TS 7240-30:2022 — Fire detection and alarm systems — Part 30: Design, installation, commissioning and service of 
+video fire detector systems.” https://www.iso.org/standard/74564.html. ISO page says reviewed/confirmed current in 2026. 
+Accessed 26 Oct 2026.
+[10] MIVIA, “Smoke Detection Dataset,” 149 videos / approximately 35 hours; https://mivia.unisa.it/datasets/video-analysis-
+datasets/smoke-detection-dataset/. Accessed 26 Oct 2026.
+[11] “An open flame and smoke detection dataset for deep learning in remote sensing based fire detection” (FASDD), International 
+Journal of Digital Earth, 2024. DOI: https://doi.org/10.1080/10095020.2024.2347922. The article describes >120,000 
+heterogeneous images and three sub-datasets. Accessed 26 Oct 2026.
+[12] P. Foggia, A. Saggese and M. Vento, “Real-time Fire Detection for Video Surveillance Applications using a Combination of 
+Experts based on Color, Shape and Motion,” IEEE Transactions on Circuits and Systems for Video Technology, 2015. Citation 
+provided by the MIVIA dataset pages; use to trace older baseline methods.
+Appendix A — Event Gate Reference Logic
+The kit includes `appendix/alert_policy_reference.py` as a small readable reference implementation of a k-of-n 
+decision gate. It intentionally does not activate hardware, send email, or claim certification. The numerical 
+threshold is a placeholder that must be calibrated on validation data. In the final implementation, use 
+separate policies for fire and smoke, add a very-high-confidence fast path only if validated, and keep the 
+actual event state/log independent from the UI.
+Appendix B — Simulator Equation and Interpretation
+The kit includes `appendix/simulation_model_reference.py` and `simulation/fire_response_simulation.html`. 
+The HTML simulator runs locally in a browser without installation. It demonstrates a test fire, repeated-
+evidence confirmation, a virtual alarm, virtual water animation and a simulated severity reduction. Its 
+parameters are pedagogical. The model omits fuel type, heat release rate, ventilation, plume dynamics, 
+sprinkler activation temperature, droplet size, water flow/pressure, obstruction, water supply and room 
+geometry, so no physical inference is valid.
+Appendix C — Minimum experiment log schema
+Field Example / description
+run_id Unique run identifier with date, model hash and config hash.
+source_id / split Dataset, original video/scene identity and train/val/test membership.
+frame_timestamp Timestamp from original video, not only processed frame index.
+detections Class, confidence, normalized box coordinates, model version.
+gate_state normal/candidate/confirmed/cleared; transition reason.
+event_id Stable ID shared by alert, email and simulation entries.
+alert_timestamp Local alert start; compute time-to-alarm from annotated onset.
+email_status queued/sent/failed/retried, provider response and delay.
+FIRESENSE AI  |  RESEARCH & DEVELOPMENT REPORT
+M.Sc. AI & ML Major Project  •  Version 1.0  •  26 October 2026  |  Page 23
+Field Example / description
+simulator_config Growth, coverage, actuation delay, virtual water-effect parameters.
+simulator_trace Intensity proxy per step; label as simulation output.
+hardware_environment CPU/GPU, memory, camera resolution, framework versions.
+annotation / notes Event label, hard-negative class, error type, adjudication notes.
+Appendix D — Event Payload and Software Test 
+Scenarios
+This appendix defines the minimum interface between the real detector, event service, email queue and 
+virtual response simulator. It is an integration contract for the prototype, not a command format for real fire 
+suppression hardware.
+{
+  "event_id": "generated-uuid",
+  "camera_id": "camera_01",
+  "event_type": "fire_confirmed",
+  "class": "fire",
+  "frame_confidence": 0.91,
+  "event_score": 0.86,
+  "bbox_xyxy": [x1, y1, x2, y2],
+  "first_evidence_timestamp": "ISO-8601",
+  "confirmed_timestamp": "ISO-8601",
+  "model_version": "model-hash-or-release",
+  "decision_reason": "3-of-5 positive frames",
+  "evidence_ref": "secured-local-path-or-url",
+  "simulation_only": true
+}
+Minimum software test cases
+Test case Expected result Evidence to save
+Confirmed fire clip Event gate emits one incident; local alarm 
+and email job start; virtual sprinkler opens 
+only in simulation.
+Source video ID, event time, confidence, 
+alarm log and simulator trace.
+Transient fire-like distractor Candidate overlay may appear, but no 
+confirmed event if the locked policy is not 
+met.
+False-positive class and number of 
+candidate frames.
+Email provider unavailable Local alarm stays active; email state 
+records retry/failure and the UI shows 
+delivery problem.
+Queue time, retry count and provider/error 
+code.
+Camera disconnected / corrupt upload Application reports the input error and 
+does not label the scene as fire-free.
+Error log and input health status.
+Duplicate frames / repeated boxes One continuous incident maps to one event 
+ID and follows configured cooldown rules.
+Detection track, event ID and deduplication 
+decision.
+Simulation coverage / delay changes Virtual outcome changes according to 
+documented parameters and is explicitly 
+marked simulated.
+Versioned simulation config and severity 
+time series.

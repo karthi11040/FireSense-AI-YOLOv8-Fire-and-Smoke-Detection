@@ -1,0 +1,6 @@
+{
+  "size": "n",
+  "criterion": "Highest validation mAP50-95; fixed before test evaluation",
+  "threshold": 0.25,
+  "validation_map50_95": 0.5640889887369951
+}

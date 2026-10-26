@@ -31,7 +31,7 @@ delivered experiment; the download/prepare commands are for reproduction.
 .venv/Scripts/python.exe pipeline.py train --size s --epochs 20
 
 # Resume after an interruption; preserves the checkpoint's original epoch budget.
-.venv/Scripts/python.exe pipeline.py train --size n --resume runs/train/yolov8n/weights/last.pt
+.venv/Scripts/python.exe pipeline.py train --size s --resume runs/train/yolov8s/weights/last.pt
 
 # Select recommendation using validation only, then evaluate both on held-out test.
 .venv/Scripts/python.exe evaluate.py --split val
@@ -64,7 +64,7 @@ assumed to be attached.
 - `reports/`: Markdown/PDF final report and figure references.
 
 Training uses 416 px images, batch 4, AdamW, seed 42, explicit augmentations and
-full precision on the 4 GB GTX 1650. Both sizes use the same data/budget. Best weights
+full precision on the 4 GB GTX 1650. Both sizes share data, resolution and optimizer. Best weights
 are selected by validation fitness. Test AP uses confidence 0.001; operational P/R
 uses confidence 0.25, NMS IoU 0.7 and class-aware one-to-one matching at IoU 0.5.
 The native Ultralytics best-F1 P/R is retained separately and is not the fixed-threshold
@@ -74,6 +74,14 @@ The delivered nano run began with batch 8 and resumed at batch 4 after epoch 8
 because Windows/CUDA resource interruptions occurred. Small uses batch 4 throughout.
 Gradient accumulation targets nominal batch 64. This is a practical comparison,
 not a strictly isolated architecture ablation. Original and recovery logs are kept.
+
+At the user's request for faster completion, the delivered small comparison was
+stopped after 8 completed epochs of its planned 20. Nano completed 20. Both used
+the original 20-epoch learning-rate schedule. The comparison measures these actual
+checkpoints, not architecture superiority under equal training. `train_s.json`
+records the cutoff, and `scripts/finalize_comparison.py` preserves/plots the checkpoint.
+Evaluation reuses native JSON predictions for fixed-threshold counts and galleries;
+JSON uses one-based class IDs and native rounding (3-decimal coordinates, 5-decimal scores).
 
 `data/` and weight binaries are kept locally but excluded from Git. Copy the entire
 folder when transferring trained assets. A Git clone alone requires fetching data

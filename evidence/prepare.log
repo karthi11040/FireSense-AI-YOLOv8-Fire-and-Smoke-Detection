@@ -1,0 +1,20 @@
+{
+  "train": {
+    "images": 3873,
+    "fire_boxes": 2951,
+    "smoke_boxes": 1834,
+    "negatives": 87
+  },
+  "val": {
+    "images": 1297,
+    "fire_boxes": 960,
+    "smoke_boxes": 617,
+    "negatives": 33
+  },
+  "test": {
+    "images": 1295,
+    "fire_boxes": 892,
+    "smoke_boxes": 689,
+    "negatives": 15
+  }
+} Rejected: 33 Duplicates: 2

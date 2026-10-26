@@ -1,0 +1,14 @@
+{
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "torch": "2.5.1+cu121",
+  "ultralytics": "8.3.221",
+  "gpu": "NVIDIA GeForce GTX 1650",
+  "cuda": "12.1",
+  "numpy": "1.26.4",
+  "opencv": "4.10.0",
+  "scipy": "1.14.1",
+  "matplotlib": "3.9.2",
+  "pandas": "2.2.3",
+  "polars": "1.26.0"
+}

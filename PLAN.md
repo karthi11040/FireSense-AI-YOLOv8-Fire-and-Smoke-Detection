@@ -22,3 +22,14 @@ with identical budgets -> validate -> lock recommendation -> evaluate both once 
 Quality: no invented results; no test data used for checkpoint/threshold selection;
 save split manifests, archive hashes, label audit, configuration, best weights and logs;
 test parsers and duplicate handling, then run real train/evaluate/predict commands.
+
+User steering: "make the process fast". Nano completed 20 epochs; comparison stopped
+after 8 completed epochs of a planned 20. Preserve both checkpoints and compare on
+the same test set; clearly disclose unequal training budgets. No additional training
+is required for this delivery. Validation recommendation was locked before test results.
+
+Completed: both checkpoints evaluated on all 1,295 audited test images, per-class
+and overall metrics retained, ten report figures, Markdown and visually checked
+12-page PDF, six passing tests, successful single-image and 15-frame video CLI checks.
+Recommended delivered checkpoint: YOLOv8n (test mAP50 82.02%, mAP50-95 47.22%).
+All final evidence is under evidence/; portable report figures are under reports/figures/.

@@ -1,0 +1,4 @@
+torch 2.5.1+cu121
+CUDA True
+NVIDIA GeForce GTX 1650
+tensor([2., 2., 2., 2.], device='cuda:0')

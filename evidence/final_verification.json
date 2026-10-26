@@ -1,0 +1,11 @@
+{
+  "test_images_per_model": 1295,
+  "test_objects": 1581,
+  "weight_hashes_verified": true,
+  "video_output_frames": 15,
+  "image_inference_verified": true,
+  "report_figures": 10,
+  "pdf_pages": 12,
+  "unit_tests": 6,
+  "pdf_text_verified": true
+}

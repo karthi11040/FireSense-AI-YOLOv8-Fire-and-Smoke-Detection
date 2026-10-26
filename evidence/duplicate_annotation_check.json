@@ -1,0 +1,12 @@
+{
+  "conflicting_duplicate_annotations": [
+    {
+      "removed": "data\\raw\\test\\images\\test_584.jpg",
+      "kept": "data\\raw\\test\\images\\test_1240.jpg"
+    },
+    {
+      "removed": "data\\raw\\test\\images\\test_967.jpg",
+      "kept": "data\\raw\\test\\images\\test_696.jpg"
+    }
+  ]
+}

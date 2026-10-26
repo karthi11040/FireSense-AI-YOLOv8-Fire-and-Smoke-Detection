@@ -1,0 +1,224 @@
+{
+  "counts": {
+    "train": {
+      "images": 3873,
+      "fire_boxes": 2951,
+      "smoke_boxes": 1834,
+      "negatives": 87
+    },
+    "val": {
+      "images": 1297,
+      "fire_boxes": 960,
+      "smoke_boxes": 617,
+      "negatives": 33
+    },
+    "test": {
+      "images": 1295,
+      "fire_boxes": 892,
+      "smoke_boxes": 689,
+      "negatives": 15
+    }
+  },
+  "raw_images": 6500,
+  "rejected": [
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_112.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_1478.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_1620.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_1774.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_1895.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_2234.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_2678.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_2797.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_2884.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_2927.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_3207.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_3352.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_3455.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_3572.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_3645.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_3664.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_3703.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_3713.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_3830.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_3967.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_4172.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_5.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_522.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_647.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_798.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_859.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "train",
+      "image": "data\\raw\\train\\images\\train_98.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "val",
+      "image": "data\\raw\\val\\images\\val_1141.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "val",
+      "image": "data\\raw\\val\\images\\val_403.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "val",
+      "image": "data\\raw\\val\\images\\val_707.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "test",
+      "image": "data\\raw\\test\\images\\test_23.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "test",
+      "image": "data\\raw\\test\\images\\test_366.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    },
+    {
+      "split": "test",
+      "image": "data\\raw\\test\\images\\test_811.jpg",
+      "reason": "EXIF rotation requires explicit annotation conversion"
+    }
+  ],
+  "exact_duplicates_removed": [
+    {
+      "split": "test",
+      "image": "data\\raw\\test\\images\\test_584.jpg",
+      "label": "data\\raw\\test\\labels\\test_584.txt",
+      "hash": "18b94b8be3fa8f2454a3d7e14e49c7d8817c1cf3075bbba17d115cb1db181d9d",
+      "boxes": [
+        [
+          0,
+          0.65078125,
+          0.691015625,
+          0.05260416666666667,
+          0.03828125
+        ]
+      ]
+    },
+    {
+      "split": "test",
+      "image": "data\\raw\\test\\images\\test_967.jpg",
+      "label": "data\\raw\\test\\labels\\test_967.txt",
+      "hash": "c0219ceafe61cff600d6d77de9d65147f07e35d84977abe6868dd187499a031a",
+      "boxes": [
+        [
+          0,
+          0.25078125,
+          0.620703125,
+          0.07552083333333333,
+          0.11953125
+        ]
+      ]
+    }
+  ],
+  "policy": "Preserve test, then val, then train; exact decoded RGB SHA256 deduplication; resize max side 640 JPEG quality 95",
+  "scene_independence": "Not established: original video IDs are not mapped to frames"
+}

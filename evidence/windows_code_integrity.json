@@ -1,0 +1,12 @@
+[
+  {
+    "TimeCreated": "2026-10-26T09:44:56.9966326+05:30",
+    "Id": 3077,
+    "Message": "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\Karth\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe) attempted to load \\Device\\HarddiskVolume5\\fire ai\\.venv\\Lib\\site-packages\\numpy\\linalg\\_umath_linalg.cp312-win_amd64.pyd that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+  },
+  {
+    "TimeCreated": "2026-10-26T09:42:15.5846924+05:30",
+    "Id": 3077,
+    "Message": "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\Karth\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe) attempted to load \\Device\\HarddiskVolume5\\fire ai\\.venv\\Lib\\site-packages\\torch\\lib\\torch_python.dll that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+  }
+]

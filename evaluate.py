@@ -2,6 +2,7 @@
 import argparse
 from pathlib import Path
 import json
+from collections import defaultdict
 from pipeline import ROOT, save_json, parse_label
 
 
@@ -36,6 +37,18 @@ def rates(tp, fp, fn):
                 recall=tp/(tp+fn) if tp+fn else 0., tp=tp, fp=fp, fn=fn)
 
 
+def fixed_predictions(records):
+    by_image = defaultdict(list)
+    for row in records:
+        if row['score'] < .25:
+            continue
+        if row['category_id'] not in (1, 2):
+            raise ValueError('Expected one-based custom-dataset categories 1=fire, 2=smoke')
+        x, y, w, h = row['bbox']
+        by_image[str(row['image_id'])].append([row['category_id']-1, row['score'], x, y, x+w, y+h])
+    return by_image
+
+
 def gallery(records, path, title):
     from PIL import Image, ImageDraw, ImageFont
     font = ImageFont.truetype('C:/Windows/Fonts/arial.ttf', 15) if Path('C:/Windows/Fonts/arial.ttf').exists() else ImageFont.load_default()
@@ -47,7 +60,7 @@ def gallery(records, path, title):
             with Image.open(row['image']) as source:
                 w, h = source.size
                 im = source.copy()
-                im.thumbnail((470, 248))
+                im.thumbnail((470, 240))
             overlay = ImageDraw.Draw(im)
             for box in row[field]:
                 cls = int(box[0])
@@ -88,16 +101,16 @@ def evaluate(split, device):
             summary['per_class'][model.names[int(cls)]] = dict(
                 ap50=float(metrics.box.ap50[j]), ap50_95=float(metrics.box.ap[j]))
         if split == 'test':
+            from PIL import Image
             totals = [[0, 0], [0, 0], [0, 0]]
             records = []
-            predictions = model.predict(source=str(ROOT / 'data/prepared/test/images'), stream=True,
-                imgsz=416, batch=8, conf=.25, iou=.7, device=device, verbose=False)
-            for result in predictions:
-                p = Path(result.path)
-                h, w = result.orig_shape
+            predictions = fixed_predictions(json.loads((dest / 'predictions.json').read_text()))
+            for p in sorted((ROOT / 'data/prepared/test/images').glob('*.jpg')):
+                with Image.open(p) as image:
+                    w, h = image.size
                 labels = parse_label((ROOT / 'data/prepared/test/labels' / (p.stem+'.txt')).read_text())
                 gt = [[c, (x-bw/2)*w, (y-bh/2)*h, (x+bw/2)*w, (y+bh/2)*h] for c,x,y,bw,bh in labels]
-                pred = [[int(c),float(conf),*xy] for c,conf,xy in zip(result.boxes.cls.tolist(), result.boxes.conf.tolist(), result.boxes.xyxy.tolist())]
+                pred = predictions.get(p.stem, [])
                 tp, fp, fn = match_predictions(gt, pred)
                 for accumulator, counts in zip(totals, [tp, fp, fn]):
                     for i in range(2):

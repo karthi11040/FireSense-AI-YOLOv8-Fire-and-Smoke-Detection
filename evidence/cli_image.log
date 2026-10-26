@@ -1,0 +1,5 @@
+
+image 1/1 D:\fire ai\data\prepared\test\images\test_10.jpg: 256x416 1 fire, 130.1ms
+Speed: 3.0ms preprocess, 130.1ms inference, 8.1ms postprocess per image at shape (1, 3, 256, 416)
+Results saved to [1mD:\fire ai\runs\predict\inference[0m
+1 label saved to D:\fire ai\runs\predict\inference\labels

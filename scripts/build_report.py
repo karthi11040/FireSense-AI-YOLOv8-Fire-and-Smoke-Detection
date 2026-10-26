@@ -60,10 +60,17 @@ def build():
         'Images are resized proportionally to at most 640 px and stored as quality-95 JPEG; YOLO then letterboxes them to 416 px. '
         'There is no generated data or offline augmentation. Archive hashes/URLs are in evidence/downloads.json; every retained image '
         'and label is listed in evidence/manifest.json; exclusions are in evidence/data_audit.json.',
+        f'The audited test set contains only {counts["test"]["negatives"]} negative images out of '
+        f'{counts["test"]["images"]} ({pct(counts["test"]["negatives"]/counts["test"]["images"])}). '
+        'This positive-heavy benchmark provides limited evidence about nuisance alarms in long, mostly hazard-free camera streams.',
         'In this run, all 33 quarantined inputs have non-default EXIF orientation. They were excluded conservatively because '
         'automatically rotating pixels without confirming the annotation coordinate convention can misalign boxes; this does not '
         'mean the source image is corrupt. Both exact duplicate removals occurred within the official test split. '
         'No exact decoded-pixel overlap was found between retained splits.',
+        'Both removed duplicate images had slightly different fire-box coordinates from the retained copy of the same pixels. '
+        'The deterministic first-copy policy retains one original annotation rather than averaging or relabeling test boxes. '
+        'This is evidence of some annotation variation, which can matter at strict IoU thresholds; it does not quantify annotation '
+        'noise across the full collection. Pair IDs are saved in evidence/duplicate_annotation_check.json.',
         'The official split is retained rather than claiming a new scene-independent benchmark. Exact pixel hashes do not catch '
         'near duplicates, alternate encodings or adjacent video frames. A dependable frame-to-source-video map was not available; '
         'scene overlap is therefore an unresolved risk. The test set is held out from optimization, but is not demonstrated to be '
@@ -71,9 +78,11 @@ def build():
         '## Method and configuration',
         'Both detectors use official COCO-pretrained YOLOv8 weights, replacing the detection head for two classes and fine-tuning '
         'the network. Nano is the primary low-cost baseline; small tests whether additional capacity improves accuracy. '
-        'Both share the same data, seed, input resolution, optimizer and epoch budget. '
+        'Both share the same data, seed, input resolution, optimizer and originally configured 20-epoch learning-rate schedule. '
+        'Nano completed 20 epochs; small completed 8 before the user requested faster completion. '
         'Nano began with batch 8 and changed to batch 4 after epoch 8 following resource failures; small uses batch 4 throughout. '
-        'Gradient accumulation targets nominal batch 64. This is a practical resource-constrained comparison, not a strictly isolated architecture ablation. '
+        'Gradient accumulation targets nominal batch 64. With unequal completed training budgets, this is a practical comparison of delivered '
+        'checkpoints, not evidence that one architecture is inherently superior. The small run was still learning when stopped. '
         'This is one run per size, without hyperparameter search or repeated-seed confidence intervals.',
         'The nano run was interrupted just after epoch 6 by Windows error 1450 (insufficient system resources) during a filesystem '
         'existence check. The same check subsequently succeeded and the JPEG remained readable. A later CUDA out-of-memory error '
@@ -83,17 +92,18 @@ def build():
         'relative to a completely uninterrupted run; original and recovery logs are retained in evidence/.',
         table(['Setting', 'Value'], [
             ['Models','YOLOv8n and YOLOv8s'], ['Input / batch','416 x 416 / 4 (nano epochs 1-8 used 8)'],
-            ['Budget / early stopping','20 epochs per model / patience 8'],
+            ['Budget / early stopping','Nano: 20 completed; small: 8 completed of 20 planned / patience 8'],
             ['Optimizer / learning rate','AdamW / 0.001 initial, final multiplier 0.01'],
             ['Weight decay / warmup','0.0005 / 2 epochs'], ['Seed / loader workers','42 / 0'],
             ['Precision','FP32; AMP disabled for the GTX 1650'],
             ['Augmentation','HSV h=.015, s=.7, v=.4; translation .1; scale .5; horizontal flip .5'],
-            ['Other transforms','Mosaic 1.0, disabled last 3 epochs; mixup 0; vertical flip 0; rotation 0'],
+            ['Other transforms','Mosaic 1.0; nano off at epochs 18-20; small stopped before off phase; mixup/vertical flip/rotation 0'],
             ['Checkpoint selection','Best validation fitness under pinned Ultralytics version'],
             ['AP evaluation','Confidence floor .001; NMS IoU .7; IoU thresholds .50:.05:.95'],
             ['Operational P/R','Fixed confidence .25; NMS IoU .7; class-aware matching at IoU .5']]),
-        'The 4 GB NVIDIA GTX 1650 motivated 416 px, batch 4 and nano/small models. The short 20-epoch budget is a reproducible '
-        'local baseline and may undertrain the models; it is not evidence of convergence. Full precision avoids depending on mixed-precision '
+        'The 4 GB NVIDIA GTX 1650 motivated 416 px, batch 4 and nano/small models. The 20-epoch primary run and 8-epoch comparison '
+        'are local baselines and do not establish convergence. The comparison was cut short on the user\'s explicit speed request, '
+        'retaining the latest fully completed checkpoint and discarding partial epoch 9 work. Full precision avoids depending on mixed-precision '
         'behavior on this older GPU. Exact resolved defaults and configuration are saved in runs/train/*/args.yaml and evidence/train_*.json.',
         f'Environment: Python {env["python"]}; PyTorch {env["torch"]}; Ultralytics {env["ultralytics"]}; '
         f'GPU {env["gpu"]}. Windows initially blocked DLLs in the newest scientific packages; pinned older wheels were installed '
@@ -114,6 +124,8 @@ def build():
                 ' / '.join(str(m['fixed_threshold']['per_class'][c][k]) for k in ['tp','fp','fn'])]
                for s,m in test.items() for c,a in m['per_class'].items()]),
         'Fixed-threshold counts use confidence-ordered, one-to-one matching of predictions to same-class ground truth at IoU >= 0.5. '
+        'They reuse the evaluator\'s retained JSON predictions, with one-based exported categories converted back to zero-based classes. '
+        'Native export rounds coordinates to three decimals and scores to five; the fixed threshold is applied to these exported scores. '
         'Duplicate detections become false positives, and wrong classes can produce both an FP and an FN. '
         'The native Ultralytics best-F1 precision/recall are retained in the JSON evidence for transparency; '
         'they use a test-curve-selected operating point and are not substituted for the pre-fixed threshold figures above. '
@@ -125,10 +137,13 @@ def build():
                 f'{m["speed_ms"]["inference"]:.2f}'] for s,m in test.items()]),
         f'Recommendation: YOLOv8{chosen}, selected by the highest validation mAP@0.5:0.95 '
         f'({pct(choice["validation_map50_95"])}). This selection was saved before test evaluation in evidence/recommendation.json. '
-        'The table makes the capacity and latency cost visible; nano remains useful when memory/latency takes priority over the measured '
-        'validation advantage. Test scores describe the locked choice and do not drive another round of tuning. '
+        'The table makes the capacity and latency cost visible; nano also requires fewer parameters and less weight storage. '
+        'The accuracy ranking applies to these delivered checkpoints with unequal completed training budgets. '
+        'Test scores describe the locked choice and do not drive another round of tuning. '
         'Forward latency is the evaluator\'s measured batch-8 GPU average; it excludes capture, drawing, encoding and application overhead '
-        'and must not be advertised as live camera FPS. Neither size is proven optimal with this single short training budget.',
+        'and must not be advertised as live camera FPS. The machine was shared with other workloads and experienced CPU/RAM pressure '
+        '(evidence/resource_pressure.txt); these single timing runs are descriptive, not an isolated speed benchmark. '
+        'Neither size is proven optimal. In particular, the shorter small-model run cannot establish its fully trained potential.',
         '## Learning curves and diagnostic figures',
     ]
     for size in ['n','s']:
@@ -169,6 +184,10 @@ def build():
         '(after the validation selection command). Inference: `.venv/Scripts/python.exe pipeline.py predict --source IMAGE_OR_VIDEO`. '
         'A source of 0 selects the webcam. Data download and preparation each have a single command. '
         'requirements.txt pins the scientific stack; environment_freeze.txt captures the complete installed environment.',
+        'Verification: six unit tests pass, and the documented validation/test commands completed for both checkpoints. '
+        'The inference CLI completed on a held-out still image and a 15-frame MP4 made from three test stills. '
+        'The latter verifies video decoding, streamed inference and annotated video writing; it is not a temporal/event benchmark. '
+        'Its sources are recorded in evidence/demo_provenance.json. Live webcam input was not tested.',
         'Best trained weights are models/yolov8n_best.pt and models/yolov8s_best.pt. '
         'Training runs include best.pt, last.pt, results.csv, args.yaml and figures. Evaluation directories include native AP predictions, '
         'PR curves, confusion matrices, galleries and machine-readable summaries. Data binaries and weights are retained locally '
@@ -208,6 +227,8 @@ def make_pdf(sections, output):
     styles['BodyText'].leading = 13
     styles['BodyText'].spaceAfter = 6
     styles['Title'].textColor = colors.HexColor('#153a4d')
+    for name in ['Title', 'Heading2', 'Heading3']:
+        styles[name].keepWithNext = True
     story = []
     width = 487
     for text in sections:
