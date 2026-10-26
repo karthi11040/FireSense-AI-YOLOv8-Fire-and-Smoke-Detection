@@ -1,0 +1,11 @@
+{
+  "test_counts": [
+    1083,
+    81,
+    498
+  ],
+  "success_count": 817,
+  "error_image_count": 464,
+  "source": "saved test predictions",
+  "threshold": 0.5
+}
