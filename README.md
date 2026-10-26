@@ -3,6 +3,8 @@
 YOLOv8 fire/smoke object detection research pipeline. See `reports/FINAL_REPORT.md`
 for the original benchmark and `reports/OPTIMIZATION_REPORT.md` for the deployed
 refinement, confidence thresholds and measured precision/recall tradeoffs.
+The follow-up [video investigation](reports/VIDEO_GENERALIZATION_REPORT.md) documents
+the close-up/lighting failure, training-only augmentation and subsequent deployment.
 
 ## Local detection dashboard
 
@@ -34,6 +36,22 @@ at each threshold and the measured refinement comparison.
 # Compare and lock the validation recommendation before any new test evaluation.
 .venv/Scripts/python.exe scripts/report_optimization.py
 ```
+
+Investigate a new video without adding it to training:
+
+```powershell
+.venv/Scripts/python.exe scripts/review_video.py --video "C:/path/to/video.mp4" --weights models/yolov8n_domain.pt --tag video_review
+# Rebuild training-only portrait/lighting variants, then train a separate candidate.
+.venv/Scripts/python.exe scripts/adapt_detector.py
+.venv/Scripts/python.exe scripts/adapt_detector.py --train
+```
+
+The augmentation uses 600 original training images; validation/test and the supplied
+video are excluded. Rerunning training preserves existing deployed weights and prints
+a separate candidate path; use that printed path to evaluate the new candidate.
+Rebuilding the historical optimization report writes
+`evidence/refinement_selection.json` and does not replace the active deployment in
+`evidence/optimization_selection.json`. Training a candidate also does not deploy it.
 
 ## Setup (Windows PowerShell, Python 3.12)
 

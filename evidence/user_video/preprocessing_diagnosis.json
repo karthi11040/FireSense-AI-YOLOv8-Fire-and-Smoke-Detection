@@ -1,0 +1,202 @@
+[
+  {
+    "frame": "frame_0.jpg",
+    "mode": "original",
+    "fire_score": 0.2545250654220581
+  },
+  {
+    "frame": "frame_0.jpg",
+    "mode": "grayworld",
+    "fire_score": 0.3214583396911621
+  },
+  {
+    "frame": "frame_0.jpg",
+    "mode": "clahe",
+    "fire_score": 0.29446932673454285
+  },
+  {
+    "frame": "frame_0.jpg",
+    "mode": "grayscale",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_0.jpg",
+    "mode": "square_pad",
+    "fire_score": 0.2512172758579254
+  },
+  {
+    "frame": "frame_1.jpg",
+    "mode": "original",
+    "fire_score": 0.5456051826477051
+  },
+  {
+    "frame": "frame_1.jpg",
+    "mode": "grayworld",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_1.jpg",
+    "mode": "clahe",
+    "fire_score": 0.4101375937461853
+  },
+  {
+    "frame": "frame_1.jpg",
+    "mode": "grayscale",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_1.jpg",
+    "mode": "square_pad",
+    "fire_score": 0.5008630752563477
+  },
+  {
+    "frame": "frame_2.jpg",
+    "mode": "original",
+    "fire_score": 0.18014131486415863
+  },
+  {
+    "frame": "frame_2.jpg",
+    "mode": "grayworld",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_2.jpg",
+    "mode": "clahe",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_2.jpg",
+    "mode": "grayscale",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_2.jpg",
+    "mode": "square_pad",
+    "fire_score": 0.22089910507202148
+  },
+  {
+    "frame": "frame_3.jpg",
+    "mode": "original",
+    "fire_score": 0.0822167694568634
+  },
+  {
+    "frame": "frame_3.jpg",
+    "mode": "grayworld",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_3.jpg",
+    "mode": "clahe",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_3.jpg",
+    "mode": "grayscale",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_3.jpg",
+    "mode": "square_pad",
+    "fire_score": 0.08556179702281952
+  },
+  {
+    "frame": "frame_4.jpg",
+    "mode": "original",
+    "fire_score": 0.08626411110162735
+  },
+  {
+    "frame": "frame_4.jpg",
+    "mode": "grayworld",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_4.jpg",
+    "mode": "clahe",
+    "fire_score": 0.1268298476934433
+  },
+  {
+    "frame": "frame_4.jpg",
+    "mode": "grayscale",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_4.jpg",
+    "mode": "square_pad",
+    "fire_score": 0.11206015199422836
+  },
+  {
+    "frame": "frame_5.jpg",
+    "mode": "original",
+    "fire_score": 0.5566130876541138
+  },
+  {
+    "frame": "frame_5.jpg",
+    "mode": "grayworld",
+    "fire_score": 0.06461053341627121
+  },
+  {
+    "frame": "frame_5.jpg",
+    "mode": "clahe",
+    "fire_score": 0.4284888803958893
+  },
+  {
+    "frame": "frame_5.jpg",
+    "mode": "grayscale",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_5.jpg",
+    "mode": "square_pad",
+    "fire_score": 0.5847354531288147
+  },
+  {
+    "frame": "frame_6.jpg",
+    "mode": "original",
+    "fire_score": 0.2665291428565979
+  },
+  {
+    "frame": "frame_6.jpg",
+    "mode": "grayworld",
+    "fire_score": 0.05015288293361664
+  },
+  {
+    "frame": "frame_6.jpg",
+    "mode": "clahe",
+    "fire_score": 0.14592421054840088
+  },
+  {
+    "frame": "frame_6.jpg",
+    "mode": "grayscale",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_6.jpg",
+    "mode": "square_pad",
+    "fire_score": 0.28659647703170776
+  },
+  {
+    "frame": "frame_7.jpg",
+    "mode": "original",
+    "fire_score": 0.3936742842197418
+  },
+  {
+    "frame": "frame_7.jpg",
+    "mode": "grayworld",
+    "fire_score": 0.24297013878822327
+  },
+  {
+    "frame": "frame_7.jpg",
+    "mode": "clahe",
+    "fire_score": 0.26256975531578064
+  },
+  {
+    "frame": "frame_7.jpg",
+    "mode": "grayscale",
+    "fire_score": 0
+  },
+  {
+    "frame": "frame_7.jpg",
+    "mode": "square_pad",
+    "fire_score": 0.4688956141471863
+  }
+]

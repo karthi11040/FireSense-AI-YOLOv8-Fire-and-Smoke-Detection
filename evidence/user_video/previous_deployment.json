@@ -1,0 +1,11 @@
+{
+  "selected": "refined",
+  "imgsz": 416,
+  "default_confidence": 0.5,
+  "strict_confidence": 0.9,
+  "criterion": "Validation mAP50-95 improvement and precision at 0.50 >= 90%; never select using test",
+  "weights": "models/yolov8n_refined.pt",
+  "sha256": "148ca12996cde2a532d873a80bb94f519bc05e09d0887b6635aa78c83ffbb235",
+  "model": "YOLOv8 nano (refined)",
+  "testMap50": 82.62153699869582
+}

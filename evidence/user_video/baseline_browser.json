@@ -1,0 +1,892 @@
+{
+  "file": "C:\\Users\\Karth\\Downloads\\6401825-hd_1080_1920_30fps.mp4",
+  "model": "YOLOv8 nano (refined)",
+  "minimumScore": 0.5,
+  "processedFrames": 130,
+  "framesWithFire": 21,
+  "firePositiveFraction": 0.16153846153846155,
+  "pageErrors": [],
+  "responses": [
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 478.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 190.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 184.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 103.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 118
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.6136122941970825,
+          "box": [
+            0.287704199552536,
+            0.12284845858812332,
+            0.7234835028648376,
+            0.7047867178916931
+          ]
+        }
+      ],
+      "elapsedMs": 139.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 105.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 131.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 133.5
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 80
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 70.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 80.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 98.5
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.5843545794487,
+          "box": [
+            0.2215784788131714,
+            0.18782280385494232,
+            0.5974748730659485,
+            0.7322983145713806
+          ]
+        }
+      ],
+      "elapsedMs": 113
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.5963966250419617,
+          "box": [
+            0.225818932056427,
+            0.1888565868139267,
+            0.6849006414413452,
+            0.7412900924682617
+          ]
+        }
+      ],
+      "elapsedMs": 114.8
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.5546982288360596,
+          "box": [
+            0.2716962993144989,
+            0.14703677594661713,
+            0.7198277711868286,
+            0.7629687190055847
+          ]
+        }
+      ],
+      "elapsedMs": 96.5
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.5565106868743896,
+          "box": [
+            0.27441340684890747,
+            0.14084655046463013,
+            0.6892098188400269,
+            0.7203719019889832
+          ]
+        }
+      ],
+      "elapsedMs": 107.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 109
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 101.6
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.576290488243103,
+          "box": [
+            0.35516566038131714,
+            0.5381342768669128,
+            0.487314909696579,
+            0.7084410190582275
+          ]
+        }
+      ],
+      "elapsedMs": 98.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 103.9
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 81.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 80
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 78.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 82.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 98.9
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 209.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 119.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 119.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 203.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 111.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 177
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 126.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 83.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 105.5
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 110.8
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 80.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 108.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 114.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 114.9
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 92.5
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 87.5
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 79.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 87.5
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 86
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 78.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 125.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 87.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 86.3
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.6120923161506653,
+          "box": [
+            0.21978425979614258,
+            0.10641390085220337,
+            0.7072902321815491,
+            0.6876333951950073
+          ]
+        }
+      ],
+      "elapsedMs": 88.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 105.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 170.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 92.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 97
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 110.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 99
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.6346702575683594,
+          "box": [
+            0.2784389853477478,
+            0.06346497684717178,
+            0.7025892734527588,
+            0.6340867280960083
+          ]
+        }
+      ],
+      "elapsedMs": 133.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 98.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 123.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 155.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 106
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 115.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 161.8
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 94.3
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.532294750213623,
+          "box": [
+            0.3086695969104767,
+            0.14315451681613922,
+            0.6641940474510193,
+            0.6993992328643799
+          ]
+        }
+      ],
+      "elapsedMs": 102
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 100.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 96.6
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.6850948333740234,
+          "box": [
+            0.2634487748146057,
+            0.11258859187364578,
+            0.7085379958152771,
+            0.6736003756523132
+          ]
+        }
+      ],
+      "elapsedMs": 120.9
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 160
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 115.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 95.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 112.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 128.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 205.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 97.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 112.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 114.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 99.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 107.8
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 99.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 93.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 84.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 82
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 86.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 93.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 129.9
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.621836245059967,
+          "box": [
+            0.23111966252326965,
+            0.16357509791851044,
+            0.6969658136367798,
+            0.7515689134597778
+          ]
+        }
+      ],
+      "elapsedMs": 135.1
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.5670852661132812,
+          "box": [
+            0.23677988350391388,
+            0.23040977120399475,
+            0.6529432535171509,
+            0.7141517996788025
+          ]
+        }
+      ],
+      "elapsedMs": 120.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 261.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 76.9
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 83.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 78.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 80
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 83.8
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 79.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 82.8
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 87.5
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 93.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 85.2
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.5203484892845154,
+          "box": [
+            0.2527104318141937,
+            0.08336419612169266,
+            0.6484107375144958,
+            0.6779531836509705
+          ]
+        }
+      ],
+      "elapsedMs": 95.1
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.6504265069961548,
+          "box": [
+            0.24363668262958527,
+            0.04063540697097778,
+            0.6624779105186462,
+            0.6461911201477051
+          ]
+        }
+      ],
+      "elapsedMs": 92.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 75.5
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 78.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 82
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 83.5
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 97.5
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 73.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 80.4
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 114.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 74.8
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 125
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 101.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 83.3
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 80
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.6045863628387451,
+          "box": [
+            0.22040311992168427,
+            0.37262728810310364,
+            0.5312100648880005,
+            0.7306276559829712
+          ]
+        }
+      ],
+      "elapsedMs": 89.1
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.516070544719696,
+          "box": [
+            0.21975016593933105,
+            0.18015126883983612,
+            0.5780444145202637,
+            0.7244964241981506
+          ]
+        }
+      ],
+      "elapsedMs": 79
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.5041590332984924,
+          "box": [
+            0.2190566062927246,
+            0.22559532523155212,
+            0.6418711543083191,
+            0.7173267006874084
+          ]
+        }
+      ],
+      "elapsedMs": 83
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 75.7
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 74.1
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.5974406599998474,
+          "box": [
+            0.23236005008220673,
+            0.21536952257156372,
+            0.6069323420524597,
+            0.7108464241027832
+          ]
+        }
+      ],
+      "elapsedMs": 84
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 78.6
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 82.9
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 78.2
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.5398463606834412,
+          "box": [
+            0.22953958809375763,
+            0.1426151692867279,
+            0.671089768409729,
+            0.7246652245521545
+          ]
+        }
+      ],
+      "elapsedMs": 99.6
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.5066320896148682,
+          "box": [
+            0.21568194031715393,
+            0.20465725660324097,
+            0.7221264839172363,
+            0.7369592189788818
+          ]
+        }
+      ],
+      "elapsedMs": 81.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 92.5
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 96.1
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 105.5
+    },
+    {
+      "status": 200,
+      "detections": [
+        {
+          "label": "fire",
+          "confidence": 0.6140186786651611,
+          "box": [
+            0.233146071434021,
+            0.33393004536628723,
+            0.6160808801651001,
+            0.7020850777626038
+          ]
+        }
+      ],
+      "elapsedMs": 102.2
+    },
+    {
+      "status": 200,
+      "detections": [],
+      "elapsedMs": 111.7
+    }
+  ]
+}

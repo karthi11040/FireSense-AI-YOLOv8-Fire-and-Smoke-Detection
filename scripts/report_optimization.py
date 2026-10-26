@@ -32,7 +32,8 @@ if __name__ == '__main__':
     selection['model'] = 'YOLOv8 nano (refined)' if selected == 'refined' else 'YOLOv8 nano'
     test_path = ROOT / 'evidence/optimization_test_yolov8n_refined.json'
     selection['testMap50'] = (json.loads(test_path.read_text())[0]['map50']*100 if test_path.exists() else None) if selected == 'refined' else 82.02
-    save_json(ROOT / 'evidence/optimization_selection.json', selection)
+    # Rebuilding a historical report must not replace a later deployed checkpoint.
+    save_json(ROOT / 'evidence/refinement_selection.json', selection)
     rows = [('Original', baseline)] + [('Larger input', r) for r in candidates if r['imgsz'] != 416] + [('Four-epoch refinement', refined)]
     text = '# Detector optimization and confidence audit\n\n'
     text += ('A confidence score is a per-box model output, not proof of correctness. '

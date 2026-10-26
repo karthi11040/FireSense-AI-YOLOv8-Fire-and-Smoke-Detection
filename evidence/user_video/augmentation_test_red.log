@@ -1,0 +1,20 @@
+E
+======================================================================
+ERROR: test_domain_data (unittest.loader._FailedTest.test_domain_data)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_domain_data
+Traceback (most recent call last):
+  File "C:\Users\Karth\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Karth\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "D:\fire ai\tests\test_domain_data.py", line 2, in <module>
+    from scripts.adapt_detector import crop_labels
+ModuleNotFoundError: No module named 'scripts.adapt_detector'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

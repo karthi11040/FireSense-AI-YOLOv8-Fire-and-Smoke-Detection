@@ -1,0 +1,10 @@
+{
+  "minimum_validation_map50_95": 0.55,
+  "minimum_validation_precision_at_050": 0.9,
+  "required_sampled_fire_frames": 8,
+  "expected_sample_count": 8,
+  "manual_check": "Retained boxes must align with visibly burning flames",
+  "selection_data": "Original validation split and user clip as development data; no test-based selection",
+  "limitation": "Accept up to about two percentage points of validation mAP50-95 loss for recovery on the close-up clip; disclose this tradeoff",
+  "user_video_used_for_training": false
+}

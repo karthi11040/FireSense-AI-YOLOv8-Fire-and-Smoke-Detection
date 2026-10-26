@@ -1,0 +1,14 @@
+{
+  "selected": "domain_adapted",
+  "weights": "models/yolov8n_domain.pt",
+  "imgsz": 416,
+  "default_confidence": 0.5,
+  "strict_confidence": 0.9,
+  "model": "YOLOv8 nano (domain adapted)",
+  "testMap50": 83.7439181092208,
+  "sha256": "4d9b2ce49bcf61694427e1e756b2e66ed5005d6552cb999950de2ceccdf64b41",
+  "criterion": "Original validation quality plus user-video development check; contract in evidence/user_video/selection_contract.json",
+  "validation_map50": 0.9076703122782517,
+  "validation_map50_95": 0.570067611465313,
+  "user_video_used_for_training": false
+}

@@ -1,0 +1,6 @@
+{
+  "source_name": "6401825-hd_1080_1920_30fps.mp4",
+  "sha256": "304197e3a9160ecf2a477c601b6d8e85dae49ffc9a10b5916e7522b5099b3665",
+  "used_for_training": false,
+  "role": "Development video used for diagnosis/selection; not an independent test after tuning"
+}

@@ -18,6 +18,9 @@ class DashboardTests(unittest.TestCase):
             path.write_text(json.dumps(dict(weights='models/yolov8n_refined.pt',
                 imgsz=416, model='YOLOv8 nano (refined)', testMap50=82.62)))
             self.assertEqual(deployment_profile(path)['testMap50'], 82.62)
+            path.write_text(json.dumps(dict(weights='models/yolov8n_domain.pt',
+                imgsz=416, model='YOLOv8 nano (domain adapted)', testMap50=None)))
+            self.assertEqual(deployment_profile(path)['weights'], 'models/yolov8n_domain.pt')
 
     def test_accepts_image_and_rejects_invalid_input(self):
         out = io.BytesIO()

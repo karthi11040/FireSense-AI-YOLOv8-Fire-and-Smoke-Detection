@@ -1,0 +1,351 @@
+Training data: D:\fire ai\data\domain_augmented\dataset.yaml
+New https://pypi.org/project/ultralytics/8.4.189 available  Update with 'pip install -U ultralytics'
+Ultralytics 8.3.221  Python-3.12.14 torch-2.5.1+cu121 CUDA:0 (NVIDIA GeForce GTX 1650, 4096MiB)
+[34m[1mengine\trainer: [0magnostic_nms=False, amp=False, augment=False, auto_augment=randaugment, batch=8, bgr=0.0, box=7.5, cache=False, cfg=None, classes=None, close_mosaic=10, cls=0.5, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=D:\fire ai\data\domain_augmented\dataset.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=3, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=4, half=False, hsv_h=0.005, hsv_s=0.2, hsv_v=0.2, imgsz=416, int8=False, iou=0.7, keras=False, kobj=1.0, line_width=None, lr0=0.0002, lrf=0.1, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=D:\fire ai\models\yolov8n_refined.pt, momentum=0.937, mosaic=0.0, multi_scale=False, name=domain_adaptation, nbs=64, nms=False, opset=None, optimize=False, optimizer=AdamW, overlap_mask=True, patience=3, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=D:\fire ai\runs\optimization, rect=False, resume=False, retina_masks=False, save=True, save_conf=False, save_crop=False, save_dir=D:\fire ai\runs\optimization\domain_adaptation, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.15, seed=42, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=botsort.yaml, translate=0.05, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=1, warmup_momentum=0.8, weight_decay=0.0005, workers=0, workspace=None
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]                 
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]                
+  2                  -1  1      7360  ultralytics.nn.modules.block.C2f             [32, 32, 1, True]             
+  3                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]                
+  4                  -1  2     49664  ultralytics.nn.modules.block.C2f             [64, 64, 2, True]             
+  5                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  6                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]           
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  8                  -1  1    460288  ultralytics.nn.modules.block.C2f             [256, 256, 1, True]           
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]                 
+ 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 12                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]                 
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 15                  -1  1     37248  ultralytics.nn.modules.block.C2f             [192, 64, 1]                  
+ 16                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+ 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 18                  -1  1    123648  ultralytics.nn.modules.block.C2f             [192, 128, 1]                 
+ 19                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]                 
+ 22        [15, 18, 21]  1    751702  ultralytics.nn.modules.head.Detect           [2, [64, 128, 256]]           
+Model summary: 129 layers, 3,011,238 parameters, 3,011,222 gradients, 8.2 GFLOPs
+
+Transferred 355/355 items from pretrained weights
+Freezing layer 'model.0.conv.weight'
+Freezing layer 'model.0.bn.weight'
+Freezing layer 'model.0.bn.bias'
+Freezing layer 'model.1.conv.weight'
+Freezing layer 'model.1.bn.weight'
+Freezing layer 'model.1.bn.bias'
+Freezing layer 'model.2.cv1.conv.weight'
+Freezing layer 'model.2.cv1.bn.weight'
+Freezing layer 'model.2.cv1.bn.bias'
+Freezing layer 'model.2.cv2.conv.weight'
+Freezing layer 'model.2.cv2.bn.weight'
+Freezing layer 'model.2.cv2.bn.bias'
+Freezing layer 'model.2.m.0.cv1.conv.weight'
+Freezing layer 'model.2.m.0.cv1.bn.weight'
+Freezing layer 'model.2.m.0.cv1.bn.bias'
+Freezing layer 'model.2.m.0.cv2.conv.weight'
+Freezing layer 'model.2.m.0.cv2.bn.weight'
+Freezing layer 'model.2.m.0.cv2.bn.bias'
+Freezing layer 'model.3.conv.weight'
+Freezing layer 'model.3.bn.weight'
+Freezing layer 'model.3.bn.bias'
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mtrain: [0mFast image access  (ping: 0.10.0 ms, read: 33.355.6 MB/s, size: 75.0 KB)
+
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 15 images, 0 backgrounds, 0 corrupt: 0% ──────────── 15/4473 28.0it/s 0.2s<2:39
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 28 images, 0 backgrounds, 0 corrupt: 1% ──────────── 28/4473 56.4it/s 0.3s<1:19
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 43 images, 0 backgrounds, 0 corrupt: 1% ──────────── 43/4473 72.1it/s 0.4s<1:01
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 76 images, 0 backgrounds, 0 corrupt: 2% ──────────── 76/4473 148.7it/s 0.5s<29.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 100 images, 0 backgrounds, 0 corrupt: 2% ──────────── 100/4473 175.6it/s 0.6s<24.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 128 images, 0 backgrounds, 0 corrupt: 3% ──────────── 128/4473 197.4it/s 0.7s<22.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 154 images, 0 backgrounds, 0 corrupt: 3% ──────────── 154/4473 215.2it/s 0.8s<20.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 180 images, 0 backgrounds, 0 corrupt: 4% ──────────── 180/4473 224.5it/s 0.9s<19.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 206 images, 0 backgrounds, 0 corrupt: 5% ╸─────────── 206/4473 232.7it/s 1.0s<18.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 228 images, 0 backgrounds, 0 corrupt: 5% ╸─────────── 228/4473 228.2it/s 1.1s<18.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 253 images, 0 backgrounds, 0 corrupt: 6% ╸─────────── 253/4473 228.2it/s 1.2s<18.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 281 images, 0 backgrounds, 0 corrupt: 6% ╸─────────── 281/4473 235.6it/s 1.4s<17.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 309 images, 0 backgrounds, 0 corrupt: 7% ╸─────────── 309/4473 235.9it/s 1.5s<17.7s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 337 images, 0 backgrounds, 0 corrupt: 8% ╸─────────── 337/4473 243.2it/s 1.6s<17.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 365 images, 0 backgrounds, 0 corrupt: 8% ╸─────────── 365/4473 245.6it/s 1.7s<16.7s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 393 images, 0 backgrounds, 0 corrupt: 9% ━─────────── 393/4473 250.8it/s 1.8s<16.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 421 images, 0 backgrounds, 0 corrupt: 9% ━─────────── 421/4473 253.5it/s 1.9s<16.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 449 images, 0 backgrounds, 0 corrupt: 10% ━─────────── 449/4473 255.6it/s 2.0s<15.7s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 477 images, 0 backgrounds, 0 corrupt: 11% ━─────────── 477/4473 259.4it/s 2.1s<15.4s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 505 images, 0 backgrounds, 0 corrupt: 11% ━─────────── 505/4473 258.5it/s 2.2s<15.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 533 images, 0 backgrounds, 0 corrupt: 12% ━─────────── 533/4473 259.0it/s 2.3s<15.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 561 images, 0 backgrounds, 0 corrupt: 13% ━╸────────── 561/4473 262.6it/s 2.4s<14.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 589 images, 0 backgrounds, 0 corrupt: 13% ━╸────────── 589/4473 263.1it/s 2.5s<14.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 634 images, 0 backgrounds, 0 corrupt: 14% ━╸────────── 634/4473 313.8it/s 2.6s<12.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 680 images, 1 backgrounds, 0 corrupt: 15% ━╸────────── 680/4473 357.4it/s 2.7s<10.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 727 images, 2 backgrounds, 0 corrupt: 16% ━╸────────── 727/4473 383.1it/s 2.9s<9.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 771 images, 4 backgrounds, 0 corrupt: 17% ━━────────── 771/4473 400.0it/s 3.0s<9.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 816 images, 4 backgrounds, 0 corrupt: 18% ━━────────── 816/4473 412.5it/s 3.1s<8.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 857 images, 6 backgrounds, 0 corrupt: 19% ━━────────── 857/4473 406.9it/s 3.2s<8.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 894 images, 8 backgrounds, 0 corrupt: 20% ━━────────── 894/4473 395.7it/s 3.3s<9.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 939 images, 8 backgrounds, 0 corrupt: 21% ━━╸───────── 939/4473 406.9it/s 3.4s<8.7s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 986 images, 8 backgrounds, 0 corrupt: 22% ━━╸───────── 986/4473 425.3it/s 3.5s<8.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1027 images, 12 backgrounds, 0 corrupt: 23% ━━╸───────── 1027/4473 414.0it/s 3.6s<8.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1074 images, 12 backgrounds, 0 corrupt: 24% ━━╸───────── 1074/4473 426.8it/s 3.7s<8.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1117 images, 13 backgrounds, 0 corrupt: 25% ━━╸───────── 1117/4473 426.2it/s 3.8s<7.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1159 images, 14 backgrounds, 0 corrupt: 26% ━━━───────── 1159/4473 422.1it/s 3.9s<7.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1205 images, 15 backgrounds, 0 corrupt: 27% ━━━───────── 1205/4473 429.4it/s 4.0s<7.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1249 images, 16 backgrounds, 0 corrupt: 28% ━━━───────── 1249/4473 422.1it/s 4.1s<7.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1294 images, 16 backgrounds, 0 corrupt: 29% ━━━───────── 1294/4473 428.6it/s 4.2s<7.4s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1333 images, 17 backgrounds, 0 corrupt: 30% ━━━╸──────── 1333/4473 413.6it/s 4.3s<7.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1371 images, 18 backgrounds, 0 corrupt: 31% ━━━╸──────── 1371/4473 397.3it/s 4.4s<7.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1415 images, 19 backgrounds, 0 corrupt: 32% ━━━╸──────── 1415/4473 409.8it/s 4.5s<7.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1449 images, 19 backgrounds, 0 corrupt: 32% ━━━╸──────── 1449/4473 375.3it/s 4.6s<8.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1484 images, 19 backgrounds, 0 corrupt: 33% ━━━╸──────── 1484/4473 367.6it/s 4.7s<8.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1521 images, 19 backgrounds, 0 corrupt: 34% ━━━━──────── 1521/4473 367.8it/s 4.8s<8.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1558 images, 19 backgrounds, 0 corrupt: 35% ━━━━──────── 1558/4473 362.1it/s 4.9s<8.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1588 images, 19 backgrounds, 0 corrupt: 36% ━━━━──────── 1588/4473 337.8it/s 5.0s<8.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1632 images, 19 backgrounds, 0 corrupt: 36% ━━━━──────── 1632/4473 360.3it/s 5.1s<7.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1665 images, 20 backgrounds, 0 corrupt: 37% ━━━━──────── 1665/4473 327.3it/s 5.3s<8.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1705 images, 20 backgrounds, 0 corrupt: 38% ━━━━╸─────── 1705/4473 334.7it/s 5.4s<8.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1756 images, 24 backgrounds, 0 corrupt: 39% ━━━━╸─────── 1756/4473 385.3it/s 5.5s<7.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1784 images, 24 backgrounds, 0 corrupt: 40% ━━━━╸─────── 1784/4473 352.7it/s 5.6s<7.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1808 images, 24 backgrounds, 0 corrupt: 40% ━━━━╸─────── 1808/4473 310.2it/s 5.7s<8.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1852 images, 26 backgrounds, 0 corrupt: 41% ━━━━╸─────── 1852/4473 347.9it/s 5.8s<7.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1887 images, 26 backgrounds, 0 corrupt: 42% ━━━━━─────── 1887/4473 345.7it/s 5.9s<7.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1923 images, 26 backgrounds, 0 corrupt: 43% ━━━━━─────── 1923/4473 344.6it/s 6.0s<7.4s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1959 images, 26 backgrounds, 0 corrupt: 44% ━━━━━─────── 1959/4473 347.9it/s 6.1s<7.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 1994 images, 27 backgrounds, 0 corrupt: 45% ━━━━━─────── 1994/4473 344.2it/s 6.2s<7.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2029 images, 28 backgrounds, 0 corrupt: 45% ━━━━━─────── 2029/4473 343.9it/s 6.3s<7.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2065 images, 28 backgrounds, 0 corrupt: 46% ━━━━━╸────── 2065/4473 338.2it/s 6.4s<7.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2108 images, 28 backgrounds, 0 corrupt: 47% ━━━━━╸────── 2108/4473 337.7it/s 6.5s<7.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2146 images, 29 backgrounds, 0 corrupt: 48% ━━━━━╸────── 2146/4473 330.1it/s 6.7s<7.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2183 images, 29 backgrounds, 0 corrupt: 49% ━━━━━╸────── 2183/4473 336.5it/s 6.8s<6.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2216 images, 29 backgrounds, 0 corrupt: 50% ━━━━━╸────── 2216/4473 331.7it/s 6.9s<6.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2248 images, 32 backgrounds, 0 corrupt: 50% ━━━━━━────── 2248/4473 326.4it/s 7.0s<6.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2273 images, 32 backgrounds, 0 corrupt: 51% ━━━━━━────── 2273/4473 303.3it/s 7.1s<7.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2312 images, 34 backgrounds, 0 corrupt: 52% ━━━━━━────── 2312/4473 328.0it/s 7.2s<6.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2350 images, 34 backgrounds, 0 corrupt: 53% ━━━━━━────── 2350/4473 331.7it/s 7.3s<6.4s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2380 images, 34 backgrounds, 0 corrupt: 53% ━━━━━━────── 2380/4473 315.3it/s 7.4s<6.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2420 images, 35 backgrounds, 0 corrupt: 54% ━━━━━━────── 2420/4473 338.4it/s 7.5s<6.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2457 images, 37 backgrounds, 0 corrupt: 55% ━━━━━━╸───── 2457/4473 345.6it/s 7.6s<5.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2497 images, 38 backgrounds, 0 corrupt: 56% ━━━━━━╸───── 2497/4473 361.5it/s 7.7s<5.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2537 images, 38 backgrounds, 0 corrupt: 57% ━━━━━━╸───── 2537/4473 372.7it/s 7.8s<5.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2573 images, 38 backgrounds, 0 corrupt: 58% ━━━━━━╸───── 2573/4473 367.4it/s 7.9s<5.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2611 images, 38 backgrounds, 0 corrupt: 58% ━━━━━━━───── 2611/4473 371.2it/s 8.0s<5.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2655 images, 40 backgrounds, 0 corrupt: 59% ━━━━━━━───── 2655/4473 389.4it/s 8.1s<4.7s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2681 images, 41 backgrounds, 0 corrupt: 60% ━━━━━━━───── 2681/4473 350.5it/s 8.2s<5.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2709 images, 43 backgrounds, 0 corrupt: 61% ━━━━━━━───── 2709/4473 329.3it/s 8.3s<5.4s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2750 images, 44 backgrounds, 0 corrupt: 61% ━━━━━━━───── 2750/4473 351.2it/s 8.4s<4.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2769 images, 44 backgrounds, 0 corrupt: 62% ━━━━━━━───── 2769/4473 279.5it/s 8.6s<6.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2780 images, 45 backgrounds, 0 corrupt: 62% ━━━━━━━───── 2780/4473 224.6it/s 8.7s<7.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2825 images, 45 backgrounds, 0 corrupt: 63% ━━━━━━━╸──── 2825/4473 266.3it/s 8.8s<6.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2856 images, 46 backgrounds, 0 corrupt: 64% ━━━━━━━╸──── 2856/4473 264.1it/s 8.9s<6.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2895 images, 47 backgrounds, 0 corrupt: 65% ━━━━━━━╸──── 2895/4473 295.3it/s 9.0s<5.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2936 images, 48 backgrounds, 0 corrupt: 66% ━━━━━━━╸──── 2936/4473 322.9it/s 9.1s<4.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 2975 images, 50 backgrounds, 0 corrupt: 67% ━━━━━━━╸──── 2975/4473 333.9it/s 9.3s<4.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3012 images, 51 backgrounds, 0 corrupt: 67% ━━━━━━━━──── 3012/4473 339.3it/s 9.4s<4.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3056 images, 51 backgrounds, 0 corrupt: 68% ━━━━━━━━──── 3056/4473 363.7it/s 9.5s<3.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3103 images, 53 backgrounds, 0 corrupt: 69% ━━━━━━━━──── 3103/4473 393.1it/s 9.6s<3.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3148 images, 53 backgrounds, 0 corrupt: 70% ━━━━━━━━──── 3148/4473 404.4it/s 9.7s<3.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3191 images, 55 backgrounds, 0 corrupt: 71% ━━━━━━━━╸─── 3191/4473 411.3it/s 9.8s<3.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3230 images, 57 backgrounds, 0 corrupt: 72% ━━━━━━━━╸─── 3230/4473 403.3it/s 9.9s<3.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3264 images, 57 backgrounds, 0 corrupt: 73% ━━━━━━━━╸─── 3264/4473 383.3it/s 10.0s<3.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3302 images, 58 backgrounds, 0 corrupt: 74% ━━━━━━━━╸─── 3302/4473 378.6it/s 10.1s<3.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3331 images, 58 backgrounds, 0 corrupt: 74% ━━━━━━━━╸─── 3331/4473 350.1it/s 10.2s<3.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3371 images, 58 backgrounds, 0 corrupt: 75% ━━━━━━━━━─── 3371/4473 361.4it/s 10.3s<3.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3412 images, 60 backgrounds, 0 corrupt: 76% ━━━━━━━━━─── 3412/4473 369.5it/s 10.4s<2.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3454 images, 60 backgrounds, 0 corrupt: 77% ━━━━━━━━━─── 3454/4473 383.4it/s 10.5s<2.7s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3490 images, 62 backgrounds, 0 corrupt: 78% ━━━━━━━━━─── 3490/4473 371.9it/s 10.6s<2.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3531 images, 63 backgrounds, 0 corrupt: 79% ━━━━━━━━━─── 3531/4473 375.9it/s 10.7s<2.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3567 images, 63 backgrounds, 0 corrupt: 80% ━━━━━━━━━╸── 3567/4473 371.1it/s 10.8s<2.4s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3605 images, 63 backgrounds, 0 corrupt: 81% ━━━━━━━━━╸── 3605/4473 369.3it/s 10.9s<2.4s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3643 images, 65 backgrounds, 0 corrupt: 81% ━━━━━━━━━╸── 3643/4473 366.7it/s 11.0s<2.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3683 images, 67 backgrounds, 0 corrupt: 82% ━━━━━━━━━╸── 3683/4473 363.3it/s 11.1s<2.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3720 images, 67 backgrounds, 0 corrupt: 83% ━━━━━━━━━╸── 3720/4473 360.5it/s 11.2s<2.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3760 images, 71 backgrounds, 0 corrupt: 84% ━━━━━━━━━━── 3760/4473 370.6it/s 11.3s<1.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3802 images, 72 backgrounds, 0 corrupt: 85% ━━━━━━━━━━── 3802/4473 376.9it/s 11.4s<1.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3843 images, 72 backgrounds, 0 corrupt: 86% ━━━━━━━━━━── 3843/4473 383.4it/s 11.5s<1.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3879 images, 74 backgrounds, 0 corrupt: 87% ━━━━━━━━━━── 3879/4473 371.0it/s 11.6s<1.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3924 images, 75 backgrounds, 0 corrupt: 88% ━━━━━━━━━━╸─ 3924/4473 394.1it/s 11.7s<1.4s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 3970 images, 77 backgrounds, 0 corrupt: 89% ━━━━━━━━━━╸─ 3970/4473 400.5it/s 11.9s<1.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4012 images, 78 backgrounds, 0 corrupt: 90% ━━━━━━━━━━╸─ 4012/4473 404.1it/s 12.0s<1.1s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4043 images, 79 backgrounds, 0 corrupt: 90% ━━━━━━━━━━╸─ 4043/4473 365.6it/s 12.1s<1.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4087 images, 79 backgrounds, 0 corrupt: 91% ━━━━━━━━━━╸─ 4087/4473 385.2it/s 12.2s<1.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4123 images, 81 backgrounds, 0 corrupt: 92% ━━━━━━━━━━━─ 4123/4473 375.8it/s 12.3s<0.9s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4163 images, 82 backgrounds, 0 corrupt: 93% ━━━━━━━━━━━─ 4163/4473 382.8it/s 12.4s<0.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4203 images, 82 backgrounds, 0 corrupt: 94% ━━━━━━━━━━━─ 4203/4473 385.6it/s 12.5s<0.7s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4239 images, 83 backgrounds, 0 corrupt: 95% ━━━━━━━━━━━─ 4239/4473 375.8it/s 12.6s<0.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4270 images, 83 backgrounds, 0 corrupt: 95% ━━━━━━━━━━━─ 4270/4473 328.6it/s 12.7s<0.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4280 images, 83 backgrounds, 0 corrupt: 96% ━━━━━━━━━━━─ 4280/4473 245.7it/s 12.9s<0.8s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4318 images, 83 backgrounds, 0 corrupt: 97% ━━━━━━━━━━━╸ 4318/4473 279.7it/s 13.0s<0.6s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4359 images, 83 backgrounds, 0 corrupt: 97% ━━━━━━━━━━━╸ 4359/4473 308.1it/s 13.1s<0.4s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4393 images, 86 backgrounds, 0 corrupt: 98% ━━━━━━━━━━━╸ 4393/4473 309.2it/s 13.2s<0.3s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4425 images, 87 backgrounds, 0 corrupt: 99% ━━━━━━━━━━━╸ 4425/4473 310.9it/s 13.3s<0.2s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4469 images, 87 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━╸ 4469/4473 324.5it/s 13.5s<0.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4473 images, 87 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 4473/4473 332.3it/s 13.5s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\domain_augmented\labels... 4473 images, 87 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 4473/4473 332.3it/s 13.5s
+[34m[1mtrain: [0mNew cache created: D:\fire ai\data\domain_augmented\labels.cache
+[34m[1mval: [0mFast image access  (ping: 0.60.0 ms, read: 5.12.4 MB/s, size: 79.3 KB)
+
+[K[34m[1mval: [0mScanning D:\fire ai\data\prepared\val\labels.cache... 1297 images, 33 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1297/1297  0.0s
+[K[34m[1mval: [0mScanning D:\fire ai\data\prepared\val\labels.cache... 1297 images, 33 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1297/1297  0.0s
+Plotting labels to D:\fire ai\runs\optimization\domain_adaptation\labels.jpg... 
+[34m[1moptimizer:[0m AdamW(lr=0.0002, momentum=0.937) with parameter groups 57 weight(decay=0.0), 64 weight(decay=0.0005), 63 bias(decay=0.0)
+Image sizes 416 train, 416 val
+Using 0 dataloader workers
+Logging results to [1mD:\fire ai\runs\optimization\domain_adaptation[0m
+Starting training for 3 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+
+[K        1/3     0.609G      1.178     0.9177      1.104         10        416: 0% ──────────── 0/560  2.5s
+[K        1/3     0.609G      1.163      0.798      1.189         11        416: 0% ──────────── 1/560 0.6it/s 3.0s<14:24
+[K        1/3     0.609G      1.284     0.9061       1.32          9        416: 0% ──────────── 2/560 1.3it/s 3.3s<7:12
+[K        1/3     0.609G      1.363     0.9862      1.554         11        416: 1% ──────────── 3/560 1.8it/s 3.7s<5:10
+[K        1/3     0.609G      1.399      1.016      1.614          9        416: 1% ──────────── 4/560 2.1it/s 4.0s<4:20
+[K        1/3     0.609G       1.47       1.04      1.605         10        416: 1% ──────────── 5/560 2.5it/s 4.3s<3:44
+[K        1/3     0.609G      1.439      1.077      1.588         12        416: 1% ──────────── 6/560 2.7it/s 4.6s<3:25
+[K        1/3     0.609G      1.386      1.049      1.548          9        416: 1% ──────────── 7/560 2.8it/s 5.0s<3:15
+[K        1/3     0.609G      1.384       1.04       1.67          8        416: 1% ──────────── 8/560 2.9it/s 5.3s<3:11
+[K        1/3     0.609G      1.369      1.043      1.636         10        416: 2% ──────────── 9/560 2.9it/s 5.6s<3:09
+[K        1/3     0.609G      1.361      1.038      1.606          9        416: 2% ──────────── 10/560 3.0it/s 5.9s<3:04
+[K        1/3     0.609G      1.359      1.025      1.602          9        416: 2% ──────────── 11/560 3.1it/s 6.2s<2:58
+[K        1/3     0.609G      1.342      1.012       1.56          9        416: 2% ──────────── 12/560 3.1it/s 6.5s<2:55
+[K        1/3     0.609G      1.366      1.014      1.542         10        416: 2% ──────────── 13/560 3.1it/s 6.9s<2:55
+[K        1/3     0.609G       1.34     0.9976      1.506          7        416: 2% ──────────── 14/560 3.1it/s 7.2s<2:53
+[K        1/3     0.609G      1.336     0.9912      1.503          8        416: 3% ──────────── 15/560 3.2it/s 7.5s<2:52
+[K        1/3     0.609G      1.357      1.011      1.495         13        416: 3% ──────────── 16/560 3.2it/s 7.8s<2:48
+[K        1/3     0.609G      1.353      1.001      1.507          9        416: 3% ──────────── 17/560 3.3it/s 8.1s<2:45
+[K        1/3     0.609G      1.347     0.9991        1.5          9        416: 3% ──────────── 18/560 3.2it/s 8.4s<2:48
+[K        1/3     0.609G       1.33     0.9842      1.478          9        416: 3% ──────────── 19/560 3.1it/s 8.8s<2:54
+[K        1/3     0.609G      1.321     0.9774      1.466         11        416: 4% ──────────── 20/560 3.2it/s 9.1s<2:50
+[K        1/3     0.609G      1.309     0.9769      1.463          9        416: 4% ──────────── 21/560 3.2it/s 9.4s<2:49
+[K        1/3     0.609G      1.298      0.968      1.449         11        416: 4% ──────────── 22/560 3.2it/s 9.7s<2:48
+[K        1/3     0.609G      1.297     0.9593      1.431          9        416: 4% ──────────── 23/560 3.2it/s 10.0s<2:48
+[K        1/3     0.609G      1.294     0.9611      1.441         11        416: 4% ╸─────────── 24/560 3.2it/s 10.3s<2:48
+[K        1/3     0.609G      1.295     0.9549      1.432         10        416: 4% ╸─────────── 25/560 3.2it/s 10.6s<2:48
+[K        1/3     0.609G      1.302     0.9516      1.441         10        416: 5% ╸─────────── 26/560 3.2it/s 10.9s<2:47
+[K        1/3     0.609G      1.301     0.9508      1.425         10        416: 5% ╸─────────── 27/560 3.2it/s 11.2s<2:46
+[K        1/3     0.609G      1.303     0.9666      1.432         14        416: 5% ╸─────────── 28/560 2.9it/s 11.7s<3:01
+[K        1/3     0.609G      1.311     0.9676      1.441          9        416: 5% ╸─────────── 29/560 2.7it/s 12.2s<3:20
+[K        1/3     0.609G      1.325     0.9739      1.445         10        416: 5% ╸─────────── 30/560 2.6it/s 12.6s<3:27
+[K        1/3     0.609G      1.316     0.9635      1.442          8        416: 6% ╸─────────── 31/560 2.5it/s 13.0s<3:33
+[K        1/3     0.609G      1.309     0.9525      1.429         10        416: 6% ╸─────────── 32/560 2.6it/s 13.4s<3:27
+[K        1/3     0.609G      1.308     0.9608      1.429          9        416: 6% ╸─────────── 33/560 2.6it/s 13.8s<3:23
+[K        1/3     0.609G      1.306     0.9535      1.423          9        416: 6% ╸─────────── 34/560 2.7it/s 14.1s<3:14
+[K        1/3     0.609G      1.302     0.9552      1.423         11        416: 6% ╸─────────── 35/560 2.6it/s 14.5s<3:19
+[K        1/3     0.609G      1.306     0.9573      1.433          9        416: 6% ╸─────────── 36/560 2.6it/s 14.9s<3:20
+[K        1/3     0.609G      1.306     0.9636       1.44         11        416: 7% ╸─────────── 37/560 2.3it/s 15.6s<3:52
+[K        1/3     0.609G        1.3     0.9605      1.433          9        416: 7% ╸─────────── 38/560 2.2it/s 16.1s<3:57
+[K        1/3     0.611G      1.301     0.9591      1.431         14        416: 7% ╸─────────── 39/560 2.3it/s 16.5s<3:43
+[K        1/3     0.611G      1.294     0.9526      1.422         11        416: 7% ╸─────────── 40/560 2.6it/s 16.8s<3:18
+[K        1/3     0.619G      1.299     0.9557      1.431          9        416: 7% ╸─────────── 41/560 2.4it/s 17.3s<3:34
+[K        1/3     0.619G      1.311     0.9578       1.44          7        416: 8% ╸─────────── 42/560 2.5it/s 17.7s<3:29
+[K        1/3     0.619G      1.306     0.9524      1.436          8        416: 8% ╸─────────── 43/560 2.3it/s 18.2s<3:41
+[K        1/3     0.619G      1.305     0.9469      1.432          8        416: 8% ╸─────────── 44/560 2.2it/s 18.7s<3:51
+[K        1/3     0.619G      1.299     0.9405      1.421          7        416: 8% ╸─────────── 45/560 2.0it/s 19.3s<4:14
+[K        1/3     0.619G      1.293      0.938      1.414          7        416: 8% ╸─────────── 46/560 1.9it/s 20.0s<4:33
+[K        1/3     0.619G      1.297     0.9369       1.41         10        416: 8% ━─────────── 47/560 1.8it/s 20.5s<4:39
+[K        1/3     0.619G      1.297     0.9408      1.417          8        416: 9% ━─────────── 48/560 2.0it/s 20.9s<4:13
+[K        1/3     0.619G      1.295     0.9378      1.412          9        416: 9% ━─────────── 49/560 1.9it/s 21.5s<4:23
+[K        1/3     0.619G      1.295     0.9323      1.409         10        416: 9% ━─────────── 50/560 1.8it/s 22.2s<4:43
+[K        1/3     0.619G      1.295     0.9321      1.408         12        416: 9% ━─────────── 51/560 1.7it/s 22.8s<4:55
+[K        1/3     0.619G      1.294     0.9266      1.404         10        416: 9% ━─────────── 52/560 2.0it/s 23.2s<4:15
+[K        1/3     0.619G       1.29     0.9285      1.398          9        416: 9% ━─────────── 53/560 1.9it/s 23.8s<4:27
+[K        1/3     0.619G      1.291     0.9259      1.392          7        416: 10% ━─────────── 54/560 2.2it/s 24.2s<3:53
+[K        1/3     0.619G      1.295     0.9245      1.397         10        416: 10% ━─────────── 55/560 2.2it/s 24.6s<3:50
+[K        1/3     0.619G      1.299     0.9219      1.402         10        416: 10% ━─────────── 56/560 2.4it/s 25.0s<3:31
+[K        1/3     0.619G      1.294     0.9181      1.395         10        416: 10% ━─────────── 57/560 2.3it/s 25.4s<3:37
+[K        1/3     0.619G       1.29     0.9147      1.392          7        416: 10% ━─────────── 58/560 2.5it/s 25.8s<3:21
+[K        1/3     0.619G      1.287     0.9139       1.39          8        416: 11% ━─────────── 59/560 2.5it/s 26.2s<3:23
+[K        1/3     0.619G      1.288     0.9215      1.386         12        416: 11% ━─────────── 60/560 2.4it/s 26.6s<3:28
+[K        1/3     0.619G      1.293     0.9218      1.391          9        416: 11% ━─────────── 61/560 2.1it/s 27.4s<4:00
+[K        1/3     0.619G       1.29     0.9189       1.39          8        416: 11% ━─────────── 62/560 2.0it/s 27.9s<4:09
+[K        1/3     0.619G      1.288     0.9173      1.387          9        416: 11% ━─────────── 63/560 1.9it/s 28.5s<4:15
+[K        1/3     0.619G      1.292     0.9205      1.386         10        416: 11% ━─────────── 64/560 2.2it/s 28.9s<3:46
+[K        1/3     0.619G       1.29     0.9166      1.381          8        416: 12% ━─────────── 65/560 2.1it/s 29.3s<3:50
+[K        1/3     0.619G      1.291     0.9148       1.38          9        416: 12% ━─────────── 66/560 2.4it/s 29.7s<3:26
+[K        1/3     0.619G      1.292      0.915      1.382          9        416: 12% ━─────────── 67/560 2.4it/s 30.1s<3:25
+[K        1/3     0.619G      1.294     0.9165      1.379          7        416: 12% ━─────────── 68/560 2.5it/s 30.5s<3:15
+[K        1/3     0.619G      1.291     0.9133      1.374         10        416: 12% ━─────────── 69/560 2.4it/s 30.9s<3:27
+[K        1/3     0.619G      1.293     0.9138      1.375         10        416: 12% ━─────────── 70/560 2.3it/s 31.4s<3:30
+[K        1/3     0.619G      1.294     0.9174       1.38         10        416: 13% ━╸────────── 71/560 2.2it/s 31.9s<3:38
+[K        1/3     0.619G      1.293     0.9185      1.379          8        416: 13% ━╸────────── 72/560 2.2it/s 32.4s<3:44
+[K        1/3     0.619G      1.293     0.9155      1.379          9        416: 13% ━╸────────── 73/560 2.0it/s 33.0s<4:07
+[K        1/3     0.619G      1.291     0.9122      1.375          9        416: 13% ━╸────────── 74/560 1.8it/s 33.7s<4:27
+[K        1/3     0.619G      1.292     0.9151      1.376         10        416: 13% ━╸────────── 75/560 1.9it/s 34.2s<4:16
+[K        1/3     0.619G      1.293     0.9172      1.377          8        416: 14% ━╸────────── 76/560 2.0it/s 34.7s<4:02
+[K        1/3     0.619G      1.294     0.9192      1.376         13        416: 14% ━╸────────── 77/560 1.9it/s 35.3s<4:14
+[K        1/3     0.619G       1.29     0.9152      1.373          8        416: 14% ━╸────────── 78/560 1.9it/s 35.8s<4:09
+[K        1/3     0.619G      1.291     0.9137      1.372         12        416: 14% ━╸────────── 79/560 1.9it/s 36.3s<4:14
+[K        1/3     0.619G      1.291     0.9111      1.374          8        416: 14% ━╸────────── 80/560 2.1it/s 36.7s<3:46
+[K        1/3     0.619G      1.289     0.9103      1.375         11        416: 14% ━╸────────── 81/560 2.2it/s 37.1s<3:37
+[K        1/3     0.619G      1.292     0.9105      1.376         12        416: 15% ━╸────────── 82/560 2.3it/s 37.5s<3:25
+[K        1/3     0.619G       1.29       0.91      1.376          8        416: 15% ━╸────────── 83/560 2.1it/s 38.1s<3:45
+[K        1/3     0.619G      1.293     0.9146      1.385          8        416: 15% ━╸────────── 84/560 2.3it/s 38.5s<3:29
+[K        1/3     0.619G      1.295     0.9172      1.381          8        416: 15% ━╸────────── 85/560 2.2it/s 38.9s<3:31
+[K        1/3     0.619G      1.297     0.9159      1.377         12        416: 15% ━╸────────── 86/560 2.5it/s 39.3s<3:09
+[K        1/3     0.619G      1.296     0.9167      1.378         10        416: 16% ━╸────────── 87/560 2.4it/s 39.7s<3:14
+[K        1/3     0.619G      1.294     0.9146      1.375         10        416: 16% ━╸────────── 88/560 2.7it/s 40.0s<2:54
+[K        1/3     0.619G      1.294     0.9155      1.378         10        416: 16% ━╸────────── 89/560 2.7it/s 40.4s<2:57
+[K        1/3     0.619G      1.294     0.9139      1.378          8        416: 16% ━╸────────── 90/560 2.7it/s 40.7s<2:53
+[K        1/3     0.619G      1.299      0.914      1.381          9        416: 16% ━╸────────── 91/560 2.5it/s 41.2s<3:05
+[K        1/3     0.619G      1.302     0.9127      1.386          7        416: 16% ━╸────────── 92/560 2.7it/s 41.6s<2:55
+[K        1/3     0.619G      1.299      0.912      1.386          9        416: 17% ━╸────────── 93/560 2.6it/s 42.0s<2:58
+[K        1/3     0.619G      1.299     0.9119      1.387          8        416: 17% ━━────────── 94/560 2.9it/s 42.2s<2:42
+[K        1/3     0.619G      1.297     0.9111      1.385         11        416: 17% ━━────────── 95/560 2.8it/s 42.6s<2:46
+[K        1/3     0.619G      1.298     0.9113      1.388          9        416: 17% ━━────────── 96/560 2.9it/s 42.9s<2:41
+[K        1/3     0.619G      1.295     0.9101      1.387         10        416: 17% ━━────────── 97/560 2.6it/s 43.4s<2:57
+[K        1/3     0.619G      1.292     0.9086      1.385         11        416: 18% ━━────────── 98/560 2.6it/s 43.8s<2:57
+[K        1/3     0.619G       1.29      0.908      1.386          9        416: 18% ━━────────── 99/560 2.5it/s 44.3s<3:05
+[K        1/3     0.619G      1.292     0.9083      1.386          9        416: 18% ━━────────── 100/560 2.7it/s 44.6s<2:49
+[K        1/3     0.619G       1.29     0.9061      1.385          8        416: 18% ━━────────── 101/560 2.4it/s 45.2s<3:09
+[K        1/3     0.619G      1.293     0.9119      1.389         10        416: 18% ━━────────── 102/560 2.6it/s 45.5s<2:56
+[K        1/3     0.619G      1.294     0.9123      1.389         14        416: 18% ━━────────── 103/560 2.7it/s 45.9s<2:52
+[K        1/3     0.619G      1.302     0.9191      1.398         12        416: 19% ━━────────── 104/560 2.8it/s 46.2s<2:41
+[K        1/3     0.619G      1.302     0.9199      1.399          9        416: 19% ━━────────── 105/560 2.8it/s 46.5s<2:40
+[K        1/3     0.619G      1.301     0.9181      1.399          9        416: 19% ━━────────── 106/560 3.2it/s 46.8s<2:24
+[K        1/3     0.619G      1.299     0.9167      1.398          8        416: 19% ━━────────── 107/560 2.8it/s 47.3s<2:44
+[K        1/3     0.619G        1.3     0.9162      1.397         11        416: 19% ━━────────── 108/560 2.9it/s 47.6s<2:38
+[K        1/3     0.619G      1.303     0.9179        1.4         10        416: 19% ━━────────── 109/560 2.7it/s 48.0s<2:45
+[K        1/3     0.619G      1.305     0.9164        1.4         11        416: 20% ━━────────── 110/560 2.8it/s 48.4s<2:41
+[K        1/3     0.619G      1.304     0.9156      1.398          9        416: 20% ━━────────── 111/560 2.6it/s 48.8s<2:51
+[K        1/3     0.619G      1.301     0.9135      1.395         10        416: 20% ━━────────── 112/560 2.7it/s 49.2s<2:48
+[K        1/3     0.619G      1.302     0.9146      1.398          8        416: 20% ━━────────── 113/560 2.4it/s 49.7s<3:03
+[K        1/3     0.619G      1.299     0.9131      1.396          9        416: 20% ━━────────── 114/560 2.3it/s 50.2s<3:11
+[K        1/3     0.619G      1.298     0.9101      1.392          9        416: 21% ━━────────── 115/560 2.3it/s 50.7s<3:15
+[K        1/3     0.619G      1.303     0.9111      1.393          8        416: 21% ━━────────── 116/560 2.4it/s 51.0s<3:05
+[K        1/3     0.619G      1.304     0.9115      1.393         10        416: 21% ━━╸───────── 117/560 2.5it/s 51.4s<2:57
+[K        1/3     0.619G      1.304     0.9102      1.392          9        416: 21% ━━╸───────── 118/560 2.5it/s 51.8s<2:58
+[K        1/3     0.619G      1.304     0.9088      1.392          8        416: 21% ━━╸───────── 119/560 2.3it/s 52.4s<3:14
+[K        1/3     0.619G      1.305     0.9102      1.391         11        416: 21% ━━╸───────── 120/560 2.4it/s 52.7s<2:60
+[K        1/3     0.619G      1.306     0.9129      1.392         10        416: 22% ━━╸───────── 121/560 2.4it/s 53.1s<3:00
+[K        1/3     0.619G      1.306     0.9122       1.39          8        416: 22% ━━╸───────── 122/560 2.5it/s 53.5s<2:58
+[K        1/3     0.619G      1.305     0.9106      1.388         10        416: 22% ━━╸───────── 123/560 2.7it/s 53.8s<2:40
+[K        1/3     0.619G      1.301     0.9083      1.386         10        416: 22% ━━╸───────── 124/560 3.1it/s 54.1s<2:21
+[K        1/3     0.619G        1.3      0.908      1.384          9        416: 22% ━━╸───────── 125/560 2.9it/s 54.5s<2:28
+[K        1/3     0.619G      1.298     0.9055      1.383         11        416: 22% ━━╸───────── 126/560 3.1it/s 54.8s<2:22
+[K        1/3     0.619G        1.3     0.9045      1.384          9        416: 23% ━━╸───────── 127/560 2.7it/s 55.3s<2:39
+[K        1/3     0.619G      1.301     0.9043      1.384         10        416: 23% ━━╸───────── 128/560 2.7it/s 55.6s<2:38
+[K        1/3     0.619G      1.302      0.903      1.384         10        416: 23% ━━╸───────── 129/560 3.1it/s 55.9s<2:18
+[K        1/3     0.619G      1.303     0.9019      1.385          8        416: 23% ━━╸───────── 130/560 3.4it/s 56.1s<2:07
+[K        1/3     0.619G      1.302     0.9001      1.387          9        416: 23% ━━╸───────── 131/560 3.2it/s 56.5s<2:13
+[K        1/3     0.619G      1.303     0.9051      1.389          7        416: 24% ━━╸───────── 132/560 3.3it/s 56.8s<2:09
+[K        1/3     0.619G      1.303     0.9042      1.387          9        416: 24% ━━╸───────── 133/560 3.5it/s 57.0s<2:02
+[K        1/3     0.619G      1.301     0.9025      1.385          8        416: 24% ━━╸───────── 134/560 3.4it/s 57.3s<2:05
+[K        1/3     0.619G      1.299        0.9      1.384         10        416: 24% ━━╸───────── 135/560 3.6it/s 57.6s<1:59
+[K        1/3     0.619G        1.3     0.9009      1.384          9        416: 24% ━━╸───────── 136/560 3.7it/s 57.8s<1:53
+[K        1/3     0.619G      1.299     0.9009      1.384          9        416: 24% ━━╸───────── 137/560 3.6it/s 58.1s<1:57
+[K        1/3     0.619G      1.299     0.9004      1.383         10        416: 25% ━━╸───────── 138/560 3.8it/s 58.4s<1:51
+[K        1/3     0.619G      1.299     0.9002      1.381         11        416: 25% ━━╸───────── 139/560 3.9it/s 58.6s<1:47
+[K        1/3     0.619G      1.297     0.8982      1.379         10        416: 25% ━━━───────── 140/560 3.7it/s 58.9s<1:54
+[K        1/3     0.619G      1.298     0.8986      1.379          8        416: 25% ━━━───────── 141/560 3.7it/s 59.2s<1:53
+[K        1/3     0.621G      1.299     0.8988      1.379         13        416: 25% ━━━───────── 142/560 3.7it/s 59.5s<1:54
+[K        1/3     0.621G      1.298     0.8972      1.377          8        416: 26% ━━━───────── 143/560 3.5it/s 59.8s<2:00
+[K        1/3     0.621G      1.301      0.899      1.376          9        416: 26% ━━━───────── 144/560 3.6it/s 1:00<1:55
+[K        1/3     0.621G      1.301     0.8981      1.373         10        416: 26% ━━━───────── 145/560 3.6it/s 1:00<1:55
+[K        1/3     0.621G        1.3     0.8978      1.373         10        416: 26% ━━━───────── 146/560 3.4it/s 1:01<2:01
+[K        1/3     0.621G      1.299     0.8964      1.371         12        416: 26% ━━━───────── 147/560 3.6it/s 1:01<1:54
+[K        1/3     0.621G      1.297     0.8952       1.37         10        416: 26% ━━━───────── 148/560 3.7it/s 1:01<1:51
+[K        1/3     0.621G      1.298     0.8968      1.372         13        416: 27% ━━━───────── 149/560 3.6it/s 1:01<1:54
+[K        1/3     0.621G      1.296      0.895      1.369         10        416: 27% ━━━───────── 150/560 3.8it/s 1:02<1:48
+[K        1/3     0.621G      1.295     0.8945      1.367          9        416: 27% ━━━───────── 151/560 3.7it/s 1:02<1:49
+[K        1/3     0.621G      1.295     0.8927      1.366          8        416: 27% ━━━───────── 152/560 3.4it/s 1:02<2:01
+[K        1/3     0.621G      1.293     0.8908      1.364          9        416: 27% ━━━───────── 153/560 3.4it/s 1:03<2:01

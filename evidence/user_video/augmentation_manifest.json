@@ -1,0 +1,6608 @@
+{
+  "original_training_images": 3873,
+  "generated": 600,
+  "seed": 42,
+  "source_policy": "Original training split only; user video and validation/test excluded",
+  "images": [
+    {
+      "source": "data\\prepared\\train\\images\\train_1088.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1088.jpg",
+      "bounds": [
+        477,
+        239,
+        586,
+        326
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2455.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2455.jpg",
+      "bounds": [
+        228,
+        260,
+        252,
+        288
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_363.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_363.jpg",
+      "bounds": [
+        226,
+        263,
+        258,
+        286
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3534.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3534.jpg",
+      "bounds": [
+        362,
+        75,
+        397,
+        95
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3397.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3397.jpg",
+      "bounds": [
+        327,
+        164,
+        354,
+        196
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3186.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3186.jpg",
+      "bounds": [
+        280,
+        0,
+        354,
+        194
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3781.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3781.jpg",
+      "bounds": [
+        412,
+        173,
+        533,
+        330
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2997.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2997.jpg",
+      "bounds": [
+        223,
+        189,
+        277,
+        261
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1966.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1966.jpg",
+      "bounds": [
+        344,
+        306,
+        389,
+        343
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1556.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1556.jpg",
+      "bounds": [
+        220,
+        226,
+        240,
+        251
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_220.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_220.jpg",
+      "bounds": [
+        357,
+        209,
+        424,
+        272
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1603.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1603.jpg",
+      "bounds": [
+        294,
+        185,
+        392,
+        281
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1110.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1110.jpg",
+      "bounds": [
+        259,
+        173,
+        364,
+        348
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_886.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_886.jpg",
+      "bounds": [
+        299,
+        45,
+        381,
+        141
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3102.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3102.jpg",
+      "bounds": [
+        245,
+        131,
+        420,
+        198
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4008.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4008.jpg",
+      "bounds": [
+        301,
+        201,
+        335,
+        263
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3314.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3314.jpg",
+      "bounds": [
+        292,
+        183,
+        408,
+        295
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1014.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1014.jpg",
+      "bounds": [
+        348,
+        167,
+        355,
+        176
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_372.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_372.jpg",
+      "bounds": [
+        331,
+        216,
+        459,
+        318
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1514.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1514.jpg",
+      "bounds": [
+        86,
+        0,
+        547,
+        286
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3262.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3262.jpg",
+      "bounds": [
+        152,
+        207,
+        193,
+        276
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2145.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2145.jpg",
+      "bounds": [
+        346,
+        309,
+        390,
+        342
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3669.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3669.jpg",
+      "bounds": [
+        340,
+        238,
+        410,
+        295
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1871.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1871.jpg",
+      "bounds": [
+        308,
+        218,
+        360,
+        301
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1695.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1695.jpg",
+      "bounds": [
+        366,
+        184,
+        470,
+        261
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2882.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2882.jpg",
+      "bounds": [
+        296,
+        34,
+        431,
+        209
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2628.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2628.jpg",
+      "bounds": [
+        240,
+        37,
+        264,
+        82
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3368.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3368.jpg",
+      "bounds": [
+        214,
+        162,
+        240,
+        198
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3159.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3159.jpg",
+      "bounds": [
+        332,
+        259,
+        348,
+        275
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1552.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1552.jpg",
+      "bounds": [
+        113,
+        95,
+        334,
+        231
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_580.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_580.jpg",
+      "bounds": [
+        283,
+        198,
+        420,
+        267
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_439.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_439.jpg",
+      "bounds": [
+        306,
+        28,
+        481,
+        203
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_877.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_877.jpg",
+      "bounds": [
+        271,
+        77,
+        387,
+        224
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_835.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_835.jpg",
+      "bounds": [
+        303,
+        82,
+        387,
+        196
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2593.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2593.jpg",
+      "bounds": [
+        0,
+        102,
+        83,
+        291
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_527.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_527.jpg",
+      "bounds": [
+        170,
+        49,
+        327,
+        168
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2087.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2087.jpg",
+      "bounds": [
+        273,
+        0,
+        439,
+        267
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_311.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_311.jpg",
+      "bounds": [
+        154,
+        212,
+        188,
+        271
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_408.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_408.jpg",
+      "bounds": [
+        120,
+        112,
+        237,
+        268
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1582.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1582.jpg",
+      "bounds": [
+        198,
+        39,
+        324,
+        292
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2189.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2189.jpg",
+      "bounds": [
+        152,
+        215,
+        215,
+        277
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3501.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3501.jpg",
+      "bounds": [
+        218,
+        249,
+        246,
+        282
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1564.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1564.jpg",
+      "bounds": [
+        292,
+        92,
+        360,
+        350
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3173.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3173.jpg",
+      "bounds": [
+        104,
+        63,
+        370,
+        298
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3447.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3447.jpg",
+      "bounds": [
+        225,
+        139,
+        298,
+        234
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2263.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2263.jpg",
+      "bounds": [
+        279,
+        133,
+        356,
+        286
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_968.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_968.jpg",
+      "bounds": [
+        375,
+        84,
+        448,
+        223
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2427.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2427.jpg",
+      "bounds": [
+        354,
+        190,
+        411,
+        263
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3435.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3435.jpg",
+      "bounds": [
+        226,
+        46,
+        320,
+        154
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2022.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2022.jpg",
+      "bounds": [
+        259,
+        199,
+        380,
+        335
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_410.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_410.jpg",
+      "bounds": [
+        85,
+        0,
+        537,
+        360
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_236.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_236.jpg",
+      "bounds": [
+        148,
+        209,
+        217,
+        285
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1980.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1980.jpg",
+      "bounds": [
+        250,
+        34,
+        541,
+        331
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4146.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4146.jpg",
+      "bounds": [
+        186,
+        141,
+        402,
+        191
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1686.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1686.jpg",
+      "bounds": [
+        216,
+        24,
+        407,
+        286
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_594.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_594.jpg",
+      "bounds": [
+        424,
+        158,
+        447,
+        183
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_834.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_834.jpg",
+      "bounds": [
+        245,
+        80,
+        330,
+        246
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3120.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3120.jpg",
+      "bounds": [
+        208,
+        161,
+        299,
+        217
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_513.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_513.jpg",
+      "bounds": [
+        327,
+        167,
+        357,
+        207
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3010.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3010.jpg",
+      "bounds": [
+        140,
+        303,
+        193,
+        337
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_701.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_701.jpg",
+      "bounds": [
+        247,
+        144,
+        289,
+        215
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2798.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2798.jpg",
+      "bounds": [
+        236,
+        0,
+        379,
+        260
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_771.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_771.jpg",
+      "bounds": [
+        502,
+        167,
+        528,
+        205
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_289.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_289.jpg",
+      "bounds": [
+        254,
+        214,
+        400,
+        344
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_644.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_644.jpg",
+      "bounds": [
+        145,
+        114,
+        319,
+        261
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1762.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1762.jpg",
+      "bounds": [
+        234,
+        203,
+        297,
+        337
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2037.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2037.jpg",
+      "bounds": [
+        83,
+        378,
+        296,
+        586
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2784.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2784.jpg",
+      "bounds": [
+        0,
+        170,
+        59,
+        301
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3504.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3504.jpg",
+      "bounds": [
+        325,
+        249,
+        421,
+        290
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1943.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1943.jpg",
+      "bounds": [
+        334,
+        189,
+        457,
+        272
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2512.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2512.jpg",
+      "bounds": [
+        469,
+        168,
+        632,
+        258
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_155.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_155.jpg",
+      "bounds": [
+        395,
+        111,
+        473,
+        270
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4122.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4122.jpg",
+      "bounds": [
+        358,
+        78,
+        405,
+        113
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2275.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2275.jpg",
+      "bounds": [
+        352,
+        190,
+        374,
+        217
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3904.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3904.jpg",
+      "bounds": [
+        273,
+        0,
+        353,
+        152
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_568.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_568.jpg",
+      "bounds": [
+        282,
+        2,
+        344,
+        126
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2165.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2165.jpg",
+      "bounds": [
+        79,
+        259,
+        151,
+        340
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_461.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_461.jpg",
+      "bounds": [
+        388,
+        178,
+        414,
+        198
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3837.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3837.jpg",
+      "bounds": [
+        281,
+        282,
+        301,
+        293
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2734.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2734.jpg",
+      "bounds": [
+        225,
+        141,
+        379,
+        248
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3051.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3051.jpg",
+      "bounds": [
+        226,
+        192,
+        271,
+        259
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_472.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_472.jpg",
+      "bounds": [
+        465,
+        186,
+        523,
+        330
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_396.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_396.jpg",
+      "bounds": [
+        318,
+        264,
+        330,
+        280
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_939.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_939.jpg",
+      "bounds": [
+        219,
+        197,
+        276,
+        260
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3709.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3709.jpg",
+      "bounds": [
+        364,
+        136,
+        412,
+        242
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_765.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_765.jpg",
+      "bounds": [
+        286,
+        144,
+        321,
+        194
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_950.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_950.jpg",
+      "bounds": [
+        252,
+        155,
+        335,
+        220
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3518.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3518.jpg",
+      "bounds": [
+        320,
+        233,
+        376,
+        275
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2064.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2064.jpg",
+      "bounds": [
+        283,
+        139,
+        429,
+        295
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1061.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1061.jpg",
+      "bounds": [
+        244,
+        151,
+        323,
+        220
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3065.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3065.jpg",
+      "bounds": [
+        82,
+        0,
+        542,
+        286
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_686.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_686.jpg",
+      "bounds": [
+        325,
+        255,
+        344,
+        276
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_683.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_683.jpg",
+      "bounds": [
+        290,
+        183,
+        412,
+        299
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1651.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1651.jpg",
+      "bounds": [
+        338,
+        185,
+        496,
+        242
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_369.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_369.jpg",
+      "bounds": [
+        281,
+        165,
+        309,
+        188
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4036.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4036.jpg",
+      "bounds": [
+        101,
+        49,
+        567,
+        360
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_125.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_125.jpg",
+      "bounds": [
+        325,
+        120,
+        379,
+        276
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1529.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1529.jpg",
+      "bounds": [
+        401,
+        150,
+        422,
+        169
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3407.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3407.jpg",
+      "bounds": [
+        216,
+        233,
+        243,
+        260
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1013.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1013.jpg",
+      "bounds": [
+        231,
+        223,
+        280,
+        277
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2111.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2111.jpg",
+      "bounds": [
+        144,
+        82,
+        314,
+        277
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1559.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1559.jpg",
+      "bounds": [
+        226,
+        261,
+        257,
+        288
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1068.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1068.jpg",
+      "bounds": [
+        524,
+        211,
+        559,
+        291
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_298.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_298.jpg",
+      "bounds": [
+        317,
+        45,
+        413,
+        259
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_64.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_64.jpg",
+      "bounds": [
+        167,
+        225,
+        204,
+        248
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_865.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_865.jpg",
+      "bounds": [
+        402,
+        101,
+        497,
+        277
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3657.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3657.jpg",
+      "bounds": [
+        226,
+        8,
+        322,
+        227
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3097.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3097.jpg",
+      "bounds": [
+        361,
+        219,
+        443,
+        292
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3968.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3968.jpg",
+      "bounds": [
+        146,
+        197,
+        217,
+        287
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3533.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3533.jpg",
+      "bounds": [
+        367,
+        174,
+        411,
+        264
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1021.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1021.jpg",
+      "bounds": [
+        127,
+        132,
+        263,
+        294
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1733.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1733.jpg",
+      "bounds": [
+        350,
+        48,
+        375,
+        116
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3688.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3688.jpg",
+      "bounds": [
+        190,
+        227,
+        229,
+        258
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2683.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2683.jpg",
+      "bounds": [
+        347,
+        165,
+        355,
+        176
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1043.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1043.jpg",
+      "bounds": [
+        0,
+        132,
+        88,
+        298
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3588.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3588.jpg",
+      "bounds": [
+        280,
+        105,
+        365,
+        191
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3108.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3108.jpg",
+      "bounds": [
+        222,
+        153,
+        304,
+        201
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3792.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3792.jpg",
+      "bounds": [
+        400,
+        145,
+        426,
+        169
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_250.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_250.jpg",
+      "bounds": [
+        310,
+        257,
+        323,
+        275
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2243.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2243.jpg",
+      "bounds": [
+        245,
+        151,
+        290,
+        220
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1008.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1008.jpg",
+      "bounds": [
+        271,
+        118,
+        309,
+        252
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3651.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3651.jpg",
+      "bounds": [
+        151,
+        204,
+        219,
+        277
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4164.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4164.jpg",
+      "bounds": [
+        257,
+        48,
+        440,
+        224
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_190.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_190.jpg",
+      "bounds": [
+        397,
+        106,
+        464,
+        189
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3561.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3561.jpg",
+      "bounds": [
+        434,
+        261,
+        458,
+        299
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3194.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3194.jpg",
+      "bounds": [
+        173,
+        69,
+        245,
+        186
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_704.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_704.jpg",
+      "bounds": [
+        357,
+        11,
+        472,
+        229
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2691.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2691.jpg",
+      "bounds": [
+        260,
+        96,
+        540,
+        250
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4025.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4025.jpg",
+      "bounds": [
+        316,
+        59,
+        364,
+        106
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1.jpg",
+      "bounds": [
+        363,
+        215,
+        414,
+        257
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3387.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3387.jpg",
+      "bounds": [
+        257,
+        141,
+        285,
+        198
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2763.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2763.jpg",
+      "bounds": [
+        311,
+        148,
+        346,
+        182
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2387.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2387.jpg",
+      "bounds": [
+        371,
+        186,
+        470,
+        261
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3733.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3733.jpg",
+      "bounds": [
+        505,
+        156,
+        589,
+        209
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3101.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3101.jpg",
+      "bounds": [
+        236,
+        127,
+        338,
+        285
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2680.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2680.jpg",
+      "bounds": [
+        329,
+        233,
+        381,
+        285
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1494.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1494.jpg",
+      "bounds": [
+        239,
+        62,
+        396,
+        181
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_884.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_884.jpg",
+      "bounds": [
+        274,
+        141,
+        366,
+        255
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2438.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2438.jpg",
+      "bounds": [
+        325,
+        283,
+        368,
+        326
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2172.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2172.jpg",
+      "bounds": [
+        309,
+        87,
+        387,
+        193
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1687.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1687.jpg",
+      "bounds": [
+        301,
+        205,
+        370,
+        253
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_542.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_542.jpg",
+      "bounds": [
+        378,
+        5,
+        472,
+        226
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_720.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_720.jpg",
+      "bounds": [
+        147,
+        211,
+        192,
+        278
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3004.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3004.jpg",
+      "bounds": [
+        254,
+        170,
+        380,
+        265
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_225.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_225.jpg",
+      "bounds": [
+        363,
+        178,
+        473,
+        265
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4167.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4167.jpg",
+      "bounds": [
+        226,
+        0,
+        328,
+        238
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3029.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3029.jpg",
+      "bounds": [
+        133,
+        381,
+        200,
+        451
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3587.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3587.jpg",
+      "bounds": [
+        114,
+        91,
+        130,
+        107
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2548.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2548.jpg",
+      "bounds": [
+        454,
+        124,
+        566,
+        212
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3616.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3616.jpg",
+      "bounds": [
+        455,
+        0,
+        555,
+        103
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1667.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1667.jpg",
+      "bounds": [
+        323,
+        223,
+        388,
+        287
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_20.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_20.jpg",
+      "bounds": [
+        335,
+        259,
+        351,
+        275
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3678.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3678.jpg",
+      "bounds": [
+        298,
+        62,
+        374,
+        353
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3245.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3245.jpg",
+      "bounds": [
+        182,
+        45,
+        372,
+        210
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2144.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2144.jpg",
+      "bounds": [
+        238,
+        120,
+        274,
+        141
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3254.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3254.jpg",
+      "bounds": [
+        322,
+        73,
+        430,
+        167
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3891.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3891.jpg",
+      "bounds": [
+        323,
+        58,
+        418,
+        274
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3637.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3637.jpg",
+      "bounds": [
+        414,
+        200,
+        510,
+        302
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3404.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3404.jpg",
+      "bounds": [
+        391,
+        193,
+        427,
+        260
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3211.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3211.jpg",
+      "bounds": [
+        126,
+        122,
+        331,
+        258
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2920.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2920.jpg",
+      "bounds": [
+        480,
+        242,
+        578,
+        321
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_424.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_424.jpg",
+      "bounds": [
+        456,
+        29,
+        479,
+        74
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2212.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2212.jpg",
+      "bounds": [
+        154,
+        71,
+        327,
+        239
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3451.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3451.jpg",
+      "bounds": [
+        194,
+        16,
+        292,
+        240
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2885.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2885.jpg",
+      "bounds": [
+        332,
+        274,
+        357,
+        319
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3785.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3785.jpg",
+      "bounds": [
+        304,
+        185,
+        335,
+        208
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1835.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1835.jpg",
+      "bounds": [
+        215,
+        147,
+        327,
+        226
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_435.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_435.jpg",
+      "bounds": [
+        365,
+        49,
+        413,
+        171
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1540.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1540.jpg",
+      "bounds": [
+        163,
+        221,
+        197,
+        244
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3267.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3267.jpg",
+      "bounds": [
+        322,
+        232,
+        420,
+        295
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2959.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2959.jpg",
+      "bounds": [
+        337,
+        239,
+        456,
+        308
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2303.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2303.jpg",
+      "bounds": [
+        339,
+        164,
+        433,
+        231
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3810.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3810.jpg",
+      "bounds": [
+        415,
+        53,
+        484,
+        173
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2794.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2794.jpg",
+      "bounds": [
+        164,
+        270,
+        183,
+        281
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3461.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3461.jpg",
+      "bounds": [
+        231,
+        255,
+        262,
+        276
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1461.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1461.jpg",
+      "bounds": [
+        258,
+        198,
+        374,
+        338
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2118.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2118.jpg",
+      "bounds": [
+        375,
+        65,
+        479,
+        284
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_342.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_342.jpg",
+      "bounds": [
+        248,
+        5,
+        311,
+        143
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2035.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2035.jpg",
+      "bounds": [
+        347,
+        40,
+        461,
+        223
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1041.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1041.jpg",
+      "bounds": [
+        327,
+        252,
+        342,
+        275
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4049.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4049.jpg",
+      "bounds": [
+        165,
+        341,
+        229,
+        378
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_967.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_967.jpg",
+      "bounds": [
+        211,
+        59,
+        373,
+        201
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_178.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_178.jpg",
+      "bounds": [
+        162,
+        35,
+        191,
+        106
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3317.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3317.jpg",
+      "bounds": [
+        214,
+        94,
+        264,
+        195
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1903.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1903.jpg",
+      "bounds": [
+        0,
+        156,
+        93,
+        303
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2318.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2318.jpg",
+      "bounds": [
+        305,
+        182,
+        357,
+        247
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_151.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_151.jpg",
+      "bounds": [
+        380,
+        110,
+        470,
+        280
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2801.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2801.jpg",
+      "bounds": [
+        239,
+        230,
+        275,
+        272
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4007.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4007.jpg",
+      "bounds": [
+        467,
+        231,
+        592,
+        335
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_467.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_467.jpg",
+      "bounds": [
+        418,
+        189,
+        523,
+        320
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2056.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2056.jpg",
+      "bounds": [
+        329,
+        220,
+        339,
+        237
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_775.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_775.jpg",
+      "bounds": [
+        327,
+        232,
+        406,
+        286
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1867.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1867.jpg",
+      "bounds": [
+        179,
+        35,
+        261,
+        148
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3845.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3845.jpg",
+      "bounds": [
+        410,
+        70,
+        420,
+        86
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2140.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2140.jpg",
+      "bounds": [
+        380,
+        85,
+        469,
+        262
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1944.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1944.jpg",
+      "bounds": [
+        406,
+        131,
+        428,
+        211
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1704.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1704.jpg",
+      "bounds": [
+        0,
+        107,
+        90,
+        286
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3139.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3139.jpg",
+      "bounds": [
+        206,
+        0,
+        401,
+        330
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2774.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2774.jpg",
+      "bounds": [
+        192,
+        40,
+        299,
+        149
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_732.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_732.jpg",
+      "bounds": [
+        134,
+        111,
+        329,
+        239
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3466.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3466.jpg",
+      "bounds": [
+        0,
+        232,
+        35,
+        273
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1924.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1924.jpg",
+      "bounds": [
+        371,
+        300,
+        405,
+        340
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2572.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2572.jpg",
+      "bounds": [
+        289,
+        0,
+        391,
+        179
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1994.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1994.jpg",
+      "bounds": [
+        285,
+        137,
+        329,
+        202
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_260.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_260.jpg",
+      "bounds": [
+        86,
+        263,
+        150,
+        334
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3205.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3205.jpg",
+      "bounds": [
+        457,
+        194,
+        487,
+        217
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1877.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1877.jpg",
+      "bounds": [
+        418,
+        197,
+        466,
+        273
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2623.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2623.jpg",
+      "bounds": [
+        406,
+        49,
+        422,
+        98
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3469.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3469.jpg",
+      "bounds": [
+        283,
+        129,
+        328,
+        197
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1801.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1801.jpg",
+      "bounds": [
+        343,
+        218,
+        405,
+        330
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3153.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3153.jpg",
+      "bounds": [
+        245,
+        42,
+        446,
+        265
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2695.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2695.jpg",
+      "bounds": [
+        125,
+        159,
+        336,
+        345
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3315.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3315.jpg",
+      "bounds": [
+        310,
+        169,
+        344,
+        219
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3.jpg",
+      "bounds": [
+        348,
+        261,
+        377,
+        284
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_667.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_667.jpg",
+      "bounds": [
+        286,
+        305,
+        365,
+        352
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_959.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_959.jpg",
+      "bounds": [
+        86,
+        266,
+        144,
+        331
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2335.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2335.jpg",
+      "bounds": [
+        376,
+        194,
+        468,
+        256
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_790.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_790.jpg",
+      "bounds": [
+        249,
+        111,
+        543,
+        330
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3591.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3591.jpg",
+      "bounds": [
+        205,
+        277,
+        298,
+        309
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_438.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_438.jpg",
+      "bounds": [
+        366,
+        195,
+        469,
+        259
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3855.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3855.jpg",
+      "bounds": [
+        238,
+        209,
+        270,
+        250
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1785.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1785.jpg",
+      "bounds": [
+        219,
+        256,
+        238,
+        301
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4061.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4061.jpg",
+      "bounds": [
+        330,
+        74,
+        381,
+        127
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_331.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_331.jpg",
+      "bounds": [
+        359,
+        46,
+        383,
+        141
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_691.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_691.jpg",
+      "bounds": [
+        298,
+        336,
+        325,
+        359
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_645.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_645.jpg",
+      "bounds": [
+        165,
+        89,
+        401,
+        336
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2880.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2880.jpg",
+      "bounds": [
+        325,
+        227,
+        384,
+        288
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_381.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_381.jpg",
+      "bounds": [
+        156,
+        158,
+        301,
+        235
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_524.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_524.jpg",
+      "bounds": [
+        233,
+        21,
+        537,
+        360
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_164.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_164.jpg",
+      "bounds": [
+        238,
+        247,
+        261,
+        279
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2802.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2802.jpg",
+      "bounds": [
+        132,
+        49,
+        288,
+        214
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_355.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_355.jpg",
+      "bounds": [
+        323,
+        45,
+        456,
+        234
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2192.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2192.jpg",
+      "bounds": [
+        38,
+        0,
+        450,
+        335
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2110.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2110.jpg",
+      "bounds": [
+        372,
+        81,
+        458,
+        223
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3874.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3874.jpg",
+      "bounds": [
+        274,
+        0,
+        402,
+        137
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3898.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3898.jpg",
+      "bounds": [
+        196,
+        74,
+        290,
+        160
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1857.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1857.jpg",
+      "bounds": [
+        209,
+        257,
+        263,
+        288
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2609.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2609.jpg",
+      "bounds": [
+        214,
+        144,
+        403,
+        282
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2289.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2289.jpg",
+      "bounds": [
+        273,
+        45,
+        461,
+        225
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3554.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3554.jpg",
+      "bounds": [
+        373,
+        209,
+        413,
+        247
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_992.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_992.jpg",
+      "bounds": [
+        371,
+        179,
+        411,
+        241
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3828.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3828.jpg",
+      "bounds": [
+        248,
+        163,
+        540,
+        250
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_276.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_276.jpg",
+      "bounds": [
+        361,
+        19,
+        533,
+        336
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3514.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3514.jpg",
+      "bounds": [
+        162,
+        0,
+        466,
+        245
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1001.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1001.jpg",
+      "bounds": [
+        258,
+        0,
+        394,
+        262
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_824.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_824.jpg",
+      "bounds": [
+        376,
+        187,
+        463,
+        255
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1495.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1495.jpg",
+      "bounds": [
+        154,
+        227,
+        189,
+        273
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3342.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3342.jpg",
+      "bounds": [
+        315,
+        243,
+        375,
+        276
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2028.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2028.jpg",
+      "bounds": [
+        0,
+        165,
+        57,
+        294
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_837.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_837.jpg",
+      "bounds": [
+        0,
+        230,
+        35,
+        271
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3990.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3990.jpg",
+      "bounds": [
+        131,
+        181,
+        212,
+        273
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_390.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_390.jpg",
+      "bounds": [
+        220,
+        133,
+        294,
+        192
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2214.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2214.jpg",
+      "bounds": [
+        377,
+        107,
+        442,
+        168
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3870.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3870.jpg",
+      "bounds": [
+        425,
+        62,
+        502,
+        120
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_678.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_678.jpg",
+      "bounds": [
+        334,
+        65,
+        361,
+        117
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1697.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1697.jpg",
+      "bounds": [
+        533,
+        128,
+        563,
+        203
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1657.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1657.jpg",
+      "bounds": [
+        172,
+        270,
+        190,
+        280
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_399.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_399.jpg",
+      "bounds": [
+        321,
+        241,
+        378,
+        274
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1894.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1894.jpg",
+      "bounds": [
+        141,
+        50,
+        363,
+        230
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1583.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1583.jpg",
+      "bounds": [
+        0,
+        159,
+        82,
+        298
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_47.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_47.jpg",
+      "bounds": [
+        263,
+        308,
+        311,
+        360
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3676.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3676.jpg",
+      "bounds": [
+        258,
+        219,
+        383,
+        335
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_514.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_514.jpg",
+      "bounds": [
+        312,
+        304,
+        361,
+        326
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2429.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2429.jpg",
+      "bounds": [
+        310,
+        203,
+        374,
+        256
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_924.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_924.jpg",
+      "bounds": [
+        241,
+        108,
+        342,
+        271
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3306.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3306.jpg",
+      "bounds": [
+        389,
+        121,
+        477,
+        195
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3493.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3493.jpg",
+      "bounds": [
+        0,
+        152,
+        64,
+        298
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2767.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2767.jpg",
+      "bounds": [
+        199,
+        80,
+        243,
+        139
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_868.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_868.jpg",
+      "bounds": [
+        91,
+        0,
+        548,
+        319
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2081.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2081.jpg",
+      "bounds": [
+        368,
+        76,
+        401,
+        104
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2942.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2942.jpg",
+      "bounds": [
+        210,
+        68,
+        383,
+        311
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1023.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1023.jpg",
+      "bounds": [
+        312,
+        67,
+        378,
+        249
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1109.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1109.jpg",
+      "bounds": [
+        363,
+        242,
+        388,
+        310
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1781.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1781.jpg",
+      "bounds": [
+        340,
+        257,
+        387,
+        320
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3536.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3536.jpg",
+      "bounds": [
+        384,
+        107,
+        488,
+        206
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3584.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3584.jpg",
+      "bounds": [
+        207,
+        144,
+        281,
+        210
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3995.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3995.jpg",
+      "bounds": [
+        338,
+        142,
+        353,
+        156
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4044.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4044.jpg",
+      "bounds": [
+        303,
+        167,
+        339,
+        237
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2280.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2280.jpg",
+      "bounds": [
+        153,
+        0,
+        478,
+        329
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3787.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3787.jpg",
+      "bounds": [
+        373,
+        186,
+        462,
+        258
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4190.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4190.jpg",
+      "bounds": [
+        302,
+        46,
+        416,
+        239
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3422.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3422.jpg",
+      "bounds": [
+        270,
+        244,
+        285,
+        265
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1747.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1747.jpg",
+      "bounds": [
+        251,
+        196,
+        297,
+        244
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_994.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_994.jpg",
+      "bounds": [
+        231,
+        54,
+        316,
+        257
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2679.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2679.jpg",
+      "bounds": [
+        149,
+        212,
+        216,
+        279
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3524.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3524.jpg",
+      "bounds": [
+        138,
+        83,
+        202,
+        267
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3846.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3846.jpg",
+      "bounds": [
+        156,
+        92,
+        330,
+        217
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2021.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2021.jpg",
+      "bounds": [
+        46,
+        36,
+        360,
+        247
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3686.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3686.jpg",
+      "bounds": [
+        294,
+        250,
+        357,
+        345
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3605.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3605.jpg",
+      "bounds": [
+        293,
+        115,
+        460,
+        316
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2689.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2689.jpg",
+      "bounds": [
+        522,
+        143,
+        564,
+        189
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2310.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2310.jpg",
+      "bounds": [
+        374,
+        80,
+        458,
+        257
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1723.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1723.jpg",
+      "bounds": [
+        213,
+        235,
+        253,
+        258
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_450.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_450.jpg",
+      "bounds": [
+        277,
+        92,
+        385,
+        209
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4082.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4082.jpg",
+      "bounds": [
+        359,
+        177,
+        412,
+        264
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_261.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_261.jpg",
+      "bounds": [
+        344,
+        200,
+        424,
+        262
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_384.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_384.jpg",
+      "bounds": [
+        274,
+        234,
+        290,
+        263
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_123.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_123.jpg",
+      "bounds": [
+        79,
+        257,
+        152,
+        341
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1690.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1690.jpg",
+      "bounds": [
+        264,
+        107,
+        292,
+        138
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_688.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_688.jpg",
+      "bounds": [
+        197,
+        49,
+        423,
+        276
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_378.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_378.jpg",
+      "bounds": [
+        328,
+        59,
+        438,
+        270
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2421.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2421.jpg",
+      "bounds": [
+        310,
+        211,
+        372,
+        257
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3295.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3295.jpg",
+      "bounds": [
+        275,
+        105,
+        525,
+        320
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3954.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3954.jpg",
+      "bounds": [
+        181,
+        93,
+        366,
+        238
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2863.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2863.jpg",
+      "bounds": [
+        157,
+        0,
+        453,
+        297
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1720.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1720.jpg",
+      "bounds": [
+        135,
+        68,
+        436,
+        304
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3444.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3444.jpg",
+      "bounds": [
+        249,
+        171,
+        331,
+        211
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2279.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2279.jpg",
+      "bounds": [
+        322,
+        34,
+        417,
+        187
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_335.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_335.jpg",
+      "bounds": [
+        287,
+        307,
+        298,
+        319
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1610.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1610.jpg",
+      "bounds": [
+        459,
+        166,
+        506,
+        201
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3292.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3292.jpg",
+      "bounds": [
+        378,
+        153,
+        497,
+        323
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3756.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3756.jpg",
+      "bounds": [
+        0,
+        144,
+        86,
+        302
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1685.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1685.jpg",
+      "bounds": [
+        353,
+        179,
+        464,
+        241
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3269.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3269.jpg",
+      "bounds": [
+        0,
+        148,
+        76,
+        292
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1554.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1554.jpg",
+      "bounds": [
+        248,
+        184,
+        294,
+        241
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_937.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_937.jpg",
+      "bounds": [
+        323,
+        268,
+        347,
+        291
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1048.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1048.jpg",
+      "bounds": [
+        236,
+        116,
+        359,
+        265
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_839.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_839.jpg",
+      "bounds": [
+        115,
+        59,
+        444,
+        316
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1026.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1026.jpg",
+      "bounds": [
+        482,
+        69,
+        580,
+        154
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1454.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1454.jpg",
+      "bounds": [
+        336,
+        308,
+        357,
+        324
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2866.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2866.jpg",
+      "bounds": [
+        293,
+        0,
+        525,
+        244
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2272.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2272.jpg",
+      "bounds": [
+        315,
+        218,
+        363,
+        280
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3089.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3089.jpg",
+      "bounds": [
+        471,
+        236,
+        586,
+        329
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_239.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_239.jpg",
+      "bounds": [
+        166,
+        212,
+        205,
+        264
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_627.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_627.jpg",
+      "bounds": [
+        305,
+        37,
+        416,
+        243
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1741.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1741.jpg",
+      "bounds": [
+        369,
+        250,
+        416,
+        303
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_745.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_745.jpg",
+      "bounds": [
+        229,
+        189,
+        338,
+        247
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_679.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_679.jpg",
+      "bounds": [
+        144,
+        138,
+        266,
+        230
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2137.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2137.jpg",
+      "bounds": [
+        276,
+        135,
+        414,
+        242
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3240.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3240.jpg",
+      "bounds": [
+        304,
+        203,
+        371,
+        259
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2346.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2346.jpg",
+      "bounds": [
+        445,
+        130,
+        523,
+        204
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3772.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3772.jpg",
+      "bounds": [
+        369,
+        209,
+        427,
+        262
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_618.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_618.jpg",
+      "bounds": [
+        265,
+        0,
+        375,
+        206
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1795.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1795.jpg",
+      "bounds": [
+        315,
+        152,
+        358,
+        206
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1721.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1721.jpg",
+      "bounds": [
+        442,
+        96,
+        536,
+        349
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3373.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3373.jpg",
+      "bounds": [
+        270,
+        234,
+        313,
+        271
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1691.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1691.jpg",
+      "bounds": [
+        227,
+        266,
+        254,
+        287
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_975.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_975.jpg",
+      "bounds": [
+        228,
+        148,
+        370,
+        348
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1459.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1459.jpg",
+      "bounds": [
+        311,
+        117,
+        437,
+        243
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2645.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2645.jpg",
+      "bounds": [
+        0,
+        163,
+        82,
+        294
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2747.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2747.jpg",
+      "bounds": [
+        344,
+        310,
+        390,
+        343
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_858.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_858.jpg",
+      "bounds": [
+        302,
+        20,
+        422,
+        250
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1120.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1120.jpg",
+      "bounds": [
+        280,
+        246,
+        300,
+        278
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2611.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2611.jpg",
+      "bounds": [
+        221,
+        0,
+        539,
+        360
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3976.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3976.jpg",
+      "bounds": [
+        503,
+        116,
+        584,
+        222
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_377.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_377.jpg",
+      "bounds": [
+        329,
+        151,
+        384,
+        294
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_552.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_552.jpg",
+      "bounds": [
+        0,
+        191,
+        97,
+        302
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2274.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2274.jpg",
+      "bounds": [
+        364,
+        178,
+        477,
+        266
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_432.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_432.jpg",
+      "bounds": [
+        262,
+        209,
+        389,
+        332
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2620.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2620.jpg",
+      "bounds": [
+        255,
+        155,
+        433,
+        271
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2607.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2607.jpg",
+      "bounds": [
+        247,
+        298,
+        302,
+        335
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_94.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_94.jpg",
+      "bounds": [
+        374,
+        0,
+        597,
+        250
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3737.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3737.jpg",
+      "bounds": [
+        279,
+        239,
+        298,
+        283
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2391.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2391.jpg",
+      "bounds": [
+        317,
+        235,
+        380,
+        278
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2616.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2616.jpg",
+      "bounds": [
+        267,
+        92,
+        387,
+        217
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_842.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_842.jpg",
+      "bounds": [
+        135,
+        0,
+        640,
+        351
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3214.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3214.jpg",
+      "bounds": [
+        81,
+        258,
+        155,
+        343
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2461.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2461.jpg",
+      "bounds": [
+        410,
+        215,
+        452,
+        262
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2238.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2238.jpg",
+      "bounds": [
+        167,
+        125,
+        400,
+        218
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2534.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2534.jpg",
+      "bounds": [
+        424,
+        251,
+        459,
+        304
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2287.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2287.jpg",
+      "bounds": [
+        224,
+        84,
+        374,
+        244
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_51.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_51.jpg",
+      "bounds": [
+        310,
+        219,
+        364,
+        295
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_719.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_719.jpg",
+      "bounds": [
+        494,
+        270,
+        536,
+        300
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_841.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_841.jpg",
+      "bounds": [
+        484,
+        40,
+        555,
+        150
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3032.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3032.jpg",
+      "bounds": [
+        138,
+        288,
+        150,
+        306
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_864.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_864.jpg",
+      "bounds": [
+        0,
+        145,
+        76,
+        308
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3955.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3955.jpg",
+      "bounds": [
+        346,
+        311,
+        390,
+        341
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1815.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1815.jpg",
+      "bounds": [
+        210,
+        168,
+        312,
+        264
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_271.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_271.jpg",
+      "bounds": [
+        161,
+        0,
+        312,
+        202
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3276.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3276.jpg",
+      "bounds": [
+        341,
+        176,
+        388,
+        273
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_113.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_113.jpg",
+      "bounds": [
+        283,
+        280,
+        301,
+        294
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1970.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1970.jpg",
+      "bounds": [
+        278,
+        209,
+        296,
+        240
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3819.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3819.jpg",
+      "bounds": [
+        145,
+        58,
+        193,
+        143
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3359.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3359.jpg",
+      "bounds": [
+        405,
+        293,
+        428,
+        312
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_431.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_431.jpg",
+      "bounds": [
+        327,
+        0,
+        435,
+        360
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1466.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1466.jpg",
+      "bounds": [
+        213,
+        247,
+        272,
+        298
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_492.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_492.jpg",
+      "bounds": [
+        240,
+        183,
+        285,
+        217
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1010.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1010.jpg",
+      "bounds": [
+        180,
+        249,
+        255,
+        316
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1119.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1119.jpg",
+      "bounds": [
+        342,
+        153,
+        426,
+        211
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_910.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_910.jpg",
+      "bounds": [
+        238,
+        234,
+        272,
+        271
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3299.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3299.jpg",
+      "bounds": [
+        270,
+        109,
+        401,
+        219
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3909.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3909.jpg",
+      "bounds": [
+        368,
+        25,
+        472,
+        222
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_482.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_482.jpg",
+      "bounds": [
+        102,
+        74,
+        203,
+        286
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_279.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_279.jpg",
+      "bounds": [
+        319,
+        292,
+        338,
+        313
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1861.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1861.jpg",
+      "bounds": [
+        187,
+        226,
+        218,
+        252
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4053.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4053.jpg",
+      "bounds": [
+        69,
+        37,
+        228,
+        161
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3176.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3176.jpg",
+      "bounds": [
+        308,
+        74,
+        403,
+        167
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_657.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_657.jpg",
+      "bounds": [
+        148,
+        205,
+        193,
+        280
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2829.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2829.jpg",
+      "bounds": [
+        386,
+        87,
+        425,
+        254
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_812.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_812.jpg",
+      "bounds": [
+        49,
+        107,
+        571,
+        360
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3974.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3974.jpg",
+      "bounds": [
+        338,
+        200,
+        391,
+        282
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2632.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2632.jpg",
+      "bounds": [
+        309,
+        0,
+        395,
+        155
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2775.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2775.jpg",
+      "bounds": [
+        314,
+        215,
+        363,
+        261
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1826.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1826.jpg",
+      "bounds": [
+        131,
+        143,
+        164,
+        243
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1883.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1883.jpg",
+      "bounds": [
+        474,
+        240,
+        582,
+        324
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3728.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3728.jpg",
+      "bounds": [
+        305,
+        258,
+        329,
+        288
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2124.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2124.jpg",
+      "bounds": [
+        417,
+        0,
+        473,
+        64
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_733.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_733.jpg",
+      "bounds": [
+        271,
+        107,
+        309,
+        142
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_199.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_199.jpg",
+      "bounds": [
+        179,
+        0,
+        447,
+        223
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3510.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3510.jpg",
+      "bounds": [
+        231,
+        107,
+        456,
+        303
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1766.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1766.jpg",
+      "bounds": [
+        326,
+        277,
+        358,
+        326
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3121.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3121.jpg",
+      "bounds": [
+        124,
+        57,
+        413,
+        308
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_774.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_774.jpg",
+      "bounds": [
+        403,
+        90,
+        453,
+        144
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3917.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3917.jpg",
+      "bounds": [
+        214,
+        91,
+        348,
+        360
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3149.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3149.jpg",
+      "bounds": [
+        111,
+        134,
+        154,
+        223
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_814.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_814.jpg",
+      "bounds": [
+        324,
+        271,
+        374,
+        326
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_282.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_282.jpg",
+      "bounds": [
+        262,
+        213,
+        278,
+        241
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3321.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3321.jpg",
+      "bounds": [
+        293,
+        268,
+        353,
+        346
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_961.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_961.jpg",
+      "bounds": [
+        328,
+        247,
+        450,
+        345
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2389.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2389.jpg",
+      "bounds": [
+        274,
+        266,
+        298,
+        303
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3777.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3777.jpg",
+      "bounds": [
+        311,
+        253,
+        330,
+        276
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2932.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2932.jpg",
+      "bounds": [
+        205,
+        155,
+        302,
+        223
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4006.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4006.jpg",
+      "bounds": [
+        145,
+        0,
+        493,
+        336
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_799.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_799.jpg",
+      "bounds": [
+        82,
+        260,
+        149,
+        339
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1904.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1904.jpg",
+      "bounds": [
+        267,
+        166,
+        301,
+        187
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2525.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2525.jpg",
+      "bounds": [
+        355,
+        187,
+        384,
+        215
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1501.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1501.jpg",
+      "bounds": [
+        156,
+        270,
+        175,
+        284
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_663.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_663.jpg",
+      "bounds": [
+        417,
+        144,
+        446,
+        170
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4166.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4166.jpg",
+      "bounds": [
+        341,
+        193,
+        376,
+        240
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_402.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_402.jpg",
+      "bounds": [
+        231,
+        70,
+        324,
+        167
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1807.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1807.jpg",
+      "bounds": [
+        311,
+        141,
+        389,
+        288
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3374.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3374.jpg",
+      "bounds": [
+        154,
+        224,
+        304,
+        318
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3424.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3424.jpg",
+      "bounds": [
+        328,
+        90,
+        493,
+        276
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_820.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_820.jpg",
+      "bounds": [
+        4,
+        225,
+        35,
+        275
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1608.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1608.jpg",
+      "bounds": [
+        247,
+        137,
+        324,
+        247
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3568.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3568.jpg",
+      "bounds": [
+        391,
+        264,
+        441,
+        323
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_388.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_388.jpg",
+      "bounds": [
+        220,
+        443,
+        270,
+        467
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2248.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2248.jpg",
+      "bounds": [
+        150,
+        77,
+        525,
+        297
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2004.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2004.jpg",
+      "bounds": [
+        223,
+        0,
+        509,
+        324
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2963.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2963.jpg",
+      "bounds": [
+        288,
+        164,
+        321,
+        187
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_557.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_557.jpg",
+      "bounds": [
+        223,
+        188,
+        273,
+        266
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1906.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1906.jpg",
+      "bounds": [
+        278,
+        280,
+        299,
+        295
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_547.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_547.jpg",
+      "bounds": [
+        275,
+        152,
+        359,
+        240
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_419.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_419.jpg",
+      "bounds": [
+        269,
+        124,
+        381,
+        166
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3339.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3339.jpg",
+      "bounds": [
+        292,
+        138,
+        317,
+        208
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1998.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1998.jpg",
+      "bounds": [
+        243,
+        164,
+        300,
+        235
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4031.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4031.jpg",
+      "bounds": [
+        163,
+        20,
+        190,
+        83
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3575.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3575.jpg",
+      "bounds": [
+        284,
+        159,
+        460,
+        316
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2815.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2815.jpg",
+      "bounds": [
+        406,
+        294,
+        429,
+        314
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1087.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1087.jpg",
+      "bounds": [
+        212,
+        0,
+        326,
+        170
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4078.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4078.jpg",
+      "bounds": [
+        344,
+        309,
+        389,
+        342
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_26.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_26.jpg",
+      "bounds": [
+        325,
+        239,
+        383,
+        272
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2875.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2875.jpg",
+      "bounds": [
+        306,
+        206,
+        363,
+        251
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3850.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3850.jpg",
+      "bounds": [
+        413,
+        71,
+        488,
+        163
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_160.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_160.jpg",
+      "bounds": [
+        392,
+        199,
+        464,
+        307
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3355.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3355.jpg",
+      "bounds": [
+        276,
+        275,
+        308,
+        299
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3187.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3187.jpg",
+      "bounds": [
+        254,
+        187,
+        297,
+        241
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2191.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2191.jpg",
+      "bounds": [
+        285,
+        28,
+        376,
+        278
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3310.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3310.jpg",
+      "bounds": [
+        433,
+        254,
+        464,
+        300
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1086.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1086.jpg",
+      "bounds": [
+        198,
+        0,
+        308,
+        139
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2380.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2380.jpg",
+      "bounds": [
+        229,
+        265,
+        256,
+        296
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1885.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1885.jpg",
+      "bounds": [
+        318,
+        0,
+        629,
+        261
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2312.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2312.jpg",
+      "bounds": [
+        287,
+        164,
+        416,
+        218
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2741.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2741.jpg",
+      "bounds": [
+        274,
+        232,
+        291,
+        265
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4144.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4144.jpg",
+      "bounds": [
+        362,
+        277,
+        390,
+        302
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_836.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_836.jpg",
+      "bounds": [
+        131,
+        149,
+        166,
+        243
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2363.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2363.jpg",
+      "bounds": [
+        286,
+        164,
+        321,
+        188
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4153.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4153.jpg",
+      "bounds": [
+        299,
+        250,
+        316,
+        275
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3349.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3349.jpg",
+      "bounds": [
+        333,
+        264,
+        363,
+        319
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3556.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3556.jpg",
+      "bounds": [
+        98,
+        90,
+        155,
+        203
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_503.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_503.jpg",
+      "bounds": [
+        364,
+        190,
+        477,
+        262
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2324.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2324.jpg",
+      "bounds": [
+        309,
+        311,
+        338,
+        334
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3474.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3474.jpg",
+      "bounds": [
+        324,
+        231,
+        385,
+        284
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1776.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1776.jpg",
+      "bounds": [
+        146,
+        346,
+        196,
+        457
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_579.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_579.jpg",
+      "bounds": [
+        339,
+        217,
+        444,
+        309
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3642.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3642.jpg",
+      "bounds": [
+        11,
+        253,
+        28,
+        270
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3261.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3261.jpg",
+      "bounds": [
+        375,
+        173,
+        429,
+        200
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1081.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1081.jpg",
+      "bounds": [
+        280,
+        49,
+        400,
+        360
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_675.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_675.jpg",
+      "bounds": [
+        310,
+        92,
+        425,
+        194
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_352.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_352.jpg",
+      "bounds": [
+        372,
+        146,
+        445,
+        260
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1974.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1974.jpg",
+      "bounds": [
+        0,
+        156,
+        86,
+        301
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1672.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1672.jpg",
+      "bounds": [
+        363,
+        71,
+        402,
+        116
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1793.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1793.jpg",
+      "bounds": [
+        0,
+        105,
+        99,
+        309
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_145.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_145.jpg",
+      "bounds": [
+        359,
+        333,
+        422,
+        360
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2991.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2991.jpg",
+      "bounds": [
+        309,
+        311,
+        329,
+        330
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_89.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_89.jpg",
+      "bounds": [
+        320,
+        250,
+        423,
+        360
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3475.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3475.jpg",
+      "bounds": [
+        2,
+        229,
+        37,
+        272
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2960.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2960.jpg",
+      "bounds": [
+        393,
+        296,
+        454,
+        322
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2906.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2906.jpg",
+      "bounds": [
+        241,
+        189,
+        278,
+        219
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_861.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_861.jpg",
+      "bounds": [
+        103,
+        466,
+        131,
+        483
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_490.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_490.jpg",
+      "bounds": [
+        96,
+        0,
+        515,
+        360
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_773.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_773.jpg",
+      "bounds": [
+        293,
+        154,
+        458,
+        297
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3892.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3892.jpg",
+      "bounds": [
+        144,
+        213,
+        220,
+        281
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_540.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_540.jpg",
+      "bounds": [
+        253,
+        86,
+        346,
+        234
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_163.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_163.jpg",
+      "bounds": [
+        288,
+        169,
+        307,
+        187
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3260.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3260.jpg",
+      "bounds": [
+        0,
+        0,
+        471,
+        360
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2827.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2827.jpg",
+      "bounds": [
+        402,
+        290,
+        426,
+        314
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2079.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2079.jpg",
+      "bounds": [
+        152,
+        94,
+        338,
+        274
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2500.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2500.jpg",
+      "bounds": [
+        228,
+        73,
+        265,
+        161
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_266.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_266.jpg",
+      "bounds": [
+        253,
+        0,
+        411,
+        286
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3296.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3296.jpg",
+      "bounds": [
+        414,
+        176,
+        530,
+        321
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3167.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3167.jpg",
+      "bounds": [
+        295,
+        283,
+        304,
+        294
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2839.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2839.jpg",
+      "bounds": [
+        203,
+        110,
+        243,
+        132
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2175.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2175.jpg",
+      "bounds": [
+        137,
+        55,
+        365,
+        230
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_140.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_140.jpg",
+      "bounds": [
+        339,
+        0,
+        449,
+        233
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_61.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_61.jpg",
+      "bounds": [
+        232,
+        0,
+        469,
+        225
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2162.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2162.jpg",
+      "bounds": [
+        222,
+        186,
+        276,
+        261
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2895.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2895.jpg",
+      "bounds": [
+        360,
+        54,
+        401,
+        115
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1066.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1066.jpg",
+      "bounds": [
+        238,
+        231,
+        276,
+        272
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_443.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_443.jpg",
+      "bounds": [
+        264,
+        122,
+        380,
+        266
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1002.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1002.jpg",
+      "bounds": [
+        320,
+        305,
+        338,
+        323
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_161.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_161.jpg",
+      "bounds": [
+        243,
+        181,
+        314,
+        228
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2220.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2220.jpg",
+      "bounds": [
+        352,
+        305,
+        366,
+        326
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3947.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3947.jpg",
+      "bounds": [
+        238,
+        223,
+        274,
+        272
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2544.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2544.jpg",
+      "bounds": [
+        411,
+        71,
+        419,
+        84
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1688.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1688.jpg",
+      "bounds": [
+        202,
+        258,
+        268,
+        285
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1808.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1808.jpg",
+      "bounds": [
+        290,
+        56,
+        389,
+        326
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2490.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2490.jpg",
+      "bounds": [
+        166,
+        27,
+        460,
+        218
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_907.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_907.jpg",
+      "bounds": [
+        145,
+        298,
+        157,
+        314
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1952.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1952.jpg",
+      "bounds": [
+        364,
+        43,
+        397,
+        114
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3084.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3084.jpg",
+      "bounds": [
+        170,
+        338,
+        195,
+        351
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1948.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1948.jpg",
+      "bounds": [
+        223,
+        191,
+        284,
+        267
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1060.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1060.jpg",
+      "bounds": [
+        0,
+        149,
+        60,
+        294
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2185.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2185.jpg",
+      "bounds": [
+        0,
+        117,
+        94,
+        307
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3249.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3249.jpg",
+      "bounds": [
+        281,
+        114,
+        376,
+        203
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2357.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2357.jpg",
+      "bounds": [
+        361,
+        71,
+        399,
+        112
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2261.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2261.jpg",
+      "bounds": [
+        497,
+        269,
+        534,
+        300
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1770.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1770.jpg",
+      "bounds": [
+        5,
+        235,
+        34,
+        274
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3115.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3115.jpg",
+      "bounds": [
+        225,
+        62,
+        427,
+        200
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1029.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1029.jpg",
+      "bounds": [
+        362,
+        229,
+        389,
+        262
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_903.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_903.jpg",
+      "bounds": [
+        374,
+        210,
+        401,
+        248
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_616.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_616.jpg",
+      "bounds": [
+        165,
+        230,
+        294,
+        317
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_405.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_405.jpg",
+      "bounds": [
+        111,
+        18,
+        461,
+        331
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_502.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_502.jpg",
+      "bounds": [
+        298,
+        311,
+        319,
+        345
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_42.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_42.jpg",
+      "bounds": [
+        369,
+        43,
+        473,
+        289
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2046.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2046.jpg",
+      "bounds": [
+        226,
+        134,
+        322,
+        222
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_591.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_591.jpg",
+      "bounds": [
+        107,
+        231,
+        515,
+        339
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3593.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3593.jpg",
+      "bounds": [
+        195,
+        91,
+        317,
+        271
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_887.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_887.jpg",
+      "bounds": [
+        290,
+        305,
+        312,
+        327
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2170.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2170.jpg",
+      "bounds": [
+        132,
+        0,
+        250,
+        238
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3640.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3640.jpg",
+      "bounds": [
+        362,
+        177,
+        480,
+        263
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_248.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_248.jpg",
+      "bounds": [
+        345,
+        304,
+        393,
+        345
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4046.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4046.jpg",
+      "bounds": [
+        418,
+        157,
+        447,
+        186
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2979.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2979.jpg",
+      "bounds": [
+        145,
+        203,
+        195,
+        281
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3684.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3684.jpg",
+      "bounds": [
+        0,
+        144,
+        81,
+        298
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1121.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1121.jpg",
+      "bounds": [
+        450,
+        189,
+        487,
+        212
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1450.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1450.jpg",
+      "bounds": [
+        292,
+        109,
+        511,
+        306
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3150.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3150.jpg",
+      "bounds": [
+        171,
+        11,
+        270,
+        166
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2209.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2209.jpg",
+      "bounds": [
+        127,
+        126,
+        167,
+        249
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3476.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3476.jpg",
+      "bounds": [
+        168,
+        274,
+        238,
+        307
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2510.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2510.jpg",
+      "bounds": [
+        303,
+        148,
+        468,
+        255
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2047.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2047.jpg",
+      "bounds": [
+        501,
+        92,
+        582,
+        220
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2444.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2444.jpg",
+      "bounds": [
+        219,
+        188,
+        279,
+        263
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_565.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_565.jpg",
+      "bounds": [
+        233,
+        94,
+        318,
+        241
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_973.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_973.jpg",
+      "bounds": [
+        367,
+        45,
+        468,
+        286
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2392.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2392.jpg",
+      "bounds": [
+        377,
+        93,
+        443,
+        221
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2146.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2146.jpg",
+      "bounds": [
+        362,
+        75,
+        481,
+        215
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3763.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3763.jpg",
+      "bounds": [
+        0,
+        160,
+        68,
+        294
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1778.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1778.jpg",
+      "bounds": [
+        207,
+        171,
+        296,
+        216
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2761.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2761.jpg",
+      "bounds": [
+        360,
+        215,
+        396,
+        254
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3730.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3730.jpg",
+      "bounds": [
+        292,
+        103,
+        386,
+        288
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_37.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_37.jpg",
+      "bounds": [
+        156,
+        211,
+        190,
+        277
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3354.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3354.jpg",
+      "bounds": [
+        372,
+        259,
+        394,
+        271
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_33.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_33.jpg",
+      "bounds": [
+        174,
+        73,
+        355,
+        239
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_55.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_55.jpg",
+      "bounds": [
+        168,
+        222,
+        212,
+        248
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2366.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2366.jpg",
+      "bounds": [
+        353,
+        152,
+        372,
+        172
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3958.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3958.jpg",
+      "bounds": [
+        146,
+        211,
+        219,
+        279
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3714.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3714.jpg",
+      "bounds": [
+        85,
+        0,
+        365,
+        181
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_308.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_308.jpg",
+      "bounds": [
+        303,
+        196,
+        327,
+        220
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3356.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3356.jpg",
+      "bounds": [
+        147,
+        0,
+        479,
+        240
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1072.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1072.jpg",
+      "bounds": [
+        133,
+        27,
+        438,
+        310
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_109.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_109.jpg",
+      "bounds": [
+        370,
+        226,
+        475,
+        287
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1854.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1854.jpg",
+      "bounds": [
+        362,
+        129,
+        445,
+        280
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3437.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3437.jpg",
+      "bounds": [
+        225,
+        23,
+        388,
+        201
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2176.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2176.jpg",
+      "bounds": [
+        342,
+        307,
+        393,
+        344
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3348.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3348.jpg",
+      "bounds": [
+        0,
+        163,
+        81,
+        288
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3896.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3896.jpg",
+      "bounds": [
+        240,
+        183,
+        290,
+        223
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3033.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3033.jpg",
+      "bounds": [
+        337,
+        107,
+        371,
+        235
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_615.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_615.jpg",
+      "bounds": [
+        165,
+        335,
+        193,
+        353
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3679.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3679.jpg",
+      "bounds": [
+        271,
+        190,
+        421,
+        258
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3132.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3132.jpg",
+      "bounds": [
+        505,
+        131,
+        554,
+        188
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3918.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3918.jpg",
+      "bounds": [
+        177,
+        139,
+        312,
+        207
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2327.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2327.jpg",
+      "bounds": [
+        334,
+        213,
+        459,
+        315
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1539.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1539.jpg",
+      "bounds": [
+        144,
+        68,
+        445,
+        187
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_876.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_876.jpg",
+      "bounds": [
+        356,
+        187,
+        413,
+        276
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1058.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1058.jpg",
+      "bounds": [
+        135,
+        381,
+        180,
+        444
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3077.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3077.jpg",
+      "bounds": [
+        264,
+        298,
+        294,
+        326
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_736.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_736.jpg",
+      "bounds": [
+        0,
+        111,
+        89,
+        285
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3425.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3425.jpg",
+      "bounds": [
+        222,
+        12,
+        417,
+        289
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1999.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1999.jpg",
+      "bounds": [
+        201,
+        116,
+        304,
+        199
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1700.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1700.jpg",
+      "bounds": [
+        453,
+        141,
+        560,
+        211
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3897.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3897.jpg",
+      "bounds": [
+        391,
+        202,
+        424,
+        253
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3840.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3840.jpg",
+      "bounds": [
+        303,
+        125,
+        342,
+        214
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_54.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_54.jpg",
+      "bounds": [
+        262,
+        0,
+        361,
+        237
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3950.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3950.jpg",
+      "bounds": [
+        367,
+        190,
+        473,
+        258
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1116.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1116.jpg",
+      "bounds": [
+        345,
+        188,
+        382,
+        283
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2503.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2503.jpg",
+      "bounds": [
+        258,
+        250,
+        272,
+        270
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3755.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3755.jpg",
+      "bounds": [
+        322,
+        0,
+        496,
+        246
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2462.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2462.jpg",
+      "bounds": [
+        283,
+        206,
+        297,
+        242
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3151.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3151.jpg",
+      "bounds": [
+        123,
+        63,
+        426,
+        245
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3094.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3094.jpg",
+      "bounds": [
+        241,
+        75,
+        408,
+        191
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_661.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_661.jpg",
+      "bounds": [
+        296,
+        183,
+        397,
+        292
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2472.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2472.jpg",
+      "bounds": [
+        237,
+        0,
+        391,
+        347
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2621.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2621.jpg",
+      "bounds": [
+        208,
+        272,
+        273,
+        307
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2952.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2952.jpg",
+      "bounds": [
+        303,
+        210,
+        373,
+        262
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2295.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2295.jpg",
+      "bounds": [
+        215,
+        113,
+        280,
+        198
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_3924.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_3924.jpg",
+      "bounds": [
+        290,
+        191,
+        408,
+        297
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_1558.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_1558.jpg",
+      "bounds": [
+        322,
+        118,
+        334,
+        127
+      ],
+      "red_light": false
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_4086.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_4086.jpg",
+      "bounds": [
+        276,
+        258,
+        318,
+        278
+      ],
+      "red_light": true
+    },
+    {
+      "source": "data\\prepared\\train\\images\\train_2479.jpg",
+      "generated": "data\\domain_augmented\\images\\portrait_train_2479.jpg",
+      "bounds": [
+        178,
+        145,
+        296,
+        213
+      ],
+      "red_light": false
+    }
+  ]
+}

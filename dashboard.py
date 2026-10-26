@@ -19,7 +19,7 @@ def deployment_profile(path=ROOT / 'evidence/optimization_selection.json'):
                    model='YOLOv8 nano', testMap50=82.02)
     if path.exists():
         selected = json.loads(path.read_text())
-        if selected.get('weights') not in {'models/yolov8n_best.pt', 'models/yolov8n_refined.pt'} or selected.get('imgsz') != 416:
+        if selected.get('weights') not in {'models/yolov8n_best.pt', 'models/yolov8n_refined.pt', 'models/yolov8n_domain.pt'} or selected.get('imgsz') != 416:
             raise ValueError('Unknown deployment weights or image size.')
         profile.update({k: selected[k] for k in profile if k in selected})
     return profile
