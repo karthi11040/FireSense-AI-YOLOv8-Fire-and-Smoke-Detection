@@ -112,6 +112,8 @@ class Handler(BaseHTTPRequestHandler):
                  '/favicon.svg': ('favicon.svg', 'image/svg+xml'),
                  '/style.css': ('style.css', 'text/css'), '/app.js': ('app.js', 'text/javascript'),
                  '/simulation.mjs': ('simulation.mjs', 'text/javascript'),
+                 '/scene.mjs': ('scene.mjs', 'text/javascript'),
+                 '/sample-video.webm': ('sample-video.webm', 'video/webm'),
                  '/sample.jpg': ('sample.jpg', 'image/jpeg')}
         if path not in files:
             self.reply(404, dict(error='Not found.'))

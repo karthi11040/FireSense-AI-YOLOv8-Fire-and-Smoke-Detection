@@ -6,7 +6,19 @@
   "imageUpload": true,
   "syntheticCamera": true,
   "videoUpload": true,
+  "sampleVideoConfirmation": true,
   "logExport": true,
-  "mobileNoOverflow": true,
+  "lightTheme": true,
+  "responsiveWidths": [
+    320,
+    768,
+    1024,
+    1440
+  ],
+  "mockedRealtime": {
+    "maxActive": 1,
+    "tenFramesMs": 1350,
+    "noRequestsAfterStop": true
+  },
   "pageErrors": []
 }

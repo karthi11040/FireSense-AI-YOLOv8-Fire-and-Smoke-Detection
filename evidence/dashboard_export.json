@@ -3,23 +3,7 @@
   "policy": "3-of-5 fire-positive analyzed frames",
   "events": [
     {
-      "time": "2026-10-26T08:16:08.799Z",
-      "title": "Virtual sprinkler opened",
-      "detail": "Toy response simulation started. No physical actuation.",
-      "source": "demo",
-      "incidentId": "630b6292-546e-416c-adda-d1c02b0e20af",
-      "simulationOnly": true
-    },
-    {
-      "time": "2026-10-26T08:16:08.796Z",
-      "title": "Fire confirmed",
-      "detail": "3 of 5 analyzed frames positive. Incident 630b6292. Confirmation is not emergency certification.",
-      "source": "demo",
-      "incidentId": "630b6292-546e-416c-adda-d1c02b0e20af",
-      "simulationOnly": true
-    },
-    {
-      "time": "2026-10-26T08:16:06.785Z",
+      "time": "2026-10-26T12:15:38.505Z",
       "title": "Source started",
       "detail": "Virtual response demo — scripted detections, not model results.",
       "source": "demo",
@@ -27,7 +11,39 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:06.662Z",
+      "time": "2026-10-26T12:15:38.455Z",
+      "title": "Monitoring stopped",
+      "detail": "Stopped by user · last evidence retained",
+      "source": "video",
+      "incidentId": "dcec61a8-c7bf-4a92-a016-8073ec93ce77",
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T12:15:38.070Z",
+      "title": "Virtual sprinkler opened",
+      "detail": "Toy response simulation started. No physical actuation.",
+      "source": "video",
+      "incidentId": "dcec61a8-c7bf-4a92-a016-8073ec93ce77",
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T12:15:38.067Z",
+      "title": "Fire confirmed",
+      "detail": "3 of 5 analyzed frames positive. Incident dcec61a8. Confirmation is not emergency certification.",
+      "source": "video",
+      "incidentId": "dcec61a8-c7bf-4a92-a016-8073ec93ce77",
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T12:15:33.437Z",
+      "title": "Source started",
+      "detail": "sample-video.webm",
+      "source": "video",
+      "incidentId": null,
+      "simulationOnly": true
+    },
+    {
+      "time": "2026-10-26T12:15:32.598Z",
       "title": "Monitoring stopped",
       "detail": "Video ended · last evidence retained",
       "source": "video",
@@ -35,7 +51,7 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:05.234Z",
+      "time": "2026-10-26T12:15:31.287Z",
       "title": "Source started",
       "detail": "qa-video.webm",
       "source": "video",
@@ -43,7 +59,7 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:03.675Z",
+      "time": "2026-10-26T12:15:29.706Z",
       "title": "Image analyzed",
       "detail": "One image cannot satisfy the 3-frame confirmation gate.",
       "source": "image",
@@ -51,7 +67,7 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:03.535Z",
+      "time": "2026-10-26T12:15:29.572Z",
       "title": "Source started",
       "detail": "sample.jpg",
       "source": "image",
@@ -59,7 +75,7 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:03.419Z",
+      "time": "2026-10-26T12:15:29.430Z",
       "title": "Monitoring stopped",
       "detail": "Stopped by user · last evidence retained",
       "source": "camera",
@@ -67,7 +83,7 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:02.317Z",
+      "time": "2026-10-26T12:15:28.652Z",
       "title": "Source started",
       "detail": "Camera live",
       "source": "camera",
@@ -75,7 +91,7 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:02.271Z",
+      "time": "2026-10-26T12:15:28.605Z",
       "title": "Session reset",
       "detail": "Incident latch, evidence window and toy intensity cleared.",
       "source": "idle",
@@ -83,7 +99,7 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:01.886Z",
+      "time": "2026-10-26T12:15:28.208Z",
       "title": "Image analyzed",
       "detail": "One image cannot satisfy the 3-frame confirmation gate.",
       "source": "image",
@@ -91,7 +107,7 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:01.668Z",
+      "time": "2026-10-26T12:15:28.021Z",
       "title": "Source started",
       "detail": "Included held-out sample",
       "source": "image",
@@ -99,7 +115,7 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:01.552Z",
+      "time": "2026-10-26T12:15:27.937Z",
       "title": "Session reset",
       "detail": "Incident latch, evidence window and toy intensity cleared.",
       "source": "idle",
@@ -107,31 +123,31 @@
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:01.502Z",
+      "time": "2026-10-26T12:15:27.887Z",
       "title": "Monitoring stopped",
       "detail": "Stopped by user · last evidence retained",
       "source": "demo",
-      "incidentId": "d8800683-f7c9-434c-8f62-195fcc4ba2b3",
+      "incidentId": "33997284-dc1a-4248-ab19-a24e95930b43",
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:00.814Z",
+      "time": "2026-10-26T12:15:27.266Z",
       "title": "Virtual sprinkler opened",
       "detail": "Toy response simulation started. No physical actuation.",
       "source": "demo",
-      "incidentId": "d8800683-f7c9-434c-8f62-195fcc4ba2b3",
+      "incidentId": "33997284-dc1a-4248-ab19-a24e95930b43",
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:16:00.813Z",
+      "time": "2026-10-26T12:15:27.265Z",
       "title": "Fire confirmed",
-      "detail": "3 of 5 analyzed frames positive. Incident d8800683. Confirmation is not emergency certification.",
+      "detail": "3 of 5 analyzed frames positive. Incident 33997284. Confirmation is not emergency certification.",
       "source": "demo",
-      "incidentId": "d8800683-f7c9-434c-8f62-195fcc4ba2b3",
+      "incidentId": "33997284-dc1a-4248-ab19-a24e95930b43",
       "simulationOnly": true
     },
     {
-      "time": "2026-10-26T08:15:58.773Z",
+      "time": "2026-10-26T12:15:25.202Z",
       "title": "Source started",
       "detail": "Virtual response demo — scripted detections, not model results.",
       "source": "demo",

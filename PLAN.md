@@ -41,3 +41,9 @@ explicitly illustrative AU intensity model. Demo detections are visibly scripted
 Eight Python tests, four simulation tests, and Playwright end-to-end checks cover
 the UI, inference API, synthetic camera, uploads, log export and responsive layout.
 The physical webcam and real suppression behavior have not been validated.
+
+White console redesign: compact source toolbar, adjacent detection/response panels,
+responsive light theme and an independent animated scene. Video-frame callbacks
+replace the fixed inference delay, with one request in flight and measured result
+age/rate. Simulation timing uses elapsed seconds. An included 20-second generated
+WebM test sequence has source-image provenance in evidence/sample_video_provenance.json.

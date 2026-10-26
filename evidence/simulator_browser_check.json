@@ -1,0 +1,13 @@
+{
+  "dedicatedPage": true,
+  "demoTargetedResponse": true,
+  "manualWater": true,
+  "reset": true,
+  "widths": [
+    320,
+    768,
+    1024,
+    1440
+  ],
+  "pageErrors": []
+}

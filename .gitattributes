@@ -3,4 +3,5 @@
 *.jpg binary
 *.mp4 binary
 *.avi binary
+*.webm binary
 *.pt binary

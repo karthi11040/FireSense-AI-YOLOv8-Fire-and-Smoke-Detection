@@ -37,3 +37,12 @@ test('manual mode waits for a water action', () => {
   const before = s.intensity; s.tick(1); assert.ok(s.intensity > before);
   s.sprinkler = true; s.tick(1); assert.ok(s.intensity < before+4);
 });
+test('simulation uses elapsed seconds independently of rendering cadence', () => {
+  const coarse=new Simulation(), fine=new Simulation();
+  for(const s of [coarse,fine]){s.auto=false;for(let i=0;i<3;i++)s.observe(true,false);}
+  coarse.tick(5);
+  for(let i=0;i<50;i++)fine.tick(.1);
+  assert.ok(Math.abs(coarse.intensity-fine.intensity)<1e-8);
+  assert.equal(coarse.elapsed,5);
+  coarse.tick(NaN);coarse.tick(-1);assert.equal(coarse.elapsed,5);
+});

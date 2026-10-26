@@ -1,0 +1,11 @@
+{
+  "sources": [
+    "test_1118.jpg",
+    "test_10.jpg",
+    "test_410.jpg"
+  ],
+  "seconds": 20,
+  "format": "WebM / VP8",
+  "license": "Home Fire Dataset CC BY-NC 4.0; Peng and Kim, 2025",
+  "purpose": "Generated from still images for upload/inference/UI testing; not real incident footage or an event benchmark"
+}

@@ -3,7 +3,7 @@ export class Simulation {
   constructor() { this.auto = true; this.reset(); }
   reset() {
     this.history = []; this.confirmed = false; this.sprinkler = false;
-    this.intensity = 0; this.fire = false; this.smoke = false;
+    this.intensity = 0; this.elapsed = 0; this.fire = false; this.smoke = false;
   }
   observe(fire, smoke) {
     this.fire = fire; this.smoke = smoke;
@@ -20,7 +20,7 @@ export class Simulation {
   }
   tick(dt) {
     if (!Number.isFinite(dt) || dt <= 0) return;
-    dt = Math.min(dt, 1);
+    this.elapsed += dt;
     const growth = this.fire ? 4 : 0;
     this.intensity = Math.max(0, Math.min(100, this.intensity + (growth - (this.sprinkler ? 16 : 0)) * dt));
   }

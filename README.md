@@ -16,11 +16,20 @@ Open **http://localhost:8765** in Chrome or Edge. No additional packages or trai
 are needed. The page opens while the detector loads; wait for **Detector ready**
 before starting real inference. **Run simulation demo** works immediately.
 
+The sidebar's **Live simulator** opens `http://localhost:8765/?view=simulator`,
+a dedicated scene-first page with a highlighted virtual fire target, one active
+sprinkler and two closed heads. Start a camera/video or use the scripted demo.
+Changing pages starts a new browser session; detection state is not transferred.
+
 - **Live camera:** click Start camera and grant browser permission. Stop releases
   the camera. If the embedded preview cannot access it, open the URL in Chrome/Edge.
 - **Video file:** choose a browser-supported video (e.g. H.264 MP4 or WebM), then
   Play & detect. The browser decodes the video; only sampled JPEG frames go to
   the local model. Overlays represent the latest analyzed frame, not object tracking.
+  Download the included [20-second sample](web/sample-video.webm) from the dashboard,
+  choose Video file, upload it, and click Play & detect. It contains 4 seconds of
+  background, 8 seconds of fire and 8 seconds of smoke, generated from held-out
+  still images. It tests playback and inference, not real incident performance.
 - **Image:** choose a JPEG, PNG or WebP, then Analyze image; Try sample image uses
   the included Home Fire test image. A still image cannot confirm a temporal event.
 - **Virtual response:** 3 fire-positive samples in the last 5 analyzed frames latch
@@ -39,6 +48,12 @@ Its clock pauses when monitoring stops. Confirmed incidents remain latched until
 reset; an ended/disconnected source is reported as stopped/error, never as safe.
 The 3-of-5 policy is a prototype and has not been calibrated on event-labeled video.
 No physical sprinkler, email provider or alarm hardware is connected.
+
+The white monitoring console displays video independently of inference. New decoded
+frames trigger one model request at a time, without a fixed delay or request queue.
+Inference rate and overlay age are measured; boxes older than 750 ms are hidden.
+The simulation advances using elapsed seconds. Actual inference speed depends on
+your GPU/CPU and browser; smooth animation does not imply equal model throughput.
 
 Use `--device cpu` if CUDA is unavailable, or `--port 8766` if 8765 is occupied.
 The server binds only to 127.0.0.1 and serves an explicit asset allowlist. It is a
