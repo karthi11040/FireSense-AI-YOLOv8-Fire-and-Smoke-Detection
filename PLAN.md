@@ -49,3 +49,5 @@ age/rate. Simulation timing uses elapsed seconds. An included 20-second generate
 WebM test sequence has source-image provenance in evidence/sample_video_provenance.json.
 
 Latest user scope: remove simulator navigation, demo and virtual-response panel. Keep camera/video/image inference with a full-width feed. Browser checks passed for real image/video inference, synthetic camera and 320/768/1024/1440px layouts.
+
+Confidence optimization: evaluated 416/512/640 on validation, retained 416. Four additional epochs of backbone-frozen neck/head refinement completed with batch 16. Validation selected refined nano before test: mAP95 56.41 to 57.00%. Matched test mAP50 82.03 to 82.62%, mAP95 47.22 to 48.53%. At 0.50 precision 93.15 to 92.15%, recall 64.52 to 68.31%. Deployed refined weights in dashboard and default CLI; original weights preserved. Added explicit 90%+ filter, with 95.19% missed-object rate on test disclosed. Ten unit tests, browser input tests, confidence controls, native API and CLI inference passed. Reports/OPTIMIZATION_REPORT.md retains full evidence and limitations.

@@ -14,6 +14,17 @@ ROOT = Path(__file__).resolve().parent
 MAX_FRAME = 3 * 1024 * 1024
 
 
+def deployment_profile(path=ROOT / 'evidence/optimization_selection.json'):
+    profile = dict(weights='models/yolov8n_best.pt', imgsz=416,
+                   model='YOLOv8 nano', testMap50=82.02)
+    if path.exists():
+        selected = json.loads(path.read_text())
+        if selected.get('weights') not in {'models/yolov8n_best.pt', 'models/yolov8n_refined.pt'} or selected.get('imgsz') != 416:
+            raise ValueError('Unknown deployment weights or image size.')
+        profile.update({k: selected[k] for k in profile if k in selected})
+    return profile
+
+
 def allowed_request(host, origin, port):
     return host in {f'localhost:{port}', f'127.0.0.1:{port}'} and (
         origin is None or origin == f'http://{host}')
@@ -34,6 +45,7 @@ def decode_frame(data):
 class Detector:
     def __init__(self, device):
         self.state, self.error, self.device = 'loading', '', device
+        self.profile = deployment_profile()
         self.lock = threading.Lock()
         threading.Thread(target=self.load, daemon=True).start()
 
@@ -44,9 +56,9 @@ class Detector:
             import numpy as np
             torch.set_num_threads(2)
             self.device = ('0' if torch.cuda.is_available() else 'cpu') if self.device == 'auto' else self.device
-            weights = ROOT / 'models/yolov8n_best.pt'
+            weights = ROOT / self.profile['weights']
             if not weights.is_file():
-                raise FileNotFoundError('models/yolov8n_best.pt is missing. Restore the trained weights first.')
+                raise FileNotFoundError(f'{weights.name} is missing. Restore the selected trained weights first.')
             self.model = YOLO(str(weights))
             self.model.predict(np.zeros((256, 416, 3), dtype=np.uint8),
                                imgsz=416, device=self.device, verbose=False)
@@ -106,7 +118,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/status':
             detector = self.server.detector
             self.reply(200, dict(state=detector.state, error=detector.error, device=detector.device,
-                                 model='YOLOv8 nano', testMap50=82.02))
+                                 model=detector.profile['model'], testMap50=detector.profile['testMap50']))
             return
         files = {'/': ('index.html', 'text/html; charset=utf-8'),
                  '/favicon.svg': ('favicon.svg', 'image/svg+xml'),

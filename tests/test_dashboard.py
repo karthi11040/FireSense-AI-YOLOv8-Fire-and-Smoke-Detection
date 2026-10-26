@@ -1,10 +1,24 @@
 import io
 import unittest
+import json
+from pathlib import Path
+import tempfile
 from PIL import Image
-from dashboard import decode_frame, allowed_request
+from dashboard import decode_frame, allowed_request, deployment_profile
 
 
 class DashboardTests(unittest.TestCase):
+    def test_deployment_keeps_original_default_and_rejects_unknown_weights(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'selection.json'
+            self.assertEqual(deployment_profile(path)['weights'], 'models/yolov8n_best.pt')
+            path.write_text(json.dumps(dict(weights='../unknown.pt', imgsz=416)))
+            with self.assertRaises(ValueError):
+                deployment_profile(path)
+            path.write_text(json.dumps(dict(weights='models/yolov8n_refined.pt',
+                imgsz=416, model='YOLOv8 nano (refined)', testMap50=82.62)))
+            self.assertEqual(deployment_profile(path)['testMap50'], 82.62)
+
     def test_accepts_image_and_rejects_invalid_input(self):
         out = io.BytesIO()
         Image.new('RGB', (64, 32)).save(out, format='JPEG')

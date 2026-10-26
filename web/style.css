@@ -153,3 +153,10 @@ footer { display: flex; justify-content: space-between; gap: 16px; padding-top: 
 
 .workspace-grid { grid-template-columns:minmax(0,1fr); }
 .feed-view { aspect-ratio:16/9; max-height:600px; }
+
+.filter-presets { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.filter-presets .button { padding:6px 9px; font-size:10px; }
+.filter-note { max-width:280px; font-size:11px; line-height:1.6; margin:10px 0 0; color:var(--muted); }
+.settings { max-width:100%; }
+
+.benchmark b #benchmark-map { font-size:28px; }

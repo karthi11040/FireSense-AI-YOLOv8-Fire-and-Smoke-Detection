@@ -128,9 +128,11 @@ def train(args):
 
 def predict(args):
     from ultralytics import YOLO
+    from dashboard import deployment_profile
+    weights = args.weights or str(ROOT / deployment_profile()['weights'])
     source = int(args.source) if args.source.isdecimal() else args.source
     # Streaming results must be consumed for videos and webcams.
-    for _ in YOLO(args.weights).predict(source=source, stream=True, save=True, save_txt=True,
+    for _ in YOLO(weights).predict(source=source, stream=True, save=True, save_txt=True,
             save_conf=True, conf=args.conf, imgsz=416, device=args.device,
             project=str(ROOT / 'runs/predict'), name='inference', exist_ok=False):
         pass
@@ -147,9 +149,9 @@ def main():
     p.add_argument('--resume', help='Resume an unfinished last.pt checkpoint with its optimizer state')
     p.add_argument('--device', default='0')
     p = sub.add_parser('predict')
-    p.add_argument('--weights', default=str(ROOT / 'models/yolov8n_best.pt'))
+    p.add_argument('--weights', help='Override the validation-selected deployed checkpoint')
     p.add_argument('--source', required=True)
-    p.add_argument('--conf', type=float, default=.25)
+    p.add_argument('--conf', type=float, default=.5)
     p.add_argument('--device', default='0')
     args = parser.parse_args()
     if args.command == 'prepare':

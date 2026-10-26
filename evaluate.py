@@ -37,10 +37,10 @@ def rates(tp, fp, fn):
                 recall=tp/(tp+fn) if tp+fn else 0., tp=tp, fp=fp, fn=fn)
 
 
-def fixed_predictions(records):
+def fixed_predictions(records, confidence=.25):
     by_image = defaultdict(list)
     for row in records:
-        if row['score'] < .25:
+        if row['score'] < confidence:
             continue
         if row['category_id'] not in (1, 2):
             raise ValueError('Expected one-based custom-dataset categories 1=fire, 2=smoke')

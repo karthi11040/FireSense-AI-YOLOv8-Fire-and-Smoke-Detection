@@ -3,6 +3,11 @@ from evaluate import match_predictions, fixed_predictions
 
 
 class MatchingTests(unittest.TestCase):
+    def test_threshold_filters_scores_without_modifying_them(self):
+        rows = [dict(image_id='x', category_id=1, score=s, bbox=[0,0,10,10])
+                for s in [.899, .9, .97]]
+        self.assertEqual([p[1] for p in fixed_predictions(rows, .9)['x']], [.9, .97])
+
     def test_export_category_mapping_and_fixed_threshold(self):
         rows = [dict(image_id='test_1', category_id=2, score=.25, bbox=[10,20,3,4]),
                 dict(image_id='test_1', category_id=1, score=.249, bbox=[1,2,3,4])]

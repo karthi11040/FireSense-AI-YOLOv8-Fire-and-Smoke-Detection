@@ -23,6 +23,7 @@ function controls() {
   $('start').disabled=running || !ready || (source!=='camera' && !$('upload').files.length);
   $('sample').disabled=!ready || running;
   $('stop').disabled=!running; $('confidence').disabled=running;
+  $('precision-filter').disabled=running;$('strict-filter').disabled=running;
   $('start').textContent=source==='camera'?'Start camera':source==='video'?'Play & detect':'Analyze image';
 }
 function stop(reason='', record=true) {
@@ -49,7 +50,7 @@ function begin(kind, label) {
   $('source-status').textContent='● '+label;
   $('source-status').className='chip ready';
   $('feed-caption').textContent='Local inference · '+label;
-  $('confidence-caption').textContent='Detector output, not event risk';
+  $('confidence-caption').textContent='Raw model score, not accuracy';
   log('Source started',label);controls();
   return epoch;
 }
@@ -155,7 +156,14 @@ $('upload').addEventListener('change',()=>{stop('File selection changed');contro
 video.addEventListener('ended',()=>{if(running && mode==='video')stop('Video ended · last evidence retained');});
 $('start').addEventListener('click',start);$('stop').addEventListener('click',()=>stop('Stopped by user · last evidence retained'));
 $('sample').addEventListener('click',()=>openImage('/sample.jpg','Included held-out sample'));
-$('confidence').addEventListener('input',()=>{$('confidence-value').textContent=Number($('confidence').value).toFixed(2);});
+function updateFilter(){
+  const value=Number($('confidence').value);$('confidence-value').textContent=Math.round(value*100)+'%';
+  $('filter-note').textContent=value>=.9?'90%+ filter hides lower-score detections and can miss real fire or smoke. A high score does not guarantee correctness.':'Higher thresholds reduce false detections but also miss more objects. Score is model confidence, not measured accuracy.';
+}
+$('confidence').addEventListener('input',updateFilter);
+$('precision-filter').addEventListener('click',()=>{$('confidence').value='.5';updateFilter();});
+$('strict-filter').addEventListener('click',()=>{$('confidence').value='.9';updateFilter();});
+updateFilter();
 $('export').addEventListener('click',()=>{const a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify({events},null,2)],{type:'application/json'}));a.href=url;a.download='firesense-events.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
 window.addEventListener('pagehide',()=>stop('',false));
 
@@ -175,6 +183,7 @@ async function status() {
     const response=await fetch('/api/status');if(!response.ok)throw new Error('Server unavailable');const data=await response.json();ready=data.state==='ready';
     $('model-status').textContent=ready?`● Detector ready · ${data.device==='cpu'?'CPU':'GPU'}`:data.state==='error'?'● Detector unavailable':'● Loading detector';
     $('model-status').className='chip '+(ready?'ready':'');
+    $('model-name').textContent=data.model;$('benchmark-map').textContent=data.testMap50==null?'—':Number(data.testMap50).toFixed(2);
     if(data.state==='error')error(data.error);controls();
   } catch(e){ready=false;$('model-status').textContent='● Server disconnected';$('model-status').className='chip';if(running){stop('Server disconnected');error('Server disconnected. Restart dashboard.py to reconnect.');}controls();}
   setTimeout(status,2500);

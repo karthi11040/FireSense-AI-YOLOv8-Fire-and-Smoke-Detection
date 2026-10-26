@@ -1,7 +1,8 @@
 # FireSense AI
 
 YOLOv8 fire/smoke object detection research pipeline. See `reports/FINAL_REPORT.md`
-for the measured results and limitations once the experiment completes.
+for the original benchmark and `reports/OPTIMIZATION_REPORT.md` for the deployed
+refinement, confidence thresholds and measured precision/recall tradeoffs.
 
 ## Local detection dashboard
 
@@ -18,6 +19,21 @@ time; video rendering remains independent. Overlays older than 750 ms are hidden
 Actual inference rate depends on your hardware. The server binds to localhost;
 use `--device cpu` if CUDA is unavailable. This is a research detector, and missing
 detections do not establish safety. No physical hardware is controlled.
+
+The default minimum box score is 50%, selected from validation results for fewer
+false detections. **90%+ only** filters lower scores and can miss most objects;
+a 90% score is not a guarantee of correctness. Original model scores are preserved.
+See [the optimization audit](reports/OPTIMIZATION_REPORT.md) for precision/recall
+at each threshold and the measured refinement comparison.
+
+```powershell
+# Compare resolutions using validation only.
+.venv/Scripts/python.exe scripts/optimize_detector.py
+# Four-epoch refinement; original weights stay intact.
+.venv/Scripts/python.exe scripts/optimize_detector.py --finetune
+# Compare and lock the validation recommendation before any new test evaluation.
+.venv/Scripts/python.exe scripts/report_optimization.py
+```
 
 ## Setup (Windows PowerShell, Python 3.12)
 
@@ -63,8 +79,9 @@ delivered experiment; the download/prepare commands are for reproduction.
 .venv/Scripts/python.exe scripts/build_report.py
 ```
 
-Inference defaults to nano weights. To use the validation-recommended model, pass
-`--weights models/yolov8s_best.pt` if the report recommends small. Annotated media
+Inference defaults to the checkpoint recorded in `evidence/optimization_selection.json`
+(currently refined nano), with minimum score 0.50. Use `--weights` to override it,
+or `--conf 0.25` for greater recall. Annotated media
 and normalized YOLO detection text (including confidence) go to `runs/predict/`.
 Video uses streaming inference; webcam processing ends with Ctrl+C. No camera is
 assumed to be attached.

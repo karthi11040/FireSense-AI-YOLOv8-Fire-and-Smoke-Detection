@@ -15,7 +15,7 @@
     <a class="nav-link selected" href="/" aria-current="page"><span>◉</span> Live monitor</a>
     <a class="nav-link" href="#events"><span>≡</span> Activity</a>
   </nav>
-  <div class="model-card"><p class="eyebrow">DETECTION MODEL</p><strong>YOLOv8 nano</strong><span>Fire & smoke detection</span><div class="benchmark"><b>82.02<span>%</span></b><small>Test mAP@0.5<br>Held-out image benchmark</small></div></div>
+  <div class="model-card"><p class="eyebrow">DETECTION MODEL</p><strong id="model-name">YOLOv8 nano</strong><span>Fire & smoke detection</span><div class="benchmark"><b><span id="benchmark-map">82.02</span><span>%</span></b><small>Test mAP@0.5<br>Held-out image benchmark</small></div></div>
   <div class="local-note"><span class="local-dot"></span> Running locally<p>Frames stay on this computer.</p></div>
 </aside>
 <main id="monitor">
@@ -24,13 +24,13 @@
   <div id="error" class="error" role="alert" hidden></div>
   <section class="source-panel" aria-label="Input controls">
     <div class="source-top"><div class="source-tabs" role="group" aria-label="Input source"><button data-source="camera" aria-pressed="true">Live camera</button><button data-source="video" aria-pressed="false">Video file</button><button data-source="image" aria-pressed="false">Image</button></div><div class="source-actions"><button id="sample" class="button text-button">Try sample image ↗</button><button id="start" class="button primary" disabled>Start camera</button><button id="stop" class="button stop" disabled>Stop</button></div></div>
-    <div class="source-bottom"><div class="input-description"><label for="upload" id="upload-label" hidden>Choose a file</label><input id="upload" type="file" accept="video/*" hidden><span id="source-hint">Camera access starts only when you choose Start camera.</span></div><details class="settings"><summary>Detection settings</summary><label class="confidence-control" for="confidence">Confidence <input id="confidence" type="range" min="0.05" max="0.95" step="0.05" value="0.25"><output id="confidence-value">0.25</output></label></details></div>
+    <div class="source-bottom"><div class="input-description"><label for="upload" id="upload-label" hidden>Choose a file</label><input id="upload" type="file" accept="video/*" hidden><span id="source-hint">Camera access starts only when you choose Start camera.</span></div><details class="settings" open><summary>Detection settings</summary><label class="confidence-control" for="confidence">Minimum score <input id="confidence" type="range" min="0.05" max="0.95" step="0.05" value="0.50"><output id="confidence-value">50%</output></label><div class="filter-presets"><button id="precision-filter" class="button secondary" type="button">50% · recommended</button><button id="strict-filter" class="button secondary" type="button">90%+ only</button></div><p id="filter-note" class="filter-note">Scores are model confidence, not measured accuracy.</p></details></div>
   </section>
   <div class="workspace-grid">
     <section class="panel feed-panel"><div class="panel-heading"><div class="panel-title"><span class="panel-icon">▣</span><div><h2>Detection feed</h2><p>Live source with model overlays</p></div></div><span id="source-status" class="chip">● Idle</span></div>
       <div class="feed-view"><canvas id="feed" width="960" height="540" aria-label="Input video or image with detected fire and smoke boxes"></canvas></div>
       <div class="feed-footer"><span id="feed-caption">No source connected</span><span id="frame-age">Waiting for live frames</span></div>
-      <section class="metrics" aria-label="Latest analyzed frame"><div><span>Fire detections</span><strong id="fire-count">0</strong><small>Latest frame</small></div><div><span>Smoke detections</span><strong id="smoke-count">0</strong><small>Latest frame</small></div><div><span>Top confidence</span><strong id="top-confidence">—</strong><small id="confidence-caption">Model output, not event risk</small></div><div><span>Frames analyzed</span><strong id="frame-count">0</strong><small id="latency">Waiting for source</small></div></section>
+      <section class="metrics" aria-label="Latest analyzed frame"><div><span>Fire detections</span><strong id="fire-count">0</strong><small>Latest frame</small></div><div><span>Smoke detections</span><strong id="smoke-count">0</strong><small>Latest frame</small></div><div><span>Top confidence</span><strong id="top-confidence">—</strong><small id="confidence-caption">Raw model score, not accuracy</small></div><div><span>Frames analyzed</span><strong id="frame-count">0</strong><small id="latency">Waiting for source</small></div></section>
       <div class="feed-meta"><span><i class="key fire-key"></i> Fire <i class="key smoke-key"></i> Smoke</span><span id="processed-rate">Inference rate —</span></div>
     </section>
 

@@ -1,0 +1,247 @@
+New https://pypi.org/project/ultralytics/8.4.189 available  Update with 'pip install -U ultralytics'
+Ultralytics 8.3.221  Python-3.12.14 torch-2.5.1+cu121 CUDA:0 (NVIDIA GeForce GTX 1650, 4096MiB)
+[34m[1mengine\trainer: [0magnostic_nms=False, amp=False, augment=False, auto_augment=randaugment, batch=4, bgr=0.0, box=7.5, cache=False, cfg=None, classes=None, close_mosaic=10, cls=0.5, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=D:\fire ai\data\dataset.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=4, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=10, half=False, hsv_h=0.015, hsv_s=0.4, hsv_v=0.3, imgsz=416, int8=False, iou=0.7, keras=False, kobj=1.0, line_width=None, lr0=0.00015, lrf=0.1, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=D:\fire ai\models\yolov8n_best.pt, momentum=0.937, mosaic=0.0, multi_scale=False, name=nano_refinement, nbs=64, nms=False, opset=None, optimize=False, optimizer=AdamW, overlap_mask=True, patience=4, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=D:\fire ai\runs\optimization, rect=False, resume=False, retina_masks=False, save=True, save_conf=False, save_crop=False, save_dir=D:\fire ai\runs\optimization\nano_refinement, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.2, seed=42, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=botsort.yaml, translate=0.05, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=1, warmup_momentum=0.8, weight_decay=0.0005, workers=0, workspace=None
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]                 
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]                
+  2                  -1  1      7360  ultralytics.nn.modules.block.C2f             [32, 32, 1, True]             
+  3                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]                
+  4                  -1  2     49664  ultralytics.nn.modules.block.C2f             [64, 64, 2, True]             
+  5                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  6                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]           
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  8                  -1  1    460288  ultralytics.nn.modules.block.C2f             [256, 256, 1, True]           
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]                 
+ 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 12                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]                 
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 15                  -1  1     37248  ultralytics.nn.modules.block.C2f             [192, 64, 1]                  
+ 16                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+ 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 18                  -1  1    123648  ultralytics.nn.modules.block.C2f             [192, 128, 1]                 
+ 19                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]                 
+ 22        [15, 18, 21]  1    751702  ultralytics.nn.modules.head.Detect           [2, [64, 128, 256]]           
+Model summary: 129 layers, 3,011,238 parameters, 3,011,222 gradients, 8.2 GFLOPs
+
+Transferred 355/355 items from pretrained weights
+Freezing layer 'model.0.conv.weight'
+Freezing layer 'model.0.bn.weight'
+Freezing layer 'model.0.bn.bias'
+Freezing layer 'model.1.conv.weight'
+Freezing layer 'model.1.bn.weight'
+Freezing layer 'model.1.bn.bias'
+Freezing layer 'model.2.cv1.conv.weight'
+Freezing layer 'model.2.cv1.bn.weight'
+Freezing layer 'model.2.cv1.bn.bias'
+Freezing layer 'model.2.cv2.conv.weight'
+Freezing layer 'model.2.cv2.bn.weight'
+Freezing layer 'model.2.cv2.bn.bias'
+Freezing layer 'model.2.m.0.cv1.conv.weight'
+Freezing layer 'model.2.m.0.cv1.bn.weight'
+Freezing layer 'model.2.m.0.cv1.bn.bias'
+Freezing layer 'model.2.m.0.cv2.conv.weight'
+Freezing layer 'model.2.m.0.cv2.bn.weight'
+Freezing layer 'model.2.m.0.cv2.bn.bias'
+Freezing layer 'model.3.conv.weight'
+Freezing layer 'model.3.bn.weight'
+Freezing layer 'model.3.bn.bias'
+Freezing layer 'model.4.cv1.conv.weight'
+Freezing layer 'model.4.cv1.bn.weight'
+Freezing layer 'model.4.cv1.bn.bias'
+Freezing layer 'model.4.cv2.conv.weight'
+Freezing layer 'model.4.cv2.bn.weight'
+Freezing layer 'model.4.cv2.bn.bias'
+Freezing layer 'model.4.m.0.cv1.conv.weight'
+Freezing layer 'model.4.m.0.cv1.bn.weight'
+Freezing layer 'model.4.m.0.cv1.bn.bias'
+Freezing layer 'model.4.m.0.cv2.conv.weight'
+Freezing layer 'model.4.m.0.cv2.bn.weight'
+Freezing layer 'model.4.m.0.cv2.bn.bias'
+Freezing layer 'model.4.m.1.cv1.conv.weight'
+Freezing layer 'model.4.m.1.cv1.bn.weight'
+Freezing layer 'model.4.m.1.cv1.bn.bias'
+Freezing layer 'model.4.m.1.cv2.conv.weight'
+Freezing layer 'model.4.m.1.cv2.bn.weight'
+Freezing layer 'model.4.m.1.cv2.bn.bias'
+Freezing layer 'model.5.conv.weight'
+Freezing layer 'model.5.bn.weight'
+Freezing layer 'model.5.bn.bias'
+Freezing layer 'model.6.cv1.conv.weight'
+Freezing layer 'model.6.cv1.bn.weight'
+Freezing layer 'model.6.cv1.bn.bias'
+Freezing layer 'model.6.cv2.conv.weight'
+Freezing layer 'model.6.cv2.bn.weight'
+Freezing layer 'model.6.cv2.bn.bias'
+Freezing layer 'model.6.m.0.cv1.conv.weight'
+Freezing layer 'model.6.m.0.cv1.bn.weight'
+Freezing layer 'model.6.m.0.cv1.bn.bias'
+Freezing layer 'model.6.m.0.cv2.conv.weight'
+Freezing layer 'model.6.m.0.cv2.bn.weight'
+Freezing layer 'model.6.m.0.cv2.bn.bias'
+Freezing layer 'model.6.m.1.cv1.conv.weight'
+Freezing layer 'model.6.m.1.cv1.bn.weight'
+Freezing layer 'model.6.m.1.cv1.bn.bias'
+Freezing layer 'model.6.m.1.cv2.conv.weight'
+Freezing layer 'model.6.m.1.cv2.bn.weight'
+Freezing layer 'model.6.m.1.cv2.bn.bias'
+Freezing layer 'model.7.conv.weight'
+Freezing layer 'model.7.bn.weight'
+Freezing layer 'model.7.bn.bias'
+Freezing layer 'model.8.cv1.conv.weight'
+Freezing layer 'model.8.cv1.bn.weight'
+Freezing layer 'model.8.cv1.bn.bias'
+Freezing layer 'model.8.cv2.conv.weight'
+Freezing layer 'model.8.cv2.bn.weight'
+Freezing layer 'model.8.cv2.bn.bias'
+Freezing layer 'model.8.m.0.cv1.conv.weight'
+Freezing layer 'model.8.m.0.cv1.bn.weight'
+Freezing layer 'model.8.m.0.cv1.bn.bias'
+Freezing layer 'model.8.m.0.cv2.conv.weight'
+Freezing layer 'model.8.m.0.cv2.bn.weight'
+Freezing layer 'model.8.m.0.cv2.bn.bias'
+Freezing layer 'model.9.cv1.conv.weight'
+Freezing layer 'model.9.cv1.bn.weight'
+Freezing layer 'model.9.cv1.bn.bias'
+Freezing layer 'model.9.cv2.conv.weight'
+Freezing layer 'model.9.cv2.bn.weight'
+Freezing layer 'model.9.cv2.bn.bias'
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mtrain: [0mFast image access  (ping: 10.311.1 ms, read: 7.011.7 MB/s, size: 63.5 KB)
+
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\prepared\train\labels.cache... 3873 images, 87 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 3873/3873  0.0s
+[K[34m[1mtrain: [0mScanning D:\fire ai\data\prepared\train\labels.cache... 3873 images, 87 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 3873/3873  0.0s
+[34m[1mval: [0mFast image access  (ping: 0.10.0 ms, read: 129.144.5 MB/s, size: 79.0 KB)
+
+[K[34m[1mval: [0mScanning D:\fire ai\data\prepared\val\labels.cache... 1297 images, 33 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1297/1297  0.0s
+[K[34m[1mval: [0mScanning D:\fire ai\data\prepared\val\labels.cache... 1297 images, 33 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1297/1297  0.0s
+Plotting labels to D:\fire ai\runs\optimization\nano_refinement\labels.jpg... 
+[34m[1moptimizer:[0m AdamW(lr=0.00015, momentum=0.937) with parameter groups 57 weight(decay=0.0), 64 weight(decay=0.0005), 63 bias(decay=0.0)
+Image sizes 416 train, 416 val
+Using 0 dataloader workers
+Logging results to [1mD:\fire ai\runs\optimization\nano_refinement[0m
+Starting training for 4 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+
+[K        1/4     0.219G      1.236     0.7949     0.8885          6        416: 0% ──────────── 0/969  3.3s
+[K        1/4     0.252G      1.119     0.7079     0.9053          4        416: 0% ──────────── 1/969 0.7it/s 3.7s<23:34
+[K        1/4     0.252G      1.004     0.6496      0.915          4        416: 0% ──────────── 2/969 1.4it/s 4.1s<11:40
+[K        1/4     0.252G      1.078     0.6739     0.9246          4        416: 0% ──────────── 3/969 1.8it/s 4.4s<8:52
+[K        1/4     0.252G      1.073     0.6731     0.9259          4        416: 0% ──────────── 4/969 2.2it/s 4.8s<7:20
+[K        1/4     0.252G       1.06      0.671     0.9375          7        416: 1% ──────────── 5/969 2.5it/s 5.1s<6:30
+[K        1/4     0.252G      1.135     0.7311     0.9672          5        416: 1% ──────────── 6/969 2.6it/s 5.4s<6:08
+[K        1/4     0.252G      1.102     0.7094     0.9711          5        416: 1% ──────────── 7/969 2.7it/s 5.8s<5:55
+[K        1/4     0.252G      1.128     0.7162     0.9891          5        416: 1% ──────────── 8/969 2.8it/s 6.1s<5:38
+[K        1/4     0.252G      1.146     0.7211      1.009          7        416: 1% ──────────── 9/969 3.0it/s 6.4s<5:17
+[K        1/4     0.252G      1.142     0.7362       1.03          4        416: 1% ──────────── 10/969 3.1it/s 6.7s<5:11
+[K        1/4     0.252G      1.199     0.7727      1.039          4        416: 1% ──────────── 11/969 3.2it/s 7.0s<4:58
+[K        1/4     0.252G      1.177     0.7574      1.025          4        416: 1% ──────────── 12/969 3.2it/s 7.3s<4:55
+[K        1/4     0.252G      1.192     0.7839      1.044          5        416: 1% ──────────── 13/969 3.1it/s 7.6s<5:05
+[K        1/4     0.252G      1.191     0.7799      1.034          3        416: 1% ──────────── 14/969 3.2it/s 7.9s<4:59
+[K        1/4     0.252G      1.172     0.7897      1.033          5        416: 2% ──────────── 15/969 3.2it/s 8.2s<4:58
+[K        1/4     0.252G      1.167     0.7906      1.045          6        416: 2% ──────────── 16/969 3.0it/s 8.6s<5:14
+[K        1/4     0.252G      1.174     0.7872      1.047          6        416: 2% ──────────── 17/969 2.9it/s 9.0s<5:27
+[K        1/4     0.252G      1.181     0.7876      1.045          6        416: 2% ──────────── 18/969 3.1it/s 9.3s<5:06
+[K        1/4     0.252G      1.182     0.8016       1.06         11        416: 2% ──────────── 19/969 3.3it/s 9.5s<4:48
+[K        1/4     0.252G      1.198     0.8021      1.061          6        416: 2% ──────────── 20/969 3.4it/s 9.8s<4:39
+[K        1/4     0.252G      1.182     0.7898      1.057          4        416: 2% ──────────── 21/969 3.4it/s 10.1s<4:35
+[K        1/4     0.252G      1.201     0.8077      1.067          8        416: 2% ──────────── 22/969 3.4it/s 10.4s<4:42
+[K        1/4     0.252G      1.204     0.8084      1.069          7        416: 2% ──────────── 23/969 3.1it/s 10.8s<5:07
+[K        1/4     0.252G      1.203      0.812      1.065          4        416: 2% ──────────── 24/969 3.1it/s 11.1s<5:03
+[K        1/4     0.252G      1.223     0.8311       1.09          6        416: 3% ──────────── 25/969 3.1it/s 11.4s<5:04
+[K        1/4     0.252G      1.207     0.8246      1.084          4        416: 3% ──────────── 26/969 3.3it/s 11.7s<4:50
+[K        1/4     0.252G      1.226     0.8304      1.091          5        416: 3% ──────────── 27/969 2.9it/s 12.2s<5:28
+[K        1/4     0.252G      1.247     0.8432      1.102          6        416: 3% ──────────── 28/969 2.6it/s 12.8s<6:08
+[K        1/4     0.252G      1.254     0.8532      1.103          5        416: 3% ──────────── 29/969 2.4it/s 13.3s<6:32
+[K        1/4     0.252G      1.253     0.8492      1.105          4        416: 3% ──────────── 30/969 2.3it/s 13.7s<6:47
+[K        1/4     0.252G      1.262     0.8485      1.102          3        416: 3% ──────────── 31/969 2.5it/s 14.1s<6:11
+[K        1/4     0.252G      1.274     0.8491       1.11          6        416: 3% ──────────── 32/969 2.7it/s 14.4s<5:51
+[K        1/4     0.252G      1.263     0.8442      1.107          4        416: 3% ──────────── 33/969 3.1it/s 14.7s<5:05
+[K        1/4     0.258G      1.259     0.8467      1.105          4        416: 4% ──────────── 34/969 3.1it/s 15.0s<5:02
+[K        1/4     0.258G      1.268     0.8484      1.112          6        416: 4% ──────────── 35/969 3.4it/s 15.2s<4:36
+[K        1/4     0.258G      1.269     0.8405      1.115          6        416: 4% ──────────── 36/969 3.2it/s 15.6s<4:52
+[K        1/4     0.258G      1.274     0.8499       1.12          5        416: 4% ──────────── 37/969 3.4it/s 15.8s<4:36
+[K        1/4     0.258G      1.263     0.8429      1.118          6        416: 4% ──────────── 38/969 3.1it/s 16.2s<4:57
+[K        1/4     0.258G      1.271     0.8469      1.117          7        416: 4% ──────────── 39/969 3.4it/s 16.5s<4:32
+[K        1/4     0.258G      1.262     0.8389      1.112          4        416: 4% ──────────── 40/969 3.2it/s 16.8s<4:49
+[K        1/4     0.258G      1.265     0.8412      1.117          5        416: 4% ╸─────────── 41/969 3.4it/s 17.1s<4:30
+[K        1/4     0.258G      1.258     0.8371      1.118          4        416: 4% ╸─────────── 42/969 3.3it/s 17.4s<4:41
+[K        1/4     0.258G      1.257     0.8354      1.118          7        416: 4% ╸─────────── 43/969 3.6it/s 17.7s<4:16
+[K        1/4     0.258G      1.261     0.8352      1.119          4        416: 5% ╸─────────── 44/969 3.5it/s 18.0s<4:27
+[K        1/4     0.258G      1.267     0.8468       1.12          6        416: 5% ╸─────────── 45/969 3.8it/s 18.2s<4:02
+[K        1/4     0.258G      1.266     0.8443      1.122          6        416: 5% ╸─────────── 46/969 3.6it/s 18.5s<4:15
+[K        1/4     0.258G      1.269     0.8414      1.128          4        416: 5% ╸─────────── 47/969 3.9it/s 18.7s<3:57
+[K        1/4     0.258G       1.27     0.8416      1.128          5        416: 5% ╸─────────── 48/969 3.7it/s 19.0s<4:10
+[K        1/4     0.258G      1.261     0.8362      1.126          5        416: 5% ╸─────────── 49/969 3.7it/s 19.3s<4:11
+[K        1/4     0.258G      1.263      0.849      1.126          4        416: 5% ╸─────────── 50/969 3.5it/s 19.6s<4:21
+[K        1/4     0.258G      1.253     0.8424      1.119          4        416: 5% ╸─────────── 51/969 3.6it/s 19.9s<4:15
+[K        1/4     0.258G      1.266     0.8531      1.123          4        416: 5% ╸─────────── 52/969 3.3it/s 20.3s<4:35
+[K        1/4     0.258G      1.258     0.8552      1.124          4        416: 5% ╸─────────── 53/969 3.6it/s 20.5s<4:13
+[K        1/4     0.258G      1.257     0.8568      1.123          7        416: 6% ╸─────────── 54/969 3.5it/s 20.8s<4:20
+[K        1/4     0.258G      1.263     0.8586      1.128          4        416: 6% ╸─────────── 55/969 3.9it/s 21.0s<3:56
+[K        1/4     0.258G      1.259     0.8551       1.13          5        416: 6% ╸─────────── 56/969 3.6it/s 21.4s<4:12
+[K        1/4     0.258G      1.254     0.8519      1.126          5        416: 6% ╸─────────── 57/969 4.0it/s 21.6s<3:50
+[K        1/4     0.258G      1.261     0.8517      1.135          5        416: 6% ╸─────────── 58/969 3.8it/s 21.9s<4:00
+[K        1/4     0.258G      1.266     0.8537      1.136          5        416: 6% ╸─────────── 59/969 3.9it/s 22.1s<3:55
+[K        1/4     0.258G      1.258     0.8477       1.13          4        416: 6% ╸─────────── 60/969 3.6it/s 22.5s<4:16
+[K        1/4     0.258G      1.258     0.8466      1.127          8        416: 6% ╸─────────── 61/969 3.7it/s 22.7s<4:06
+[K        1/4     0.258G      1.253     0.8436      1.125          5        416: 6% ╸─────────── 62/969 3.5it/s 23.0s<4:17
+[K        1/4     0.258G       1.25     0.8427      1.126          5        416: 7% ╸─────────── 63/969 3.7it/s 23.3s<4:02
+[K        1/4     0.258G      1.246     0.8399      1.122          6        416: 7% ╸─────────── 64/969 3.5it/s 23.6s<4:18
+[K        1/4     0.258G      1.249     0.8391      1.127          6        416: 7% ╸─────────── 65/969 3.6it/s 23.9s<4:08
+[K        1/4     0.258G      1.245     0.8368      1.128          4        416: 7% ╸─────────── 66/969 3.4it/s 24.2s<4:24
+[K        1/4     0.258G      1.243     0.8402      1.132          4        416: 7% ╸─────────── 67/969 3.5it/s 24.5s<4:17
+[K        1/4     0.258G       1.24     0.8359      1.129          4        416: 7% ╸─────────── 68/969 3.3it/s 24.8s<4:34
+[K        1/4     0.258G      1.238     0.8326      1.131          6        416: 7% ╸─────────── 69/969 3.4it/s 25.1s<4:29
+[K        1/4     0.258G      1.239     0.8348      1.134          4        416: 7% ╸─────────── 70/969 3.1it/s 25.5s<4:47
+[K        1/4     0.258G       1.24     0.8356      1.135          6        416: 7% ╸─────────── 71/969 3.3it/s 25.8s<4:33
+[K        1/4     0.258G       1.24       0.84       1.14          5        416: 7% ╸─────────── 72/969 3.1it/s 26.1s<4:48
+[K        1/4     0.258G      1.236     0.8385      1.138          4        416: 8% ╸─────────── 73/969 3.3it/s 26.4s<4:29
+[K        1/4     0.258G      1.235     0.8378      1.138          5        416: 8% ╸─────────── 74/969 3.2it/s 26.7s<4:36
+[K        1/4     0.258G      1.231     0.8362      1.135          4        416: 8% ╸─────────── 75/969 3.3it/s 27.0s<4:28
+[K        1/4     0.258G      1.237      0.838      1.135          3        416: 8% ╸─────────── 76/969 3.0it/s 27.4s<4:55
+[K        1/4     0.258G      1.232     0.8353      1.131          4        416: 8% ╸─────────── 77/969 3.3it/s 27.7s<4:34
+[K        1/4     0.258G       1.23     0.8349      1.132          5        416: 8% ╸─────────── 78/969 3.1it/s 28.1s<4:52
+[K        1/4     0.258G      1.225     0.8327      1.131          6        416: 8% ╸─────────── 79/969 3.1it/s 28.4s<4:45
+[K        1/4     0.258G      1.222     0.8296      1.132          3        416: 8% ╸─────────── 80/969 3.0it/s 28.8s<4:55
+[K        1/4     0.258G      1.219     0.8281      1.133          5        416: 8% ━─────────── 81/969 3.3it/s 29.0s<4:33
+[K        1/4     0.258G      1.232     0.8491      1.134          6        416: 8% ━─────────── 82/969 3.0it/s 29.4s<4:56
+[K        1/4     0.258G      1.224     0.8453      1.131          3        416: 9% ━─────────── 83/969 3.0it/s 29.8s<4:52
+[K        1/4     0.258G      1.225     0.8476       1.13          4        416: 9% ━─────────── 84/969 3.1it/s 30.1s<4:44
+[K        1/4     0.258G      1.223     0.8467      1.131          6        416: 9% ━─────────── 85/969 3.6it/s 30.3s<4:07
+[K        1/4     0.258G      1.219     0.8431      1.132          5        416: 9% ━─────────── 86/969 3.5it/s 30.6s<4:11
+[K        1/4     0.258G      1.218     0.8405      1.128          6        416: 9% ━─────────── 87/969 3.8it/s 30.8s<3:51
+[K        1/4     0.258G      1.216     0.8399      1.128          7        416: 9% ━─────────── 88/969 3.5it/s 31.2s<4:12
+[K        1/4     0.258G      1.216     0.8381      1.126          4        416: 9% ━─────────── 89/969 3.5it/s 31.4s<4:09
+[K        1/4     0.258G      1.221     0.8391      1.128          6        416: 9% ━─────────── 90/969 3.3it/s 31.8s<4:27
+[K        1/4     0.258G      1.222     0.8377      1.128          4        416: 9% ━─────────── 91/969 3.6it/s 32.0s<4:06
+[K        1/4     0.258G      1.223      0.836      1.125          6        416: 9% ━─────────── 92/969 3.4it/s 32.4s<4:14
+[K        1/4     0.258G      1.224     0.8353      1.124          6        416: 10% ━─────────── 93/969 3.7it/s 32.6s<3:57
+[K        1/4     0.258G      1.223      0.837      1.122          5        416: 10% ━─────────── 94/969 3.4it/s 33.0s<4:20
+[K        1/4     0.258G      1.223     0.8349      1.122         10        416: 10% ━─────────── 95/969 3.5it/s 33.2s<4:12
+[K        1/4     0.258G      1.222     0.8327      1.124          6        416: 10% ━─────────── 96/969 3.1it/s 33.7s<4:39
+[K        1/4     0.258G       1.22     0.8309      1.124          5        416: 10% ━─────────── 97/969 3.3it/s 33.9s<4:24
+[K        1/4     0.258G      1.219     0.8293      1.126          6        416: 10% ━─────────── 98/969 3.3it/s 34.2s<4:21
+[K        1/4     0.258G      1.217     0.8278      1.126          4        416: 10% ━─────────── 99/969 3.0it/s 34.7s<4:51
+[K        1/4     0.258G      1.218     0.8251      1.127          5        416: 10% ━─────────── 100/969 3.1it/s 35.0s<4:38
+[K        1/4     0.258G      1.214      0.823      1.125          5        416: 10% ━─────────── 101/969 3.3it/s 35.2s<4:21
+[K        1/4     0.258G      1.213      0.821      1.126          6        416: 11% ━─────────── 102/969 3.1it/s 35.6s<4:37
+[K        1/4     0.258G       1.21     0.8186      1.126          6        416: 11% ━─────────── 103/969 3.3it/s 35.9s<4:19
+[K        1/4     0.258G      1.211     0.8175      1.127          8        416: 11% ━─────────── 104/969 3.3it/s 36.2s<4:20
+[K        1/4     0.258G       1.21     0.8173      1.127          5        416: 11% ━─────────── 105/969 3.1it/s 36.6s<4:37
+[K        1/4     0.258G      1.212      0.816       1.13          7        416: 11% ━─────────── 106/969 3.2it/s 36.9s<4:31
+[K        1/4     0.258G       1.21     0.8142       1.13          4        416: 11% ━─────────── 107/969 3.3it/s 37.1s<4:19
+[K        1/4     0.258G      1.209     0.8147      1.129          6        416: 11% ━─────────── 108/969 3.2it/s 37.5s<4:30
+[K        1/4     0.258G      1.209     0.8145      1.128          4        416: 11% ━─────────── 109/969 3.3it/s 37.8s<4:20
+[K        1/4     0.258G      1.209     0.8132      1.129          4        416: 11% ━─────────── 110/969 3.2it/s 38.1s<4:32
+[K        1/4     0.258G       1.21     0.8158      1.131          6        416: 11% ━─────────── 111/969 2.6it/s 38.8s<5:27
+[K        1/4     0.258G      1.217     0.8181      1.135          5        416: 12% ━─────────── 112/969 2.7it/s 39.2s<5:14
+[K        1/4     0.258G      1.218     0.8175      1.137          5        416: 12% ━─────────── 113/969 2.7it/s 39.6s<5:16
+[K        1/4     0.258G      1.215     0.8164      1.136          4        416: 12% ━─────────── 114/969 2.6it/s 40.0s<5:32
+[K        1/4     0.258G      1.214     0.8159      1.136          6        416: 12% ━─────────── 115/969 2.8it/s 40.3s<5:08
+[K        1/4     0.258G      1.213     0.8153      1.136          5        416: 12% ━─────────── 116/969 2.8it/s 40.6s<5:00
